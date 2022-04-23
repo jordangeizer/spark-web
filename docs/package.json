@@ -1,15 +1,15 @@
 {
   "name": "@spark-web/docs",
-  "licens^e": "MIT",
   "version": "1.0.1",
   "private": true,
+  "license": "MIT",
   "scripts": {
-    "dev": "./scripts/generate-spark-components.js && ./scripts/generate-sidebar-navigations.js && next dev",
     "build": "./scripts/generate-spark-components.js && ./scripts/generate-sidebar-navigations.js && yarn playroom:build && next build && yarn storybook:build",
-    "start": "next start",
+    "dev": "./scripts/generate-spark-components.js && ./scripts/generate-sidebar-navigations.js && next dev",
     "lint": "next lint",
-    "playroom:start": "playroom start",
     "playroom:build": "./scripts/generate-spark-components.js && playroom build",
+    "playroom:start": "playroom start",
+    "start": "next start",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook -o ./public/storybook"
   },
