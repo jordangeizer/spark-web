@@ -4,6 +4,13 @@
   "license": "MIT",
   "main": "dist/spark-web-analytics.cjs.js",
   "module": "dist/spark-web-analytics.esm.js",
+  "scripts": {
+    "clean": "git clean -fXd",
+    "format": "prettier --write .",
+    "lint": "TIMING=1 eslint src --fix",
+    "test": "jest",
+    "typecheck": "tsc --noEmit"
+  },
   "dependencies": {
     "@babel/runtime": "^7.14.6",
     "react": "^17.0.2"

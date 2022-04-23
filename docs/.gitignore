@@ -1,0 +1,7 @@
+# Next.js build output
+.next
+
+# Docs
+cache
+public/playroom
+public/storybook

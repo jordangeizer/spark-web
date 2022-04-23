@@ -33,16 +33,8 @@ node_modules/
 .env
 .env.test
 
-# Next.js build output
-.next
-
 # Preconstruct build output
 dist
-
-# Docs
-docs/cache
-docs/public/playroom
-docs/public/storybook
 
 # Test coverage
 coverage

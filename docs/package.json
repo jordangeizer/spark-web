@@ -5,13 +5,16 @@
   "license": "MIT",
   "scripts": {
     "build": "./scripts/generate-spark-components.js && ./scripts/generate-sidebar-navigations.js && yarn playroom:build && next build && yarn storybook:build",
+    "clean": "git clean -fXd",
     "dev": "./scripts/generate-spark-components.js && ./scripts/generate-sidebar-navigations.js && next dev",
-    "lint": "next lint",
+    "format": "prettier --write . --ignore-path .gitignore",
+    "lint": "TIMING=1 next lint --ignore-path .gitignore",
     "playroom:build": "./scripts/generate-spark-components.js && playroom build",
     "playroom:start": "playroom start",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook -o ./public/storybook"
+    "storybook:build": "build-storybook -o ./public/storybook",
+    "typecheck": "./scripts/generate-spark-components.js tsc --noEmit"
   },
   "dependencies": {
     "@babel/core": "^7.16.5",

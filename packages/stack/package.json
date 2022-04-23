@@ -4,6 +4,12 @@
   "license": "MIT",
   "main": "dist/spark-web-stack.cjs.js",
   "module": "dist/spark-web-stack.esm.js",
+  "scripts": {
+    "clean": "git clean -fXd",
+    "format": "prettier --write .",
+    "lint": "TIMING=1 eslint src --fix",
+    "typecheck": "tsc --noEmit"
+  },
   "dependencies": {
     "@babel/runtime": "^7.14.6",
     "@emotion/css": "^11.7.1",
