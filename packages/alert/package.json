@@ -6,8 +6,10 @@
   "module": "dist/spark-web-alert.esm.js",
   "scripts": {
     "clean": "git clean -fXd",
-    "format": "prettier --write .",
-    "lint": "TIMING=1 eslint src --fix",
+    "format:check": "prettier --check src",
+    "format:write": "prettier --write src",
+    "lint:check": "TIMING=1 eslint src",
+    "lint:fix": "TIMING=1 eslint src --fix",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

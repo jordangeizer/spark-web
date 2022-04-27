@@ -3,7 +3,9 @@
   "baseBranch": "origin/main",
   "pipeline": {
     "clean": { "cache": false },
-    "format": { "outputs": [] },
-    "lint": { "outputs": [] }
+    "format:check": { "outputs": [] },
+    "format:write": { "outputs": [] },
+    "lint:check": { "outputs": [] },
+    "lint:fix": { "outputs": [] }
   }
 }
