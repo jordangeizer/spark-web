@@ -1,7 +1,7 @@
 {
   "name": "@spark-web/float-input",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "main": "dist/spark-web-float-input.cjs.js",
   "module": "dist/spark-web-float-input.esm.js",
   "devDependencies": {
