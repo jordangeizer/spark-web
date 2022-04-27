@@ -1,5 +1,9 @@
 import numeral from 'numeral';
-import type { AllHTMLAttributes, FocusEventHandler, FormEventHandler } from 'react';
+import type {
+  AllHTMLAttributes,
+  FocusEventHandler,
+  FormEventHandler,
+} from 'react';
 import { useCallback, useState } from 'react';
 
 /** Ensure only valid values are passed to the consumer */
@@ -41,10 +45,12 @@ const useFormat = (fractionDigits?: number) => {
         return val;
       }
 
-      const pattern = fractionDigits ? `0,0.${'0'.repeat(fractionDigits)}` : '0,0.[00000000]';
+      const pattern = fractionDigits
+        ? `0,0.${'0'.repeat(fractionDigits)}`
+        : '0,0.[00000000]';
       return numeral(val).format(pattern);
     },
-    [fractionDigits],
+    [fractionDigits]
   );
 };
 
@@ -53,21 +59,23 @@ type FloatInputHandlers = {
   onBlur: FocusEventHandler<HTMLInputElement>;
   onFocus: FocusEventHandler<HTMLInputElement>;
   value: string | number;
-}
+};
 
 type UseFloatInputControlledProps = {
   fractionDigits?: number;
   onChange: (value: number | string) => void;
-  value: number | string ;
-} &  Pick<AllHTMLAttributes<HTMLInputElement>, 'onFocus' | 'onBlur'>;
+  value: number | string;
+} & Pick<AllHTMLAttributes<HTMLInputElement>, 'onFocus' | 'onBlur'>;
 
 type UseFloatInputUncontrolledProps = {
   fractionDigits?: number;
   onChange?: never;
   value?: never;
-} &  Pick<AllHTMLAttributes<HTMLInputElement>, 'onFocus' | 'onBlur'>;
+} & Pick<AllHTMLAttributes<HTMLInputElement>, 'onFocus' | 'onBlur'>;
 
-export type UseFloatInputProps = UseFloatInputControlledProps | UseFloatInputUncontrolledProps;
+export type UseFloatInputProps =
+  | UseFloatInputControlledProps
+  | UseFloatInputUncontrolledProps;
 
 export const useFloatInput = ({
   fractionDigits,
@@ -82,11 +90,14 @@ export const useFloatInput = ({
 
   const format = useFormat(fractionDigits);
 
-  const isControlled = (controlledValue !== undefined && controlledOnChange !== undefined);
-  const [internalValue, setInternalValue] = useState(() => format(controlledValue));
+  const isControlled =
+    controlledValue !== undefined && controlledOnChange !== undefined;
+  const [internalValue, setInternalValue] = useState(() =>
+    format(controlledValue)
+  );
 
   const uncontrolledHandlers: FloatInputHandlers = {
-    onChange: useCallback((e) => {
+    onChange: useCallback(e => {
       const paddedText = padLeadingDecimal(e.currentTarget.value);
       setInternalValue(normalise(paddedText));
     }, []),
@@ -100,18 +111,21 @@ export const useFloatInput = ({
   };
 
   const controlledHandlers: FloatInputHandlers = {
-    onChange: useCallback((e) => {
-      if (!isControlled) return;
-      const paddedText = padLeadingDecimal(e.currentTarget.value);
-      if (!e.currentTarget.value) {
-        controlledOnChange('');
-      } else if (isValid(paddedText)) {
-        controlledOnChange(parse(paddedText));
-      } else {
-        controlledOnChange(normalise(paddedText));
-      }
-      setInternalValue(normalise(paddedText));
-    }, [controlledOnChange, isControlled]),
+    onChange: useCallback(
+      e => {
+        if (!isControlled) return;
+        const paddedText = padLeadingDecimal(e.currentTarget.value);
+        if (!e.currentTarget.value) {
+          controlledOnChange('');
+        } else if (isValid(paddedText)) {
+          controlledOnChange(parse(paddedText));
+        } else {
+          controlledOnChange(normalise(paddedText));
+        }
+        setInternalValue(normalise(paddedText));
+      },
+      [controlledOnChange, isControlled]
+    ),
     onBlur: useFocusHandler(consumerBlur, () => {
       if (!isControlled) return;
       if (typeof controlledValue === 'number' && fractionDigits) {
@@ -132,10 +146,10 @@ export const useFloatInput = ({
 
 const useFocusHandler = (
   consumerHandler: FocusEventHandler<HTMLInputElement> | undefined,
-  ourHandler: FocusEventHandler<HTMLInputElement>,
+  ourHandler: FocusEventHandler<HTMLInputElement>
 ): FocusEventHandler<HTMLInputElement> => {
   return useCallback(
-    (event) => {
+    event => {
       if (typeof consumerHandler === 'function') {
         consumerHandler(event);
       }
@@ -144,6 +158,6 @@ const useFocusHandler = (
         ourHandler(event);
       }
     },
-    [consumerHandler, ourHandler],
+    [consumerHandler, ourHandler]
   );
 };
