@@ -56,11 +56,21 @@ return (
 A `FloatInput` can also be uncontrolled, managing it's own internal state. To access the value, instead of writing an onChange handler, you would use a ref to get form values from the DOM.
 
 ```jsx live
+const inputRef = React.useRef(null);
+const [value, setValue] = React.useState('');
+const showValueHandler = React.useCallback(() => {
+  setValue(inputRef.current?.value)
+}, [setValue])
+
+return (
 <Stack gap='large'>
-  <Field label="Example controlled validation" >
-    <FloatInput/>
+  <Field label="Example uncontrolled" >
+    <FloatInput ref={inputRef}/>
   </Field>
+  <Button onClick={showValueHandler}>Show input value</Button>
+  <Text>The input value is: {value}</Text>
 </Stack>
+)
 ```
 
 ### Format fraction digits
@@ -72,7 +82,7 @@ const [value, setValue] = React.useState(10000.101);
 
 return (
     <Stack gap='large'>
-        <Field label="Example controlled">
+        <Field label="Example format fraction digits">
             <FloatInput fractionDigits={2} value={value} onChange={(v) => setValue(v)}/>
         </Field>
         <Text>The current value is: {value}</Text>
