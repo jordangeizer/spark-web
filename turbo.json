@@ -4,7 +4,6 @@
   "pipeline": {
     "clean": { "cache": false },
     "format": { "outputs": [] },
-    "lint": { "outputs": [] },
-    "typecheck": { "outputs": [] }
+    "lint": { "outputs": [] }
   }
 }
