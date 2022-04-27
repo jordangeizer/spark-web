@@ -10,6 +10,9 @@ import { buildDataAttributes } from '@spark-web/utils/internal';
 import type { AllHTMLAttributes } from 'react';
 import { forwardRef } from 'react';
 
+import type { AdornmentsAsChildren } from './InputAdornment';
+import { childrenToAdornments } from './InputAdornment';
+
 type validTypes =
   | 'text'
   | 'password'
@@ -42,26 +45,97 @@ export type TextInputProps = {
    */
   type?: validTypes;
   mode?: validModes;
+  /**
+   * Adorn the input with ornamental element(s) to aid user input, or
+   * interactive element(s) to augment user input. Each child **must** be
+   * wrapped with the `InputAdornment` component to ensure proper layout,
+   * otherwise it will not be rendered.
+   */
+  children?: AdornmentsAsChildren;
 } & NativeInputProps;
 
 /** Organize and emphasize information quickly and effectively in a list of text elements. */
 export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
-  ({ data, ...consumerProps }, forwardedRef) => {
+  ({ children, data, ...consumerProps }, forwardedRef) => {
     const { disabled, invalid, ...a11yProps } = useFieldContext();
-    const inputStyles = useInput({ disabled, invalid });
+    const theme = useTheme();
+    const focusRingStyles = useFocusRing({ always: true });
+    const textStyles = useText({
+      baseline: false,
+      tone: disabled ? 'disabled' : 'neutral',
+      size: 'standard',
+      weight: 'regular',
+    });
 
-    return (
+    const [typographyStyles, responsiveStyles] = textStyles;
+    const { startAdornment, endAdornment } = childrenToAdornments(children);
+    const hasAdornments = Boolean(children);
+
+    return hasAdornments ? (
+      <Box
+        className={css({
+          ':focus-within': {
+            ...focusRingStyles,
+            borderColor: theme.border.color.fieldAccent,
+          }
+        })}
+        background={disabled ? 'inputDisabled' : 'input'}
+        border={invalid ? 'critical' : 'field'}
+        borderRadius="small"
+        height="medium"
+        alignItems="center"
+        flexDirection="row"
+        display="inline-flex"
+        marginY="none"
+      >
+        {startAdornment}
+        <Box
+          as="input"
+          disabled={disabled}
+          ref={forwardedRef}
+          width="full"
+          className={css({
+            ...typographyStyles,
+            ...responsiveStyles,
+            ':focus': {
+              outline: 'none',
+            },
+            ':enabled': {
+              '&:hover': {
+                borderColor: theme.border.color.fieldHover,
+              },
+            },
+          })}
+          height="small"
+          {...(data ? buildDataAttributes(data) : null)}
+          {...a11yProps}
+          {...consumerProps}
+        />
+        {endAdornment}
+      </Box>
+    ) : (
       <Box
         as="input"
         disabled={disabled}
         ref={forwardedRef}
-        // styles
         background={disabled ? 'inputDisabled' : 'input'}
         border={invalid ? 'critical' : 'field'}
         borderRadius="small"
         height="medium"
         paddingX="medium"
-        className={css(inputStyles)}
+        className={css({
+          ...typographyStyles,
+          ...responsiveStyles,
+          ':enabled': {
+            '&:hover': {
+              borderColor: theme.border.color.fieldHover,
+            },
+            '&:focus': {
+              ...focusRingStyles,
+              borderColor: theme.border.color.fieldAccent,
+            },
+          },
+        })}
         {...(data ? buildDataAttributes(data) : null)}
         {...a11yProps}
         {...consumerProps}

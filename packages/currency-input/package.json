@@ -1,0 +1,25 @@
+{
+  "name": "@spark-web/currency-input",
+  "license": "MIT",
+  "version": "0.0.0",
+  "main": "dist/spark-web-currency-input.cjs.js",
+  "module": "dist/spark-web-currency-input.esm.js",
+  "devDependencies": {
+    "react": "^17.0.2"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.14.6",
+    "@emotion/css": "^11.7.1",
+    "@spark-web/box": "^1.0.0",
+    "@spark-web/field": "^1.0.0",
+    "@spark-web/float-input": "^0.0.0",
+    "@spark-web/text": "^1.0.0",
+    "@spark-web/text-input": "^1.0.0"
+  },
+  "engines": {
+    "node": ">= 14.13"
+  }
+}
