@@ -6,18 +6,18 @@ import type { UseFloatInputProps } from './useFloatInput';
 import { useFloatInput } from './useFloatInput';
 
 export type FloatInputProps = UseFloatInputProps &
-  Omit<TextInputProps, 'onChange' | 'value'>;
+  Omit<TextInputProps, 'onChange' | 'value' | 'type' | 'mode' | 'children'>;
 
 export const FloatInput = forwardRef<HTMLInputElement, FloatInputProps>(
-  (props, ref) => {
-    const {
-      fractionDigits,
-      onBlur,
-      onFocus,
-      onChange,
-      value,
-      ...textInputProps
-    } = props;
+  ({
+    fractionDigits,
+    onBlur,
+    onFocus,
+    onChange,
+    value,
+    data,
+    placeholder,
+  }, forwardedRef) => {
     let inputs: UseFloatInputProps = {
       fractionDigits,
       onBlur,
@@ -28,9 +28,25 @@ export const FloatInput = forwardRef<HTMLInputElement, FloatInputProps>(
       inputs = { ...inputs, onChange, value };
     }
 
-    const floatInputProps = useFloatInput(inputs);
+    const {
+      onBlur: floatOnBlur,
+      onChange: floatOnChange,
+      onFocus: floatOnFocus,
+      value: floatValue
+    } = useFloatInput(inputs);
 
-    return <TextInput ref={ref} {...textInputProps} {...floatInputProps} />;
+    return (
+      <TextInput
+        ref={forwardedRef}
+        data={data}
+        placeholder={placeholder}
+        type="text"
+        mode="decimal"
+        onBlur={floatOnBlur}
+        onChange={floatOnChange}
+        onFocus={floatOnFocus}
+        value={floatValue}
+      />);
   }
 );
 

@@ -27,7 +27,7 @@ const padLeadingDecimal = (text: string) => {
   if (text.startsWith('.')) {
     return `0${text}`;
   } else if (text.startsWith('-.')) {
-    return `-0${text.substr(1)}`;
+    return `-0${text.substring(1)}`;
   }
 
   return text;
@@ -83,7 +83,7 @@ export const useFloatInput = ({
   onFocus: consumerFocus,
   onChange: controlledOnChange,
   value: controlledValue,
-}: UseFloatInputProps) => {
+}: UseFloatInputProps): FloatInputHandlers => {
   if (Number.isNaN(controlledValue)) {
     throw new Error('NaN cannot be provided to numeric inputs.');
   }
