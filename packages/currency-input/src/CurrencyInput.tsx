@@ -5,7 +5,6 @@ import type {
 } from '@spark-web/float-input';
 import { FloatInput } from '@spark-web/float-input';
 import { Text } from '@spark-web/text';
-import type { AdornmentChild } from '@spark-web/text-input';
 import { InputAdornment } from '@spark-web/text-input';
 import { forwardRef } from 'react';
 
@@ -14,13 +13,12 @@ import { currencySymbolMap } from './currencySymbolMap';
 
 /** NOTE: The "start" adornment is filled, so we can only accept a single child element. */
 export type CurrencyInputProps = {
-  children?: AdornmentChild;
   currencyType?: CurrencyType;
 } & Omit<FloatInputProps, 'fractionDigits'>;
 
 /** A component for inputting numbers into the app via a keyboard. Enforces 2 fraction digits. */
 export const CurrencyInput = forwardRef<HTMLInputElement, CurrencyInputProps>(
-  ({ children, currencyType, ...props }, ref) => {
+  ({ currencyType, ...props }, ref) => {
     const { disabled } = useFieldContext();
 
     const { onChange, value, ...rest } = props;
@@ -37,7 +35,6 @@ export const CurrencyInput = forwardRef<HTMLInputElement, CurrencyInputProps>(
             {currencySymbolMap[currencyType ?? 'AUD']}
           </Text>
         </InputAdornment>
-        {children}
       </FloatInput>
     );
   }
