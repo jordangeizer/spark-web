@@ -41,4 +41,4 @@ You can specify what currency type you'd like for the currency symbol adornment 
 Note that `CurrencyInput` also extends [`FloatInput`](/package/float-input)'s props and are not listed here.
 
 [currency-symbol-type]:
-  https://github.com/brighte-labs/spark-web/blob/float-input-component/packages/currency-input/src/currencySymbolMap.ts
+  https://github.com/brighte-labs/spark-web/blob/56249831f3013f4e070eb7b4633447a29cea4ebb/packages/currency-input/src/currencySymbolMap.ts
