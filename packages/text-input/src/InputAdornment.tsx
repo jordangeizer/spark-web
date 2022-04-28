@@ -3,15 +3,11 @@ import { FieldContextProvider, useFieldContext } from '@spark-web/field';
 import { useTheme } from '@spark-web/theme';
 import type { ReactElement } from 'react';
 import {
-  Children,
   createContext,
-  isValidElement,
   useContext,
   useMemo,
 } from 'react';
 
-// Context
-// ------------------------------
 
 type InputAdornmentContextType = { placement: PlacementType };
 
@@ -23,12 +19,9 @@ const InputAdornmentContext = createContext<InputAdornmentContextType | null>(
   null
 );
 
-export function useInputAdornmentContext() {
+export const useInputAdornmentContext = () => {
   return useContext(InputAdornmentContext);
-}
-
-// Public components
-// ------------------------------
+};
 
 const placementToPadding = {
   start: {
@@ -116,18 +109,6 @@ export const InputAdornment = ({
   return wrappedContent;
 };
 
-// Private components
-// ------------------------------
-
-/**
- * The adornment placeholder provides the default horizontal gutter for the
- * input, when no adornment for that placement is provided.
- */
-const AdornmentPlaceholder = () => {
-  const { spacing } = useTheme();
-  return <Box style={{ width: spacing.medium }} />;
-};
-
 /**
  * Wrap the element with a field provider to override the parent field label.
  * Only split-out from `InputAdornment` to avoid the conditional hook rule.
@@ -145,43 +126,4 @@ const FieldAdornment = ({
   return (
     <FieldContextProvider value={fieldContext}>{children}</FieldContextProvider>
   );
-};
-
-// Utils
-// ------------------------------
-
-// NOTE: `null | undefined` allow consumers to conditionally render adornments
-export type AdornmentChild =
-  | ReactElement<InputAdornmentProps>
-  | null
-  | undefined;
-export type AdornmentsAsChildren =
-  | AdornmentChild
-  | [AdornmentChild, AdornmentChild];
-
-/**
- * @private
- * Map children for placement within the `TextInput` flex container. Ensures that
- * placeholders are provided for unused placements.
- */
-export const childrenToAdornments = (children?: AdornmentsAsChildren) => {
-  let endAdornment = <AdornmentPlaceholder />;
-  let startAdornment = <AdornmentPlaceholder />;
-
-  if (!children) {
-    return { endAdornment, startAdornment };
-  }
-
-  Children.forEach(children, child => {
-    if (isValidElement(child)) {
-      if (child.props.placement === 'end') {
-        endAdornment = child;
-      }
-      if (child.props.placement === 'start') {
-        startAdornment = child;
-      }
-    }
-  });
-
-  return { endAdornment, startAdornment };
 };
