@@ -113,8 +113,8 @@ return (
 | fractionDigits? | number                               |         | Specifies to what fraction digit to be displayed in the component.                                                                                          |
 | value?          | string \| number                     |         | Value to be set in the component if using in a controlled flow. The `onChange` handler must also be set for this prop to be valid.                          |
 | onChange?       | (value: number \| string) => void    |         | The handler that is fired for value changes inside the component as part of a controlled flow. The `value` prop must also be set for this prop to be valid. |
-| onFocus?        | FocusEventHandler<HTMLInputElement\> |         | Handler when input element is focused on.                                                                                                                   |
-| onBlur?         | FocusEventHandler<HTMLInputElement\> |         | Handler when input element is blurred.                                                                                                                      |
+| onFocus?        | FocusEventHandler\<HTMLInputElement\> |         | Handler when input element is focused on.                                                                                                                   |
+| onBlur?         | FocusEventHandler\<HTMLInputElement\> |         | Handler when input element is blurred.                                                                                                                      |
 
 Additional props also include [`TextField`](/package/text-field) props which are
 not listed here.
