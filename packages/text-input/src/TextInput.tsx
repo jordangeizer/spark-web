@@ -77,7 +77,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           ':focus-within': {
             ...focusRingStyles,
             borderColor: theme.border.color.fieldAccent,
-          }
+          },
         })}
         background={disabled ? 'inputDisabled' : 'input'}
         border={invalid ? 'critical' : 'field'}

@@ -2,7 +2,13 @@ import { Box } from '@spark-web/box';
 import { FieldContextProvider, useFieldContext } from '@spark-web/field';
 import { useTheme } from '@spark-web/theme';
 import type { ReactElement } from 'react';
-import { Children, createContext, isValidElement, useContext, useMemo } from 'react';
+import {
+  Children,
+  createContext,
+  isValidElement,
+  useContext,
+  useMemo,
+} from 'react';
 
 // Context
 // ------------------------------
@@ -13,7 +19,9 @@ type InputAdornmentContextType = { placement: PlacementType };
  * Components like the `SelectInput` may subscribe to the adornment context and
  * change their appearance or behaviour.
  */
-const InputAdornmentContext = createContext<InputAdornmentContextType | null>(null);
+const InputAdornmentContext = createContext<InputAdornmentContextType | null>(
+  null
+);
 
 export function useInputAdornmentContext() {
   return useContext(InputAdornmentContext);
@@ -63,7 +71,12 @@ export type InputAdornmentProps = {
  *   </InputAdornment>
  * </TextInput>
  */
-export const InputAdornment = ({ children, fieldLabel, placement, raw }: InputAdornmentProps) => {
+export const InputAdornment = ({
+  children,
+  fieldLabel,
+  placement,
+  raw,
+}: InputAdornmentProps) => {
   const { sizing } = useTheme();
   const adornmentContext = useMemo(() => ({ placement }), [placement]);
   const { paddingLeft, paddingRight } = placementToPadding[placement];
@@ -77,7 +90,11 @@ export const InputAdornment = ({ children, fieldLabel, placement, raw }: InputAd
           Using a separate element because padding is considered when declaring
           dimensions.
         */}
-        <Box alignItems="center" justifyContent="center" style={{ minWidth: sizing.xxsmall }}>
+        <Box
+          alignItems="center"
+          justifyContent="center"
+          style={{ minWidth: sizing.xxsmall }}
+        >
           {children}
         </Box>
       </Box>
@@ -85,11 +102,15 @@ export const InputAdornment = ({ children, fieldLabel, placement, raw }: InputAd
   }
 
   const wrappedContent = (
-    <InputAdornmentContext.Provider value={adornmentContext}>{content}</InputAdornmentContext.Provider>
+    <InputAdornmentContext.Provider value={adornmentContext}>
+      {content}
+    </InputAdornmentContext.Provider>
   );
 
   if (fieldLabel) {
-    return <FieldAdornment fieldLabel={fieldLabel}>{wrappedContent}</FieldAdornment>;
+    return (
+      <FieldAdornment fieldLabel={fieldLabel}>{wrappedContent}</FieldAdornment>
+    );
   }
 
   return wrappedContent;
@@ -111,19 +132,32 @@ const AdornmentPlaceholder = () => {
  * Wrap the element with a field provider to override the parent field label.
  * Only split-out from `InputAdornment` to avoid the conditional hook rule.
  */
-const FieldAdornment = ({ children, fieldLabel }: Required<Pick<InputAdornmentProps, 'children' | 'fieldLabel'>>) => {
+const FieldAdornment = ({
+  children,
+  fieldLabel,
+}: Required<Pick<InputAdornmentProps, 'children' | 'fieldLabel'>>) => {
   const parentFieldContext = useFieldContext();
-  const fieldContext = useMemo(() => ({ ...parentFieldContext, accessibilityLabel: fieldLabel }), [fieldLabel, parentFieldContext]);
+  const fieldContext = useMemo(
+    () => ({ ...parentFieldContext, accessibilityLabel: fieldLabel }),
+    [fieldLabel, parentFieldContext]
+  );
 
-  return <FieldContextProvider value={fieldContext}>{children}</FieldContextProvider>;
+  return (
+    <FieldContextProvider value={fieldContext}>{children}</FieldContextProvider>
+  );
 };
 
 // Utils
 // ------------------------------
 
 // NOTE: `null | undefined` allow consumers to conditionally render adornments
-export type AdornmentChild = ReactElement<InputAdornmentProps> | null | undefined;
-export type AdornmentsAsChildren = AdornmentChild | [AdornmentChild, AdornmentChild];
+export type AdornmentChild =
+  | ReactElement<InputAdornmentProps>
+  | null
+  | undefined;
+export type AdornmentsAsChildren =
+  | AdornmentChild
+  | [AdornmentChild, AdornmentChild];
 
 /**
  * @private

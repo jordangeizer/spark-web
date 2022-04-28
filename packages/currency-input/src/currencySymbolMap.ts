@@ -186,7 +186,7 @@ export const currencySymbolMap = {
   ZAR: 'R',
   ZMW: 'ZK',
   ZWD: 'Z$',
-  ZWL: '$'
+  ZWL: '$',
 };
 
 export default currencySymbolMap;
