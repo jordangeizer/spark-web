@@ -39,8 +39,8 @@ adornment will default to AUD.
 </Stack>
 ```
 
-| Prop         | Type                                 | Default | Description                                                                       |
-| ------------ | ------------------------------------ | ------- | --------------------------------------------------------------------------------- |
+| Prop          | Type                                 | Default | Description                                                                       |
+| ------------- | ------------------------------------ | ------- | --------------------------------------------------------------------------------- |
 | currencyType? | [CurrencyType][currency-symbol-type] | 'AUD'   | Specifies what currency symbol you want as a starting adornment to the component. |
 
 Note that `CurrencyInput` also extends [`FloatInput`](/package/float-input)'s

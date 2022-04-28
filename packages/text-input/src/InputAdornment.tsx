@@ -2,12 +2,7 @@ import { Box } from '@spark-web/box';
 import { FieldContextProvider, useFieldContext } from '@spark-web/field';
 import { useTheme } from '@spark-web/theme';
 import type { ReactElement } from 'react';
-import {
-  createContext,
-  useContext,
-  useMemo,
-} from 'react';
-
+import { createContext, useContext, useMemo } from 'react';
 
 type InputAdornmentContextType = { placement: PlacementType };
 

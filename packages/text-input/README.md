@@ -8,11 +8,12 @@ within a [`Field`](/package/field). See [`Field`](/package/field) for more
 details.
 
 ## Examples
+
 ### Controlled
 
-A `TextInput` can be either controlled or uncontrolled. To control a
-`TextInput` provide a `value`, as well as an `onChange` function to set the new
-value when the select is updated.
+A `TextInput` can be either controlled or uncontrolled. To control a `TextInput`
+provide a `value`, as well as an `onChange` function to set the new value when
+the select is updated.
 
 ```jsx live
 const [value, setValue] = React.useState(1000000.101);
@@ -61,16 +62,13 @@ const [value, setValue] = React.useState(10000.101);
 return (
   <Stack gap="large">
     <Field label="Example format fraction digits">
-      <TextInput
-        type="numeric"
-        onChange={e => setValue(e.target.value)}
-      >
-      <InputAdornment placement="start">
-        <Text>~</Text>
-      </InputAdornment>
-      <InputAdornment placement="end">
-        <Text>%</Text>
-      </InputAdornment>
+      <TextInput type="numeric" onChange={e => setValue(e.target.value)}>
+        <InputAdornment placement="start">
+          <Text>~</Text>
+        </InputAdornment>
+        <InputAdornment placement="end">
+          <Text>%</Text>
+        </InputAdornment>
       </TextInput>
     </Field>
     <Text>The current value is: {value}</Text>
@@ -80,20 +78,19 @@ return (
 
 ## Props
 
-| Prop         | Type                                                                      | Default | Description                                                                                  |
-| ------------ | ------------------------------------------------------------------------- | ------- | -------------------------------------------------------------------------------------------- |
-| data?        | [DataAttributeMap][data-attribute-map]                                    |         | Sets data attributes for the component.                                                      |
-| type?        | 'text' \| 'password' \| 'email' \| 'search' \| 'number' \| 'tel' \| 'url' | 'text'  | Sets the type attribute for the component.                                                   |
-| mode? | 'none' \| 'text' \| 'tel' \| 'url' \| 'email' \| 'numeric' \| 'decimal' \| 'search' | | Sets the input mode attribute for the component.|
-| onBlur?      | React.FocusEventHandler<HTMLInputElement\>                                |         | Callback function when input field component loses focuses.                                  |
-| onFocus?     | React.FocusEventHandler<HTMLInputElement\>                                |         | Callback function when the input field component is in focus.                                |
-| onChange?    | React.FormEventHandler<HTMLInputElement\>                                 |         | Callback function when value of the input field has been changed.                            |
-| placeholder? | string                                                                    |         | Specifies a short hint that describes the expected value (type of value) of the input field. |
-| value?       | string \| number \| readonly string[]                                     |         | Specifies the value of the input field.                                                      |
-|children?| [AdornmentChildren][adornment-children] | | Allows setting of adornments at the start and/or end of the input component. |
+| Prop         | Type                                                                                | Default | Description                                                                                  |
+| ------------ | ----------------------------------------------------------------------------------- | ------- | -------------------------------------------------------------------------------------------- |
+| data?        | [DataAttributeMap][data-attribute-map]                                              |         | Sets data attributes for the component.                                                      |
+| type?        | 'text' \| 'password' \| 'email' \| 'search' \| 'number' \| 'tel' \| 'url'           | 'text'  | Sets the type attribute for the component.                                                   |
+| mode?        | 'none' \| 'text' \| 'tel' \| 'url' \| 'email' \| 'numeric' \| 'decimal' \| 'search' |         | Sets the input mode attribute for the component.                                             |
+| onBlur?      | React.FocusEventHandler<HTMLInputElement\>                                          |         | Callback function when input field component loses focuses.                                  |
+| onFocus?     | React.FocusEventHandler<HTMLInputElement\>                                          |         | Callback function when the input field component is in focus.                                |
+| onChange?    | React.FormEventHandler<HTMLInputElement\>                                           |         | Callback function when value of the input field has been changed.                            |
+| placeholder? | string                                                                              |         | Specifies a short hint that describes the expected value (type of value) of the input field. |
+| value?       | string \| number \| readonly string[]                                               |         | Specifies the value of the input field.                                                      |
+| children?    | [AdornmentChildren][adornment-children]                                             |         | Allows setting of adornments at the start and/or end of the input component.                 |
 
 [data-attribute-map]:
   https://bitbucket.org/brighte-energy/energy/src/14a694872cc43bb454981bada65f5f12b56f77c9/spark-web/packages/utils-spark/src/buildDataAttributes.ts#spark-web/packages/utils-spark/src/buildDataAttributes.ts-1
-
 [adornment-children]:
- https://github.com/brighte-labs/spark-web/blob/d4da46200f2d6e5e9291d3c650eaaff7e53f411b/packages/text-input/src/childrenToAdornments.tsx#L12
+  https://github.com/brighte-labs/spark-web/blob/d4da46200f2d6e5e9291d3c650eaaff7e53f411b/packages/text-input/src/childrenToAdornments.tsx#L12

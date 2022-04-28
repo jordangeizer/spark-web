@@ -1,10 +1,6 @@
 import { Box } from '@spark-web/box';
-import type {
-  ReactElement } from 'react';
-import {
-  Children,
-  isValidElement
-} from 'react';
+import type { ReactElement } from 'react';
+import { Children, isValidElement } from 'react';
 
 import type { InputAdornmentProps } from './InputAdornment';
 
@@ -21,7 +17,7 @@ export type AdornmentsAsChildren =
  * The adornment placeholder provides the default horizontal gutter for the
  * input, when no adornment for that placement is provided.
  */
- const AdornmentPlaceholder = () => {
+const AdornmentPlaceholder = () => {
   return <Box gap="medium" />;
 };
 
@@ -29,7 +25,7 @@ export type AdornmentsAsChildren =
  * Map children for placement within the `TextInput` flex container. Ensures that
  * placeholders are provided for unused placements.
  */
- export const childrenToAdornments = (children?: AdornmentsAsChildren) => {
+export const childrenToAdornments = (children?: AdornmentsAsChildren) => {
   let endAdornment = <AdornmentPlaceholder />;
   let startAdornment = <AdornmentPlaceholder />;
 
