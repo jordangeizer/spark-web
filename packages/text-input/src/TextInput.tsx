@@ -10,8 +10,23 @@ import { buildDataAttributes } from '@spark-web/utils/internal';
 import type { AllHTMLAttributes } from 'react';
 import { forwardRef } from 'react';
 
-type validTypes = 'text' | 'password' | 'email' | 'search' | 'number' | 'tel' | 'url';
-type validModes = 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search';
+type validTypes =
+  | 'text'
+  | 'password'
+  | 'email'
+  | 'search'
+  | 'number'
+  | 'tel'
+  | 'url';
+type validModes =
+  | 'none'
+  | 'text'
+  | 'tel'
+  | 'url'
+  | 'email'
+  | 'numeric'
+  | 'decimal'
+  | 'search';
 
 type NativeInputProps = Pick<
   AllHTMLAttributes<HTMLInputElement>,
@@ -26,7 +41,7 @@ export type TextInputProps = {
    * attribute. If this attribute is not specified, the default type "text".
    */
   type?: validTypes;
-  mode?: validModes
+  mode?: validModes;
 } & NativeInputProps;
 
 /** Organize and emphasize information quickly and effectively in a list of text elements. */
