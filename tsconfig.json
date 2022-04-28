@@ -1,17 +1,18 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "jsx": "react-jsx",
-    "noEmit": true,
-    "isolatedModules": true,
-    "strict": true,
-    "moduleResolution": "node",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
     "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "esnext",
     "types": ["node", "jest"]
   },
   "include": ["**/*"],
-  "exclude": ["**/dist/**/*", "**/node_modules/**/*"]
+  "exclude": ["**/dist/**/*", "docs", "**/node_modules/**/*"]
 }

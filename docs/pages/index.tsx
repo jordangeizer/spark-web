@@ -1,37 +1,40 @@
 import { Stack } from '@spark-web/stack';
+import { home } from 'contentlayer/generated';
+import type { MDXComponents } from 'mdx/types';
+import { bundleMDX } from 'mdx-bundler';
+import { getMDXComponent } from 'mdx-bundler/client';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
-import { MDXRemote } from 'next-mdx-remote';
+import { useMemo } from 'react';
 
 import { DocsContent } from '../components/content';
-import { mdxComponents } from '../components/mdx-components/mdx-components';
-import type { Awaited } from '../types';
-import type { getPackageBySlug } from '../utils/mdx';
-import { getMarkdownContentFromPath } from '../utils/mdx';
+import { mdxComponents } from '../components/mdx-components';
+import type { HeadingData } from '../utils/generate-toc';
 
 export const getStaticProps: GetStaticProps<{
-  source: Awaited<ReturnType<typeof getPackageBySlug>>['source'];
-  toc: Awaited<ReturnType<typeof getPackageBySlug>>['toc'];
+  code: string;
+  toc: HeadingData[];
 }> = async () => {
-  const { source, toc } = await getMarkdownContentFromPath(
-    `${process.cwd()}/pages/index.md`
-  );
+  const { code } = await bundleMDX({
+    source: home.body.raw,
+  });
 
   return {
     props: {
-      source,
-      toc,
+      code,
+      toc: home.toc,
     },
   };
 };
 
 export default function HomePage({
-  source,
+  code,
   toc,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
+  const Component = useMemo(() => getMDXComponent(code), [code]);
   return (
     <DocsContent pageTitle={'Home'} includeNavigation toc={toc}>
       <Stack gap="xlarge">
-        <MDXRemote {...source} components={mdxComponents} />
+        <Component components={mdxComponents as MDXComponents} />
       </Stack>
     </DocsContent>
   );

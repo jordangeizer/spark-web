@@ -1,5 +1,23 @@
 # @spark-web/utils
 
+## 1.1.1
+
+### Patch Changes
+
+- [#42](https://github.com/brighte-labs/spark-web/pull/42)
+  [`435779a`](https://github.com/brighte-labs/spark-web/commit/435779aa42bd635bbf43e1fd41724c666402caa2)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Prevent multiple
+  versions of React
+
+## 1.1.0
+
+### Minor Changes
+
+- [#44](https://github.com/brighte-labs/spark-web/pull/44)
+  [`11e7365`](https://github.com/brighte-labs/spark-web/commit/11e73659ff4a01a48a8761821bff34c6ec28568b)
+  Thanks [@matildaPan](https://github.com/matildaPan)! - add
+  useIsomorphicLayoutEffect and useSynchronizedAnimation
+
 ## 1.0.2
 
 ### Patch Changes

@@ -2,74 +2,87 @@ import { Box } from '@spark-web/box';
 import { ButtonLink } from '@spark-web/button';
 import { Heading } from '@spark-web/heading';
 import { Stack } from '@spark-web/stack';
+import { plugin as untitledLiveCode } from '@untitled-docs/live-code/rehype';
+import { allPackages } from 'contentlayer/generated';
+import { bundleMDX } from 'mdx-bundler';
+import { getMDXComponent } from 'mdx-bundler/client';
 import type {
   GetStaticPaths,
   GetStaticProps,
   InferGetStaticPropsType,
 } from 'next';
-import { MDXRemote } from 'next-mdx-remote';
+import { useMemo } from 'react';
+import rehypeSlug from 'rehype-slug';
+import remarkGfm from 'remark-gfm';
 
 import { DocsContent } from '../../components/content';
 import { StorybookLogo } from '../../components/logo';
 import { mdxComponents } from '../../components/mdx-components/mdx-components';
-import type { Awaited } from '../../types';
-import { getAllPackages, getPackageBySlug } from '../../utils/mdx';
+import type { HeadingData } from '../../utils/generate-toc';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const packages = await getAllPackages();
-
+  const paths = allPackages.map(pkg => `/package/${pkg.slug}`);
   return {
-    paths: packages.map(({ slug }) => {
-      return {
-        params: {
-          slug,
-        },
-      };
-    }),
+    paths,
     fallback: false,
   };
 };
 
 export const getStaticProps: GetStaticProps<{
-  source: Awaited<ReturnType<typeof getPackageBySlug>>['source'];
-  data: Awaited<ReturnType<typeof getPackageBySlug>>['data'];
-  toc: Awaited<ReturnType<typeof getPackageBySlug>>['toc'];
+  code: string;
+  storybookPath: string | null;
+  title: string;
+  toc: HeadingData[];
 }> = async ({ params }) => {
-  if (!params?.slug || typeof params.slug !== 'string') {
+  const pkg = allPackages.find(p => p.slug === params!.slug);
+  if (!pkg) {
     return {
       notFound: true,
     };
   }
 
-  const { data, source, toc /* name, slug, version */ } =
-    await getPackageBySlug(params.slug);
+  const { code } = await bundleMDX({
+    source: pkg.body.raw,
+    mdxOptions(options) {
+      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm];
+      options.rehypePlugins = [
+        ...(options.rehypePlugins ?? []),
+        rehypeSlug,
+        untitledLiveCode,
+      ];
+      return options;
+    },
+  });
 
   return {
     props: {
-      data,
-      source,
-      toc,
+      code,
+      storybookPath: pkg.storybookPath ?? null,
+      title: pkg.title,
+      toc: pkg.toc,
     },
   };
 };
 
 export default function Packages({
-  data,
-  source,
+  code,
+  storybookPath,
+  title,
   toc,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
+  const Component = useMemo(() => getMDXComponent(code), [code]);
   return (
-    <DocsContent pageTitle={data.title} includeNavigation toc={toc}>
+    <DocsContent pageTitle={title} includeNavigation toc={toc}>
       <Stack gap="xlarge">
-        <Heading level="1">{data.title}</Heading>
-        <StorybookLink storybookPath={data.storybookPath} />
-        <MDXRemote {...source} components={mdxComponents} />
+        <Heading level="1">{title}</Heading>
+        <StorybookLink storybookPath={storybookPath} />
+        <Component components={mdxComponents as any} />
       </Stack>
     </DocsContent>
   );
 }
 
-function StorybookLink({ storybookPath }: { storybookPath?: string }) {
+function StorybookLink({ storybookPath }: { storybookPath: string | null }) {
   if (!storybookPath) return null;
 
   return (

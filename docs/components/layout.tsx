@@ -2,14 +2,15 @@ import { css } from '@emotion/css';
 import { Box } from '@spark-web/box';
 import { useTheme } from '@spark-web/theme';
 
-// @ts-ignore: file is generated at build
-import sidebarNavigation from '../cache/navigations.json';
 import { Header } from './header';
+import type { SidebarNavItemType } from './sidebar';
 import { Sidebar, SidebarContextProvider } from './sidebar';
 
 export function Layout({
+  navigation,
   children,
 }: {
+  navigation: SidebarNavItemType[];
   children: React.ReactNode;
 }): JSX.Element {
   const theme = useTheme();
@@ -34,7 +35,7 @@ export function Layout({
               flex: 1,
             })}
           >
-            <Sidebar items={sidebarNavigation.navigations} />
+            <Sidebar items={navigation} />
             {children}
           </Box>
         </Box>
