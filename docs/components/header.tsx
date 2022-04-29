@@ -7,6 +7,12 @@ import { MenuIcon, XIcon } from '@spark-web/icon';
 import { Link } from '@spark-web/link';
 import { Strong, Text } from '@spark-web/text';
 import { useTheme } from '@spark-web/theme';
+import { TextInput } from '@spark-web/text-input';
+import { Field } from '@spark-web/field';
+import { Inline } from '@spark-web/inline';
+// why can't import flexsearch
+const { Document: FlexSearchDocument } = require('flexsearch');
+import { useRef, useEffect } from 'react';
 
 import { GITHUB_URL, HEADER_HEIGHT, SIDEBAR_WIDTH } from './constants';
 import { GitHubLogo } from './github-logo';
@@ -73,8 +79,12 @@ export function Header() {
             paddingX="xlarge"
             display={{ mobile: 'none', tablet: 'inline-block' }}
           >
-            <Notice />
+            <Inline gap="xlarge">
+              <Notice />
+              <SearchInputBox />
+            </Inline>
           </Box>
+
           <Box
             paddingRight={{ mobile: 'medium', tablet: 'xxlarge' }}
             className={css({ marginLeft: 'auto' })}
@@ -137,5 +147,39 @@ const GitHubLink = () => {
       <VisuallyHidden>Spark Web on GitHub</VisuallyHidden>
       <GitHubLogo tone="muted" size="small" />
     </Link>
+  );
+};
+
+const SearchInputBox = () => {
+  const searchIndexRef = useRef();
+  useEffect(async () => {
+    if (searchIndexRef.current) {
+      return;
+    }
+    searchIndexRef.current = await new Promise(async resolve => {
+      const indexJson = await import('../cache/search-index.json');
+      const theIndex = new FlexSearchDocument();
+      indexJson.forEach(async ({ key, data }) => {
+        await theIndex.import!(key, data);
+      });
+      resolve(theIndex);
+    });
+  }, []);
+
+  const onChange: any = async (event: any) => {
+    const { value } = event.target;
+    if (!searchIndexRef.current) {
+      console.error('THIS SHOULD BE IMPOSSIBLE!');
+      return;
+    }
+    const theIndex = await searchIndexRef.current;
+    const result = theIndex.search(value);
+    console.log(result);
+  };
+
+  return (
+    <Field label="Search" labelVisibility="hidden">
+      <TextInput placeholder="search" onChange={onChange as any} />
+    </Field>
   );
 };
