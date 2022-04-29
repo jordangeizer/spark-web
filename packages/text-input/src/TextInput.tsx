@@ -10,10 +10,13 @@ import { buildDataAttributes } from '@spark-web/utils/internal';
 import type { AllHTMLAttributes } from 'react';
 import { forwardRef } from 'react';
 
-import type { AdornmentsAsChildren } from './childrenToAdornments';
-import { childrenToAdornments } from './childrenToAdornments';
+import type {
+  AdornmentsAsChildren } from './childrenToAdornments';
+import {
+  childrenToAdornments,
+} from './childrenToAdornments';
 
-type validTypes =
+type ValidTypes =
   | 'text'
   | 'password'
   | 'email'
@@ -21,7 +24,7 @@ type validTypes =
   | 'number'
   | 'tel'
   | 'url';
-type validModes =
+type ValidModes =
   | 'none'
   | 'text'
   | 'tel'
@@ -43,11 +46,8 @@ export type TextInputProps = {
    * How an input behaves varies considerably depending on the value of its type
    * attribute. If this attribute is not specified, the default type "text".
    */
-  type?: validTypes;
-  /**
-   * Mode sets the appropriate virutal keyboard on the browser for the input field.
-   */
-  mode?: validModes;
+  type?: ValidTypes;
+  inputMode?: ValidModes;
   /**
    * Adorn the input with ornamental element(s) to aid user input, or
    * interactive element(s) to augment user input. Each child **must** be
@@ -158,7 +158,7 @@ export const useInputNested = ({ disabled }: UseInputProps) => {
       // to windows high contrast mode users.
       // @see https://tailwindcss.com/docs/outline-style#removing-outlines
       outline: '2px solid transparent',
-      outlineOffset: '2px'
+      outlineOffset: '2px',
     },
     ':enabled': {
       '&:hover': {
