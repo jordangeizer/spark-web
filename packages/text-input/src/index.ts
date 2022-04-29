@@ -1,5 +1,5 @@
 export { InputAdornment } from './InputAdornment';
-export { TextInput, useInput } from './TextInput';
+export { TextInput, useInput, useInputNested, useInputWrapper } from './TextInput';
 
 // types
 

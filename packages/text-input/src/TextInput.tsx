@@ -61,16 +61,6 @@ export type TextInputProps = {
 export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
   ({ children, data, ...consumerProps }, forwardedRef) => {
     const { disabled, invalid, ...a11yProps } = useFieldContext();
-    const theme = useTheme();
-    const focusRingStyles = useFocusRing({ always: true });
-    const textStyles = useText({
-      baseline: false,
-      tone: disabled ? 'disabled' : 'neutral',
-      size: 'standard',
-      weight: 'regular',
-    });
-
-    const [typographyStyles, responsiveStyles] = textStyles;
     const { startAdornment, endAdornment } = childrenToAdornments(children);
 
     return (
@@ -83,12 +73,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
         flexDirection="row"
         height="medium"
         marginY="none"
-        className={css({
-          ':focus-within': {
-            ...focusRingStyles,
-            borderColor: theme.border.color.fieldAccent,
-          },
-        })}
+        className={css(useInputWrapper())}
       >
         {startAdornment}
         <Box
@@ -101,18 +86,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           paddingX="medium"
           paddingLeft={startAdornment ? 'none' : 'medium'}
           paddingRight={endAdornment ? 'none' : 'medium'}
-          className={css({
-            ...typographyStyles,
-            ...responsiveStyles,
-            ':focus': {
-              outline: 'none',
-            },
-            ':enabled': {
-              '&:hover': {
-                borderColor: theme.border.color.fieldHover,
-              },
-            },
-          })}
+          className={css(useInputNested({ disabled, invalid }))}
           {...(data ? buildDataAttributes(data) : null)}
           {...a11yProps}
           {...consumerProps}
@@ -148,6 +122,47 @@ export const useInput = ({ disabled }: UseInputProps) => {
       '&:focus': {
         ...focusRingStyles,
         borderColor: theme.border.color.fieldAccent,
+      },
+    },
+  };
+};
+
+export const useInputWrapper = () => {
+  const theme = useTheme();
+  const focusRingStyles = useFocusRing({ always: true });
+
+  return {
+    ':focus-within': {
+      ...focusRingStyles,
+      borderColor: theme.border.color.fieldAccent,
+    },
+  };
+};
+
+export const useInputNested = ({ disabled }: UseInputProps) => {
+  const textStyles = useText({
+    baseline: false,
+    tone: disabled ? 'disabled' : 'neutral',
+    size: 'standard',
+    weight: 'regular',
+  });
+  const [typographyStyles, responsiveStyles] = textStyles;
+  const theme = useTheme();
+
+  return {
+    ...typographyStyles,
+    ...responsiveStyles,
+    ':focus': {
+      // This removes the nested input outline visibility since
+      // the wrapper will be outlined, but still visibly focusable
+      // to windows high contrast mode users.
+      // @see https://tailwindcss.com/docs/outline-style#removing-outlines
+      outline: '2px solid transparent',
+      outlineOffset: '2px'
+    },
+    ':enabled': {
+      '&:hover': {
+        borderColor: theme.border.color.fieldHover,
       },
     },
   };
