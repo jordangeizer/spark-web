@@ -10,11 +10,8 @@ import { buildDataAttributes } from '@spark-web/utils/internal';
 import type { AllHTMLAttributes } from 'react';
 import { forwardRef } from 'react';
 
-import type {
-  AdornmentsAsChildren } from './childrenToAdornments';
-import {
-  childrenToAdornments,
-} from './childrenToAdornments';
+import type { AdornmentsAsChildren } from './childrenToAdornments';
+import { childrenToAdornments } from './childrenToAdornments';
 
 type ValidTypes =
   | 'text'
