@@ -1,5 +1,6 @@
 import type { ReactElement } from 'react';
 import { Children, isValidElement } from 'react';
+
 import type { InputAdornmentProps } from './InputAdornment';
 // NOTE: `null | undefined` allow consumers to conditionally render adornments
 export type AdornmentChild =
