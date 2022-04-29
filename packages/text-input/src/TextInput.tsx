@@ -44,6 +44,9 @@ export type TextInputProps = {
    * attribute. If this attribute is not specified, the default type "text".
    */
   type?: validTypes;
+  /**
+   * Mode sets the appropriate virutal keyboard on the browser for the input field.
+   */
   mode?: validModes;
   /**
    * Adorn the input with ornamental element(s) to aid user input, or
@@ -69,31 +72,35 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
 
     const [typographyStyles, responsiveStyles] = textStyles;
     const { startAdornment, endAdornment } = childrenToAdornments(children);
-    const hasAdornments = Boolean(children);
 
-    return hasAdornments ? (
+    return (
       <Box
+        background={disabled ? 'inputDisabled' : 'input'}
+        border={invalid ? 'critical' : 'field'}
+        borderRadius="small"
+        display="inline-flex"
+        alignItems="center"
+        flexDirection="row"
+        height="medium"
+        marginY="none"
         className={css({
           ':focus-within': {
             ...focusRingStyles,
             borderColor: theme.border.color.fieldAccent,
           },
         })}
-        background={disabled ? 'inputDisabled' : 'input'}
-        border={invalid ? 'critical' : 'field'}
-        borderRadius="small"
-        height="medium"
-        alignItems="center"
-        flexDirection="row"
-        display="inline-flex"
-        marginY="none"
       >
         {startAdornment}
         <Box
           as="input"
-          disabled={disabled}
           ref={forwardedRef}
-          width="full"
+          disabled={disabled}
+          // Styles
+          flex={1}
+          height="medium"
+          paddingX="medium"
+          paddingLeft={startAdornment ? 'none' : 'medium'}
+          paddingRight={endAdornment ? 'none' : 'medium'}
           className={css({
             ...typographyStyles,
             ...responsiveStyles,
@@ -106,51 +113,20 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
               },
             },
           })}
-          height="small"
           {...(data ? buildDataAttributes(data) : null)}
           {...a11yProps}
           {...consumerProps}
         />
         {endAdornment}
       </Box>
-    ) : (
-      <Box
-        as="input"
-        disabled={disabled}
-        ref={forwardedRef}
-        background={disabled ? 'inputDisabled' : 'input'}
-        border={invalid ? 'critical' : 'field'}
-        borderRadius="small"
-        height="medium"
-        paddingX="medium"
-        className={css({
-          ...typographyStyles,
-          ...responsiveStyles,
-          ':enabled': {
-            '&:hover': {
-              borderColor: theme.border.color.fieldHover,
-            },
-            '&:focus': {
-              ...focusRingStyles,
-              borderColor: theme.border.color.fieldAccent,
-            },
-          },
-        })}
-        {...(data ? buildDataAttributes(data) : null)}
-        {...a11yProps}
-        {...consumerProps}
-      />
     );
   }
 );
 TextInput.displayName = 'TextInput';
 
-// Styled components
-// ------------------------------
-
 export type UseInputProps = Pick<FieldContextType, 'disabled' | 'invalid'>;
 
-export function useInput({ disabled }: UseInputProps) {
+export const useInput = ({ disabled }: UseInputProps) => {
   const theme = useTheme();
   const focusRingStyles = useFocusRing({ always: true });
   const textStyles = useText({
@@ -175,4 +151,4 @@ export function useInput({ disabled }: UseInputProps) {
       },
     },
   };
-}
+};

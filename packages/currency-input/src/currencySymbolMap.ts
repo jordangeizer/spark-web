@@ -188,5 +188,3 @@ export const currencySymbolMap = {
   ZWD: 'Z$',
   ZWL: '$',
 };
-
-export default currencySymbolMap;

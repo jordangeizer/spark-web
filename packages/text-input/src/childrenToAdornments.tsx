@@ -1,9 +1,6 @@
-import { Box } from '@spark-web/box';
 import type { ReactElement } from 'react';
 import { Children, isValidElement } from 'react';
-
 import type { InputAdornmentProps } from './InputAdornment';
-
 // NOTE: `null | undefined` allow consumers to conditionally render adornments
 export type AdornmentChild =
   | ReactElement<InputAdornmentProps>
@@ -14,25 +11,20 @@ export type AdornmentsAsChildren =
   | [AdornmentChild, AdornmentChild];
 
 /**
- * The adornment placeholder provides the default horizontal gutter for the
- * input, when no adornment for that placement is provided.
- */
-const AdornmentPlaceholder = () => {
-  return <Box gap="medium" />;
-};
-
-/**
  * Map children for placement within the `TextInput` flex container. Ensures that
  * placeholders are provided for unused placements.
  */
-export const childrenToAdornments = (children?: AdornmentsAsChildren) => {
-  let endAdornment = <AdornmentPlaceholder />;
-  let startAdornment = <AdornmentPlaceholder />;
-
+export const childrenToAdornments = (
+  children?: AdornmentsAsChildren
+): {
+  startAdornment: ReactElement<InputAdornmentProps> | null;
+  endAdornment: ReactElement<InputAdornmentProps> | null;
+} => {
+  let startAdornment: AdornmentChild | null = null;
+  let endAdornment: AdornmentChild | null = null;
   if (!children) {
-    return { endAdornment, startAdornment };
+    return { startAdornment, endAdornment };
   }
-
   Children.forEach(children, child => {
     if (isValidElement(child)) {
       if (child.props.placement === 'end') {
@@ -43,6 +35,5 @@ export const childrenToAdornments = (children?: AdornmentsAsChildren) => {
       }
     }
   });
-
-  return { endAdornment, startAdornment };
+  return { startAdornment, endAdornment };
 };
