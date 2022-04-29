@@ -61,21 +61,20 @@ type FloatInputHandlers = {
   value: string | number;
 };
 
-type UseFloatInputControlledProps = {
-  fractionDigits?: number;
+type ControlledFloatInputProps = {
   onChange: (value: number | string) => void;
   value: number | string;
-} & Pick<AllHTMLAttributes<HTMLInputElement>, 'onFocus' | 'onBlur'>;
+};
 
-type UseFloatInputUncontrolledProps = {
-  fractionDigits?: number;
+type UncontrolledFloatInputProps = {
   onChange?: never;
   value?: never;
-} & Pick<AllHTMLAttributes<HTMLInputElement>, 'onFocus' | 'onBlur'>;
+};
 
-export type UseFloatInputProps =
-  | UseFloatInputControlledProps
-  | UseFloatInputUncontrolledProps;
+export type UseFloatInputProps = {
+  fractionDigits?: number;
+} & Pick<AllHTMLAttributes<HTMLInputElement>, 'onBlur' | 'onFocus'> &
+  (ControlledFloatInputProps | UncontrolledFloatInputProps);
 
 export const useFloatInput = ({
   fractionDigits,

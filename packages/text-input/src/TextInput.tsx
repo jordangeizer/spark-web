@@ -41,7 +41,7 @@ export type TextInputProps = {
    * attribute. If this attribute is not specified, the default type "text".
    */
   type?: ValidTypes;
-  mode?: ValidModes;
+  inputMode?: ValidModes;
 } & NativeInputProps;
 
 /** Organize and emphasize information quickly and effectively in a list of text elements. */
