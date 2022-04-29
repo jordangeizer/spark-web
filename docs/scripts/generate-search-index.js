@@ -2,7 +2,7 @@
 const { writeFileSync, mkdirSync } = require('fs');
 const { normalize } = require('path');
 const allPackages = require('../.contentlayer/generated/Package/_index.json');
-const {  Document } = require('flexsearch');
+const { Document } = require('flexsearch');
 
 (async () => {
 

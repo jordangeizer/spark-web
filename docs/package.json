@@ -61,7 +61,7 @@
     "clipboard-copy": "^4.0.1",
     "contentlayer": "^0.2.4",
     "esbuild": "^0.14.38",
-    "flexsearch": "^0.7.21",
+    "flexsearch": "https://github.com/nextapps-de/flexsearch#bffb255b7904cb7f79f027faeb963ecef0a85dba",
     "gray-matter": "^4.0.3",
     "mdx-bundler": "^9.0.0",
     "next": "^12.0.7",
