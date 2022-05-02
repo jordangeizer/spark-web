@@ -1,8 +1,5 @@
 export { InputAdornment } from './InputAdornment';
-export {
-  TextInput,
-  useInput,
-} from './TextInput';
+export { TextInput, useInput } from './TextInput';
 
 // types
 
