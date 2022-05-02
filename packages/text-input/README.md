@@ -61,7 +61,7 @@ const [value, setValue] = React.useState(10000.101);
 
 return (
   <Stack gap="large">
-    <Field label="Example format fraction digits">
+    <Field label="Example">
       <TextInput type="numeric" onChange={e => setValue(e.target.value)}>
         <InputAdornment placement="start">
           <Text>~</Text>
