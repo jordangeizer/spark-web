@@ -89,8 +89,8 @@ listed here (excluding `display`, `alignItems`, `gap`, `flexDirection`,
 Extra props are passed into the underlying [`Box`](/package/box) component.
 
 [responsive-prop]:
-  https://bitbucket.org/brighte-energy/energy/src/537c678a81090af545969504776c6b3d2e67743e/spark-web/packages/theme/src/themeUtils.ts#spark-web/packages/theme/src/themeUtils.ts-11
+  https://github.com/brighte-labs/spark-web/blob/e503bea4f7668d187ec7a78f99c5ed374417588b/packages/theme/src/themeUtils.ts#L11
 [responsive-range-props]:
-  https://bitbucket.org/brighte-energy/energy/src/537c678a81090af545969504776c6b3d2e67743e/spark-web/packages/theme/src/themeutils.ts#spark-web/packages/theme/src/themeutils.ts-130
+  https://github.com/brighte-labs/spark-web/blob/e503bea4f7668d187ec7a78f99c5ed374417588b/packages/theme/src/themeUtils.ts#L130
 [gap]:
-  https://bitbucket.org/brighte-energy/energy/src/537c678a81090af545969504776c6b3d2e67743e/spark-web/packages/columns/src/Columns.tsx#spark-web/packages/columns/src/Columns.tsx-14
+  https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/columns/src/Columns.tsx#L17

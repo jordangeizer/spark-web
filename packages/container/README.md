@@ -43,6 +43,6 @@ Use the `size` prop to adjust the maximum width of the container.
 | size?    | keyof [BrighteTheme][brighte-theme]['contentWidth'] |         | Sets the size of the container.                        |
 
 [data-attribute-map]:
-  https://bitbucket.org/brighte-energy/energy/src/14a694872cc43bb454981bada65f5f12b56f77c9/spark-web/packages/utils-spark/src/buildDataAttributes.ts#spark-web/packages/utils-spark/src/buildDataAttributes.ts-1
+  https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/utils/src/internal/buildDataAttributes.ts#L1
 [brighte-theme]:
-  https://bitbucket.org/brighte-energy/energy/src/24cfd1fbc07ea0f737a4580df8b20e970a32e369/spark-web/packages/theme/src/maketheme.ts#spark-web/packages/theme/src/maketheme.ts-173
+  https://github.com/brighte-labs/spark-web/blob/e503bea4f7668d187ec7a78f99c5ed374417588b/packages/theme/src/makeTheme.ts#L158

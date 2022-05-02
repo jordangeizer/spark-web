@@ -112,6 +112,6 @@ The `TextList` component also passes extra props into the component's nested
 [`Stack`](/package/stack) component.
 
 [data-attribute-map]:
-  https://bitbucket.org/brighte-energy/energy/src/14a694872cc43bb454981bada65f5f12b56f77c9/spark-web/packages/utils-spark/src/buildDataAttributes.ts#spark-web/packages/utils-spark/src/buildDataAttributes.ts-1
+  https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/utils/src/internal/buildDataAttributes.ts#L1
 [stack-props]: /package/stack
 [text-props]: /package/text

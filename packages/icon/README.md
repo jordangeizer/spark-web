@@ -64,6 +64,6 @@ foreground tones “neutral” and “muted” will be inverted.
 | tone? | [ForegroundTone][foreground-tone] | 'neutral' | Sets the tone of the icon. |
 
 [size-type]:
-  https://bitbucket.org/brighte-energy/energy/src/537c678a81090af545969504776c6b3d2e67743e/spark-web/packages/icon/src/createIcon.tsx#spark-web/packages/icon/src/createIcon.tsx-6
+  https://github.com/brighte-labs/spark-web/blob/11e73659ff4a01a48a8761821bff34c6ec28568b/packages/icon/src/createIcon.tsx#L9
 [foreground-tone]:
-  https://bitbucket.org/brighte-energy/energy/src/14a694872cc43bb454981bada65f5f12b56f77c9/spark-web/packages/text/src/useForegroundTone.ts#spark-web/packages/text/src/useForegroundTone.ts-4
+  https://github.com/brighte-labs/spark-web/blob/6c1909208460cb421e62f516106e774e4b0ddc35/packages/text/src/useForegroundTone.ts#L5

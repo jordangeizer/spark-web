@@ -125,6 +125,6 @@ element in the Row.
 Extra props are also passed into the underlying [`Box`](/package/box) component.
 
 [align]:
-  https://bitbucket.org/brighte-energy/energy/src/537c678a81090af545969504776c6b3d2e67743e/spark-web/packages/inline/src/Inline.tsx#spark-web/packages/inline/src/Inline.tsx-20
+  https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/inline/src/Inline.tsx#L16
 [align-y]:
-  https://bitbucket.org/brighte-energy/energy/src/537c678a81090af545969504776c6b3d2e67743e/spark-web/packages/inline/src/Inline.tsx#spark-web/packages/inline/src/Inline.tsx-22
+  https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/inline/src/Inline.tsx#L18

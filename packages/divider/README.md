@@ -55,6 +55,6 @@ Defines the “color” of the divider.
 | vertical? | boolean                             |            | Displays the divider vertically. |
 
 [divider-color]:
-  https://bitbucket.org/brighte-energy/energy/src/537c678a81090af545969504776c6b3d2e67743e/spark-web/packages/divider/src/Divider.tsx#spark-web/packages/divider/src/Divider.tsx-16
+  https://github.com/brighte-labs/spark-web/blob/6c1909208460cb421e62f516106e774e4b0ddc35/packages/divider/src/Divider.tsx#L16
 [brighte-theme]:
-  https://bitbucket.org/brighte-energy/energy/src/24cfd1fbc07ea0f737a4580df8b20e970a32e369/spark-web/packages/theme/src/makeTheme.ts#spark-web/packages/theme/src/makeTheme.ts-173
+  https://github.com/brighte-labs/spark-web/blob/e503bea4f7668d187ec7a78f99c5ed374417588b/packages/theme/src/makeTheme.ts#L158

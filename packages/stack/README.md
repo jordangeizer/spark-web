@@ -115,4 +115,4 @@ Nest Stack components to create more complex white space rules.
 Extra props are also passed into the underlying [`Box`](/package/box) component.
 
 [align]:
-  https://bitbucket.org/brighte-energy/energy/src/537c678a81090af545969504776c6b3d2e67743e/spark-web/packages/stack/src/Stack.tsx#spark-web/packages/stack/src/Stack.tsx-21
+  https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/stack/src/Stack.tsx#L24

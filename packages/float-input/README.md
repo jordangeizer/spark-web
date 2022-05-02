@@ -116,5 +116,5 @@ return (
 | onFocus?        | FocusEventHandler\<HTMLInputElement\> |         | Handler when input element is focused on.                                                                                                                   |
 | onBlur?         | FocusEventHandler\<HTMLInputElement\> |         | Handler when input element is blurred.                                                                                                                      |
 
-Additional props also include [`TextField`](/package/text-field) props which are
+Additional props also include [`TextLink`](/package/text-link) props which are
 not listed here.
