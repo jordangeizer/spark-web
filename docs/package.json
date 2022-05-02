@@ -36,7 +36,7 @@
     "@spark-web/dropzone": "^1.0.3",
     "@spark-web/field": "^1.0.3",
     "@spark-web/fieldset": "^1.0.3",
-    "@spark-web/float-input": "^0.0.0",
+    "@spark-web/float-input": "^1.0.0",
     "@spark-web/heading": "^1.0.3",
     "@spark-web/hidden": "^1.0.3",
     "@spark-web/icon": "^1.1.1",
