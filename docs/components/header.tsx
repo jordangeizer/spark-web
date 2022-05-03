@@ -16,9 +16,8 @@ import { Document as _FlexSearchDocument } from 'flexsearch';
 import { useEffect, useRef } from 'react';
 
 import { GITHUB_URL, HEADER_HEIGHT, SIDEBAR_WIDTH } from './constants';
-import { GitHubLogo } from './github-logo';
-import { Logo } from './logo';
 import { useSidebarContext } from './sidebar';
+import { BrighteLogo, GitHubIcon } from './vectors/fill';
 
 // @ts-expect-error flexsearch sucks
 const FlexSearchDocument = _FlexSearchDocument as FlexSearchType.Document;
@@ -64,19 +63,24 @@ export function Header() {
           </Hidden>
 
           <Box
+            paddingLeft={{ tablet: 'xxlarge' }}
             className={css({
-              marginBottom: -4, // visual alignment fix: account for "g" descender in logo
               width: SIDEBAR_WIDTH,
             })}
-            paddingLeft={{ tablet: 'xxlarge' }}
           >
-            <Logo
-              aria-hidden="true"
+            <Link
+              href="/"
               className={css({
-                color: theme.color.foreground.primary,
-                height: theme.sizing.small,
+                borderRadius: theme.border.radius.small,
+                display: 'inline-block',
+                margin: -theme.spacing.xsmall,
+                padding: theme.spacing.xsmall,
+                ':focus': focusRingStyles,
               })}
-            />
+            >
+              <VisuallyHidden>Home</VisuallyHidden>
+              <BrighteLogo tone="primary" />
+            </Link>
           </Box>
 
           <Box
@@ -149,7 +153,7 @@ const GitHubLink = () => {
       })}
     >
       <VisuallyHidden>Spark Web on GitHub</VisuallyHidden>
-      <GitHubLogo tone="muted" size="small" />
+      <GitHubIcon tone="muted" size="small" />
     </Link>
   );
 };
