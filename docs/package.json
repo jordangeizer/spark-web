@@ -4,18 +4,20 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "./scripts/generate-spark-components.js && yarn playroom:build && INIT_CWD=$PWD next build && yarn storybook:build",
+    "build": "yarn run search-generation && yarn playroom:build && INIT_CWD=$PWD next build && yarn storybook:build",
     "contentlayer:build": "INIT_CWD=$PWD yarn contentlayer build",
-    "dev": "./scripts/generate-spark-components.js && INIT_CWD=$PWD next dev",
+    "dev": "yarn run search-generation && INIT_CWD=$PWD next dev",
     "lint": "next lint",
-    "playroom:build": "./scripts/generate-spark-components.js && playroom build",
+    "playroom:build": "playroom build",
     "playroom:start": "playroom start",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook -o ./public/storybook",
-    "typecheck": "./scripts/generate-spark-components.js tsc --noEmit"
+    "typecheck": "yarn run search-generation tsc --noEmit",
+    "search-generation": "./scripts/generate-spark-components.js && ./scripts/generate-search-index.js "
   },
   "dependencies": {
+    "//": "Due to https://github.com/nextapps-de/flexsearch/issues/325 (Version 0.7.22 is not published to npm) and 0.7.21 has bugs, we have to pull flexsearch directly from guthub",
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
@@ -47,6 +49,7 @@
     "@spark-web/radio": "^1.0.2",
     "@spark-web/row": "^1.0.2",
     "@spark-web/select": "^1.0.2",
+    "@spark-web/spinner": "^1.0.0",
     "@spark-web/stack": "^1.0.2",
     "@spark-web/text": "^1.0.2",
     "@spark-web/text-area": "^1.0.2",
@@ -75,6 +78,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-simple-code-editor": "^0.11.0",
+    "react-use-flexsearch": "^0.1.1",
     "rehype-slug": "^5.0.1",
     "remark-gfm": "^3.0.1"
   },
@@ -85,6 +89,7 @@
     "@storybook/addon-links": "^6.4.21",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/react": "^6.4.21",
+    "@types/flexsearch": "^0.7.3",
     "@types/node": "16.11.13",
     "@types/react": "^17.0.12",
     "date-fns": "^2.28.0",

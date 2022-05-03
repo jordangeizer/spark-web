@@ -2,22 +2,26 @@ import { css } from '@emotion/css';
 import { useFocusRing, VisuallyHidden } from '@spark-web/a11y';
 import { Box } from '@spark-web/box';
 import { Container } from '@spark-web/container';
+import { Field } from '@spark-web/field';
 import { Hidden } from '@spark-web/hidden';
 import { MenuIcon, XIcon } from '@spark-web/icon';
+import { Inline } from '@spark-web/inline';
 import { Link } from '@spark-web/link';
 import { Strong, Text } from '@spark-web/text';
-import { useTheme } from '@spark-web/theme';
 import { TextInput } from '@spark-web/text-input';
-import { Field } from '@spark-web/field';
-import { Inline } from '@spark-web/inline';
-// why can't import flexsearch
-const { Document: FlexSearchDocument } = require('flexsearch');
-import { useRef, useEffect } from 'react';
+import { useTheme } from '@spark-web/theme';
+// @ts-expect-error flexsearch sucks
+import type FlexSearchType from 'flexsearch';
+import { Document as _FlexSearchDocument } from 'flexsearch';
+import { useEffect, useRef } from 'react';
 
 import { GITHUB_URL, HEADER_HEIGHT, SIDEBAR_WIDTH } from './constants';
 import { GitHubLogo } from './github-logo';
 import { Logo } from './logo';
 import { useSidebarContext } from './sidebar';
+
+// @ts-expect-error flexsearch sucks
+const FlexSearchDocument = _FlexSearchDocument as FlexSearchType.Document;
 
 export function Header() {
   const { sidebarIsOpen, toggleSidebar } = useSidebarContext();
@@ -151,35 +155,43 @@ const GitHubLink = () => {
 };
 
 const SearchInputBox = () => {
-  const searchIndexRef = useRef();
-  useEffect(async () => {
-    if (searchIndexRef.current) {
-      return;
-    }
-    searchIndexRef.current = await new Promise(async resolve => {
-      const indexJson = await import('../cache/search-index.json');
-      const theIndex = new FlexSearchDocument();
-      indexJson.forEach(async ({ key, data }) => {
-        await theIndex.import!(key, data);
-      });
-      resolve(theIndex);
-    });
-  }, []);
+  const flexsearchRef = useRef();
 
-  const onChange: any = async (event: any) => {
+  useEffect(() => {
+    const fetchSearchIndex = async () => {
+      if (flexsearchRef.current) {
+        return;
+      }
+      const flexsearchIndex = await import('../cache/search-index.json');
+      const flexsearchDoc = new FlexSearchDocument({
+        document: 'content',
+      });
+      flexsearchIndex.default.forEach(async element => {
+        await flexsearchDoc.import(element.key, JSON.parse(element.data));
+      });
+
+      flexsearchRef.current = flexsearchDoc;
+    };
+
+    fetchSearchIndex();
+  });
+
+  const onChange: any = (event: any) => {
     const { value } = event.target;
-    if (!searchIndexRef.current) {
+    if (!flexsearchRef.current) {
       console.error('THIS SHOULD BE IMPOSSIBLE!');
       return;
     }
-    const theIndex = await searchIndexRef.current;
-    const result = theIndex.search(value);
-    console.log(result);
+    const flexsearchDoc: any = flexsearchRef.current;
+    const results = flexsearchDoc.search(value);
+    console.log({ results });
   };
 
   return (
-    <Field label="Search" labelVisibility="hidden">
-      <TextInput placeholder="search" onChange={onChange as any} />
-    </Field>
+    <>
+      <Field label="Search" labelVisibility="hidden">
+        <TextInput placeholder="search" onChange={onChange} />
+      </Field>
+    </>
   );
 };
