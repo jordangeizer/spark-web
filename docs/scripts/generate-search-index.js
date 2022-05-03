@@ -25,7 +25,6 @@ const { Document } = require('flexsearch');
 
   let dataSearchIndex = [];
 
-
   index.export(function (key, data) {
     // you need to store both the key and the data!
     // e.g. use the key for the filename and save your data

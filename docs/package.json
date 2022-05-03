@@ -10,11 +10,11 @@
     "lint": "next lint",
     "playroom:build": "playroom build",
     "playroom:start": "playroom start",
+    "search-generation": "./scripts/generate-spark-components.js && ./scripts/generate-search-index.js ",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook -o ./public/storybook",
-    "typecheck": "yarn run search-generation tsc --noEmit",
-    "search-generation": "./scripts/generate-spark-components.js && ./scripts/generate-search-index.js "
+    "typecheck": "yarn run search-generation tsc --noEmit"
   },
   "dependencies": {
     "//": "Due to https://github.com/nextapps-de/flexsearch/issues/325 (Version 0.7.22 is not published to npm) and 0.7.21 has bugs, we have to pull flexsearch directly from guthub",
