@@ -44,14 +44,14 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       type = 'button',
       ...props
     },
-    ref
+    forwardedRef
   ) => {
     const iconOnly = Boolean(props.label);
     const buttonStyleProps = useButtonStyles({
       iconOnly,
+      prominence,
       size,
       tone,
-      prominence,
     });
 
     // TODO: add loading state for button
@@ -72,7 +72,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         as="button"
         id={id}
         onClick={handleClick}
-        ref={ref}
+        ref={forwardedRef}
         type={type}
         {...buttonStyleProps}
         {...(data ? buildDataAttributes(data) : undefined)}
@@ -87,7 +87,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     );
   }
 );
-Button.displayName = 'Buttton';
+Button.displayName = 'Button';
 
 /**
  * Prevent click events when the component is "disabled".
