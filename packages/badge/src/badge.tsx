@@ -43,7 +43,7 @@ export function Badge({ children, data, tone = 'neutral' }: BadgeProps) {
 export type BadgeProps = {
   /** The label of the badge. */
   children: string | number;
-  /** Map of data attributes. */
+  /** Sets data attributes on the component. */
   data?: DataAttributeMap;
   /** The tone of the badge. */
   tone?: BadgeTones;
@@ -75,12 +75,9 @@ export function IndicatorDot({ data, label, tone }: IndicatorDotProps) {
 }
 
 export type IndicatorDotProps = {
-  /** Map of data attributes. */
+  /** Sets data attributes on the component. */
   data?: DataAttributeMap;
-  /**
-   * When the intent isn't provided by text, you must supply an "aria-label" for
-   * assistive tech users.
-   */
+  /** When the intent isn't provided by text, you must supply an "aria-label" for assistive tech users. */
   label?: string;
   /** The tone of the indicator dot. */
   tone: BadgeTones;

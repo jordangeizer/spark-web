@@ -14,7 +14,9 @@ import { currencySymbolMap } from './currency-symbol-map';
 
 /** NOTE: The "start" adornment is filled, so we can only accept a single child element. */
 export type CurrencyInputProps = {
+  /** Specifies what currency symbol you want as a starting adornment to the component. */
   currencyType?: CurrencyType;
+  /** Sets data attributes on the component. */
   data?: DataAttributeMap;
 } & Omit<FloatInputProps, 'fractionDigits'>;
 

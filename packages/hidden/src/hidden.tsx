@@ -10,9 +10,17 @@ import { forwardRefWithAs } from '@spark-web/utils/ts';
 import type { ReactNode } from 'react';
 
 export type HiddenProps = {
+  /** Children elements to be conditionally rendered. */
   children: ReactNode;
+  /** Sets data attributes for the element. */
   data?: DataAttributeMap;
+  /** Sets whether element should be rendered in-line or on a new line. */
   inline?: boolean;
+  /**
+   * Sets on what type of device element should be hidden.
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_types
+   */
   on?: 'screen' | 'print';
 } & ResponsiveRangeProps;
 

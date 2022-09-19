@@ -11,7 +11,9 @@ import { createContext, forwardRef, useContext } from 'react';
 
 export interface LinkComponentProps
   extends AnchorHTMLAttributes<HTMLAnchorElement> {
+  /** Sets data attributes on the component. */
   data?: DataAttributeMap;
+  /** URL to be used for the link (passed to the underlying anchor element). */
   href: string;
 }
 

@@ -10,6 +10,7 @@ import { AnalyticsListenerContext } from './analytics-listener-context';
 
 export type AnalyticsListenerProps = {
   children: ReactNode;
+  /** Callback that will be invoked with fired analytics events. */
   onEvent: AnalyticsEventHandler;
 };
 

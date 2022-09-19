@@ -25,7 +25,7 @@ export type RowProps = {
   align?: ResponsiveProp<Align>;
   /** Vertically align items within the container. */
   alignY?: ResponsiveProp<AlignY>;
-  /** Allows setting of data attributes on the underlying element. */
+  /** Sets data attributes for the element. */
   data?: DataAttributeMap;
   /** Place a divider between each element. */
   dividers?: boolean;

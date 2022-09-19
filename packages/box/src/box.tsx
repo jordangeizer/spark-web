@@ -12,14 +12,16 @@ import { useBoxProps } from './use-box-props';
 import type { BoxStyleProps } from './use-box-styles';
 
 export type BoxProps = {
+  /** Children element to be rendered inside the component. */
   children?: ReactNode;
 
+  /** Sets data attributes on the component. */
   data?: DataAttributeMap;
 
   /** An identifier which must be unique in the whole document. */
   id?: string;
 
-  // experiment
+  /** Custom css styles. */
   className?: string;
 
   // TODO: this API is less than ideal, consider alternative

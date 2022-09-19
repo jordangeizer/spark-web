@@ -5,9 +5,9 @@ import { forwardRefWithAs } from '@spark-web/utils/ts';
 import type { ReactNode } from 'react';
 
 export type VisuallyHiddenProps = {
-  /** Children element to be rendered inside the component. */
+  /** Children elements to be hidden within this component. */
   children?: ReactNode;
-  /** Map of data attributes. */
+  /** Sets data attributes on the component. */
   data?: DataAttributeMap;
 };
 

@@ -43,13 +43,14 @@ type NativeInputProps = Pick<
 >;
 
 export type TextInputProps = {
-  /** Map of data attributes. */
+  /** Sets data attributes for the element. */
   data?: DataAttributeMap;
   /**
    * How an input behaves varies considerably depending on the value of its type
    * attribute. If this attribute is not specified, the default type "text".
    */
   type?: ValidTypes;
+  /** Sets the input mode attribute for the component. */
   inputMode?: ValidModes;
   /**
    * Adorn the input with ornamental element(s) to aid user input, or

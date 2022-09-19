@@ -32,7 +32,7 @@ export type ButtonChildrenProps = ChildrenWithText | IconOnly;
 export type NativeButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
 export type CommonButtonProps = {
-  /** Allows setting of data attributes on the underlying element. */
+  /** Sets data attributes for the element. */
   data?: DataAttributeMap;
   /** Unique identifier for the underlying element. */
   id?: string;

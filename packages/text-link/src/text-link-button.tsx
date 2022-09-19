@@ -8,6 +8,7 @@ import { forwardRef, useCallback, useRef } from 'react';
 import { useTextLink } from './use-text-link';
 
 export type TextLinkButtonProps = {
+  /** Sets data attributes on the component. */
   data?: DataAttributeMap;
 } & HTMLAttributes<HTMLSpanElement>;
 

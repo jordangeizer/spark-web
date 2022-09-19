@@ -227,15 +227,23 @@ export function DialogCloseButton(): JSX.Element {
 // Content Dialog
 // ------------------------------
 export type ContentDialogProps = {
+  /** Children elements to be rendered as content inside the modal. */
   children: ReactNode;
+  /** Sets data attributes on the component. */
   data?: DataAttributeMap;
+  /** Sets the width of the modal. */
   size?: keyof BrighteTheme['contentWidth'];
+  /** Sets the title of the modal. */
   title: string;
+  /** Sets a description for the modal. */
   description?: string;
 } & (
   | {
+      /** Sets whether the modal should be open or not. Used only for controlled modal dialogs. */
       isOpen: boolean;
+      /** Callback function called upon modal dialog being toggled. Used only for controlled modal dialogs. */
       onToggle: () => void;
+      /** Component that toggles the modal. Used by uncontrolled modal dialogs. */
       trigger?: ReactNode;
     }
   | {

@@ -27,15 +27,22 @@ type IconWithRef = typeof toneToIcon[AlertTones];
 type IconWithWithoutRef = (props: IconProps) => JSX.Element;
 
 export type AlertProps = {
+  /** The body content of the alert. */
   children: ReactNode;
+  /** Sets data attributes on the component. */
   data?: DataAttributeMap;
+  /** Sets a heading for the alert. */
   heading?: string;
   icon?: IconWithRef | IconWithWithoutRef;
+  /** Sets a unique indentifier on the component. */
   id?: string;
+  /** Sets the tone of the alert. */
   tone: AlertTones;
 } & (
   | {
+      /** Sets a label for the close button if the close icon button is present. */
       closeLabel: string;
+      /** Sets a callback function when the alert close icon button is pressed. If the onClose function is not defined, the close icon button will not be rendered on the alert component. */
       onClose: () => void;
     }
   | {

@@ -11,7 +11,7 @@ import { forwardRef, useMemo } from 'react';
 type SizeType = Exclude<keyof BrighteTheme['sizing'], 'full' | 'none'>;
 
 export type IconProps = {
-  /** Map of data attributes. */
+  /** Sets data attributes for the element. */
   data?: DataAttributeMap;
   /** The size of the icon. */
   size?: SizeType;

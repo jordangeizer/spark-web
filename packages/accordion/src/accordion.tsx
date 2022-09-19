@@ -39,9 +39,13 @@ export type AccordionItemProps = Pick<
   RadixAccordionItemProps,
   'children' | 'value'
 > & {
+  /** Sets data attributes on the component. */
   data?: DataAttributeMap;
+  /** The html element to render the accordion item heading as. */
   headingElement?: 'h2' | 'h3' | 'h4';
+  /** The heading of the accordion item. */
   label: string;
+  /** The size of the heading. '1' is largest and '4' is smallest. */
   level?: '1' | '2' | '3' | '4';
 };
 

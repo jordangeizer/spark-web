@@ -20,7 +20,7 @@ export type NativeTextAreaProps = Pick<
 >;
 
 export type TextAreaProps = NativeTextAreaProps & {
-  /** Allows setting of data attributes on the underlying element. */
+  /** Sets data attributes for the element. */
   data?: DataAttributeMap;
 };
 

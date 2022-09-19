@@ -67,7 +67,7 @@ export type TabsProps = {
    * Expected to be `TabList` and `TabPanels`.
    */
   children: ReactNode;
-  /** Map of data attributes. */
+  /** Sets data attributes for the element. */
   data?: DataAttributeMap;
   /** The index of the tab that should be active when initially rendered. */
   defaultIndex?: number;
@@ -96,7 +96,7 @@ export type TabListProps = {
    * Expected to be more than one `Tab` component.
    */
   children: Array<ReactElement<TabProps>>;
-  /** Map of data attributes. */
+  /** Sets data attributes for the element. */
   data?: DataAttributeMap;
 };
 
@@ -157,7 +157,7 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
 export type TabProps = {
   /** Children elements to be rendered within the component. */
   children: ReactNode;
-  /** Map of data attributes. */
+  /** Sets data attributes for the element. */
   data?: DataAttributeMap;
   /** When true, prevents the user from interacting with the tab. */
   disabled?: boolean;
@@ -188,7 +188,7 @@ export type TabPanelsProps = {
    * Expected to be more than one `TabPanel` component.
    */
   children: Array<ReactElement<TabPanelProps>>;
-  /** Map of data attributes. */
+  /** Sets data attributes for the element. */
   data?: DataAttributeMap;
 };
 
@@ -225,7 +225,7 @@ TabPanel.displayName = TAB_PANEL_NAME;
 export type TabPanelProps = {
   /** Children elements to be rendered within the component. */
   children: ReactNode;
-  /** Map of data attributes. */
+  /** Sets data attributes for the element. */
   data?: DataAttributeMap;
 };
 

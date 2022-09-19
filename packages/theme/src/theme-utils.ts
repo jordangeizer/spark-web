@@ -128,7 +128,9 @@ export function createResponsiveMapFn<Keys extends keyof LookupMap, LookupMap>(
 // ------------------------------
 
 export type ResponsiveRangeProps = {
+  /** Sets the screen width floor breakpoint the elements should be hidden. */
   above?: Exclude<Breakpoint, 'wide'>;
+  /** Sets the screen width ceiling breakpoint the elements should be hidden. */
   below?: Exclude<Breakpoint, 'mobile'>;
 };
 

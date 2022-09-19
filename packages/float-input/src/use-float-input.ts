@@ -72,6 +72,7 @@ type UncontrolledFloatInputProps = {
 };
 
 export type UseFloatInputProps = {
+  /** Specifies to what fraction digit will be displayed in the component. */
   fractionDigits?: number;
 } & Pick<AllHTMLAttributes<HTMLInputElement>, 'onBlur' | 'onFocus'> &
   (ControlledFloatInputProps | UncontrolledFloatInputProps);

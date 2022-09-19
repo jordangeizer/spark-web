@@ -8,6 +8,7 @@ import { forwardRefWithAs } from '@spark-web/utils/ts';
 import { useTextLink } from './use-text-link';
 
 export type TextLinkProps = {
+  /** Sets data attributes on the component. */
   data?: DataAttributeMap;
 } & LinkComponentProps;
 

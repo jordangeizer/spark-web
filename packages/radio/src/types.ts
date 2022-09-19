@@ -12,7 +12,7 @@ type InputProps = Omit<
 export type RadioPrimitiveProps = {
   /** When true, the radio will be checked. */
   checked?: boolean;
-  /** Allows setting of data attributes on the underlying element. */
+  /** Sets data attributes for the element. */
   data?: DataAttributeMap;
   /** When true, the radio will be disabled. */
   disabled?: boolean;

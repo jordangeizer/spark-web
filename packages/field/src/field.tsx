@@ -15,7 +15,9 @@ import { FieldContextProvider } from './context';
 export type Tone = keyof typeof messageToneMap;
 
 export type FieldProps = {
+  /** Sets a unique identifier for the component. */
   id?: string;
+  /** Sets data attributes on the component. */
   data?: DataAttributeMap;
 
   /** Optionally provide a utility or contextual hint, related to the field. */

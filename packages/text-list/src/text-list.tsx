@@ -28,7 +28,7 @@ type ListElement = HTMLUListElement | HTMLOListElement;
 export type TextListProps = {
   /** The elements that represent each item in the list. */
   children: ReactNode;
-  /** Map of data attributes. */
+  /** Sets data attributes for the element. */
   data?: DataAttributeMap;
   /** The size of the gap between each item. */
   gap?: StackProps['gap'];

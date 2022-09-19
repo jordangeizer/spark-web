@@ -8,9 +8,11 @@ import type { DataAttributeMap } from '@spark-web/utils/internal';
 
 export type SpinnerProps = {
   // TODO: match tones to design in Figma
+  /** Provide a tone to influence elements of the field, and its input. */
   tone?: IconProps['tone'];
+  /** The size of the nested radios. */
   size?: 'xxsmall' | 'xsmall';
-  /** Allows setting of data attributes on the underlying element. */
+  /** Sets data attributes for the element. */
   data?: DataAttributeMap;
 };
 

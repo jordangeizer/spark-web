@@ -29,7 +29,7 @@ export type NativeSelectProps = Pick<
   'defaultValue' | 'name' | 'onBlur' | 'onChange' | 'required' | 'value'
 >;
 export type SelectProps = NativeSelectProps & {
-  /** Allows setting of data attributes on the underlying element. */
+  /** Sets data attributes for the element. */
   data?: DataAttributeMap;
   /** The values that can be selected by the input. */
   options: OptionsOrGroups;

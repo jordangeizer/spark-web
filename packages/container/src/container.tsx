@@ -8,8 +8,11 @@ import { forwardRefWithAs } from '@spark-web/utils/ts';
 import type { ReactNode } from 'react';
 
 export type ContainerProps = {
+  /** Children elements to be rendered inside the container. */
   children: ReactNode;
+  /** Sets data attributes on the element. */
   data?: DataAttributeMap;
+  /** Sets the size of the container. */
   size?: keyof BrighteTheme['contentWidth'];
 };
 

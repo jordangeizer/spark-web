@@ -3,6 +3,7 @@ import { renderStatic } from '@spark-web/ssr';
 import type { DocumentInitialProps } from 'next/document';
 
 export async function propsWithCssText(
+  /** Value returned from the getInitialProps static method on the Document class (in next/document). */
   initialProps: DocumentInitialProps
 ): Promise<DocumentInitialProps> {
   const { css, ids } = await renderStatic(initialProps.html);

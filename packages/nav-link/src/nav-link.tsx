@@ -16,11 +16,17 @@ type NavLinkChildren =
   | [string, ReactElement<IconProps>];
 
 export type NavLinkProps = Pick<HTMLAnchorElement, 'href'> & {
+  /** Border radius of the NavLink. */
   borderRadius?: 'full' | 'small';
+  /** Children element(s) to be rendered inside the NavLink. */
   children: NavLinkChildren;
+  /** Sets data attributes on the component. */
   data?: DataAttributeMap;
+  /** Indicates if NavLink should be inline or not. */
   inline?: boolean;
+  /** When true, add active styles to the NavLink and sets the aria-current attribute to page. */
   isSelected?: boolean;
+  /** Sets the size of the NavLink. */
   size?: 'medium' | 'large';
 };
 
