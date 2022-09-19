@@ -100,17 +100,7 @@ slots to place the start and end adornments.
 
 ### TextInput
 
-| Prop         | Type                                                                                | Default | Description                                                                                  |
-| ------------ | ----------------------------------------------------------------------------------- | ------- | -------------------------------------------------------------------------------------------- |
-| data?        | [DataAttributeMap][data-attribute-map]                                              |         | Sets data attributes for the component.                                                      |
-| type?        | 'text' \| 'password' \| 'email' \| 'search' \| 'number' \| 'tel' \| 'url'           | 'text'  | Sets the type attribute for the component.                                                   |
-| mode?        | 'none' \| 'text' \| 'tel' \| 'url' \| 'email' \| 'numeric' \| 'decimal' \| 'search' |         | Sets the input mode attribute for the component.                                             |
-| onBlur?      | React.FocusEventHandler\<HTMLInputElement\>                                         |         | Callback function when input field component loses focuses.                                  |
-| onFocus?     | React.FocusEventHandler\<HTMLInputElement\>                                         |         | Callback function when the input field component is in focus.                                |
-| onChange?    | React.FormEventHandler\<HTMLInputElement\>                                          |         | Callback function when value of the input field has been changed.                            |
-| placeholder? | string                                                                              |         | Specifies a short hint that describes the expected value (type of value) of the input field. |
-| value?       | string \| number \| readonly string[]                                               |         | Specifies the value of the input field.                                                      |
-| children?    | [AdornmentChildren][adornment-children]                                             |         | Allows setting of adornments at the start and/or end of the input component.                 |
+<PropsTable displayName="TextInput" />
 
 [data-attribute-map]:
   https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/utils/src/internal/buildDataAttributes.ts#L1
@@ -119,9 +109,6 @@ slots to place the start and end adornments.
 
 ### InputContainer
 
-| Prop            | Type                                | Default | Description                     |
-| --------------- | ----------------------------------- | ------- | ------------------------------- |
-| startAdornment? | ReactElement\<InputAdornmentProps\> |         | Slot to start render adornment. |
-| endAdornment?   | ReactElement\<InputAdornmentProps\> |         | Slot to end render adornment.   |
+<PropsTable displayName="InputContainer" />
 
 Extra props are passed into the underlying [`Box`](/package/box) component.

@@ -77,15 +77,7 @@ In rare cases, you may need to provide a custom icon. To do so, we expose an
 
 ## Props
 
-| Prop        | Type                                            | Default       | Description                                                                                                                                                                      |
-| ----------- | ----------------------------------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| children    | string \| React.ReactNode                       |               | The body content of the alert.                                                                                                                                                   |
-| tone        | 'caution' \| 'critical' \| 'info' \| 'positive' | 'info'        | Sets the tone of the alert.                                                                                                                                                      |
-| data?       | [DataAttributeMap][data-attribute-map]          |               | Sets data attributes on the component.                                                                                                                                           |
-| id?         | string                                          |               | Sets a unique indentifier on the component.                                                                                                                                      |
-| onClose?    | () => void                                      |               | Sets a callback function when the alert close icon button is pressed. If the onClose function is not defined, the close icon button will not be rendered on the alert component. |
-| closeLabel? | string                                          | 'Close alert' | Sets a label for the close button if the close icon button is present.                                                                                                           |
-| heading     | string                                          |               | Sets a heading for the alert.                                                                                                                                                    |
+<PropsTable displayName="Alert" />
 
 [data-attribute-map]:
   https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/utils/src/internal/buildDataAttributes.ts#L1

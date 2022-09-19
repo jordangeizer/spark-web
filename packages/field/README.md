@@ -126,19 +126,7 @@ Mark the field as disabled by passing true to the disabled prop.
 
 ## Props
 
-| Prop             | Type                                     | Default   | Description                                                                                                                                      |
-| ---------------- | ---------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| id?              | string                                   |           | Sets a unique identifier for the component.                                                                                                      |
-| data?            | [DataAttributeMap][data-attribute-map]   |           | Sets data attributes on the component.                                                                                                           |
-| adornment?       | React.ReactElement                       |           | Optionally provide a utility or contextual hint, related to the field.                                                                           |
-| children         | React.ReactNode                          |           | Children elements to be rendered within the component. Expected to be Input elements.                                                            |
-| disabled?        | boolean                                  |           | Indicates that the field is perceivable but disabled, so it is not editable or otherwise operable.                                               |
-| description?     | string                                   |           | Sets a description for the field to provide additional information that will aid user input.                                                     |
-| label            | string                                   |           | Sets a label for the field.                                                                                                                      |
-| labelVisibility? | 'hidden' \| 'reserve-space' \| 'visible' | 'visible' | The label must always be provided for assistive technology, but you may hide it from sighted users when the intent can be inferred from context. |
-| message?         | string                                   |           | Provide a message, informing the user about changes in state.                                                                                    |
-| secondaryLabel?  | string                                   |           | Provides additional context, typically used to indicate that the field is optional.                                                              |
-| tone?            | 'critical' \| 'neutral' \| 'positive'    | 'neutral' | Provide a tone to influence elements of the field, and its input.                                                                                |
+<PropsTable displayName="Field" />
 
 [data-attribute-map]:
   https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/utils/src/internal/buildDataAttributes.ts#L1

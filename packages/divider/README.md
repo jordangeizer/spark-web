@@ -49,11 +49,7 @@ Defines the “color” of the divider.
 
 ## Props
 
-| Prop      | Type                                | Default    | Description                      |
-| --------- | ----------------------------------- | ---------- | -------------------------------- |
-| color?    | [DividerColor][divider-color]       |            | Sets the color of the divider.   |
-| width?    | keyof [BrighteTheme][brighte-theme] | 'standard' | Sets the width of the divider.   |
-| vertical? | boolean                             |            | Displays the divider vertically. |
+<PropsTable displayName="Divider" />
 
 [divider-color]:
   https://github.com/brighte-labs/spark-web/blob/6c1909208460cb421e62f516106e774e4b0ddc35/packages/divider/src/Divider.tsx#L16

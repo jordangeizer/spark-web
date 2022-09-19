@@ -132,41 +132,23 @@ activation mode unless you absolutely need it.
 
 ### Tabs
 
-| Prop            | Type                                   | Default     | Description                                                                                            |
-| --------------- | -------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------ |
-| activationMode? | 'automatic' \| 'manual'                | 'automatic' | When automatic, tabs are activated when receiving focus. When manual, tabs are activated when clicked. |
-| children        | ReactNode                              |             | Children elements to be rendered within the component. Expected to be `TabList` and `TabPanels`.       |
-| data?           | [DataAttributeMap][data-attribute-map] |             | Sets data attributes on the component.                                                                 |
-| defaultIndex?   | number                                 | 0           | Sets data attributes on the component.                                                                 |
+<PropsTable displayName="Tabs" />
 
 ### TabList
 
-| Prop     | Type                                   | Default | Description                                                                                          |
-| -------- | -------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------- |
-| children | Array\<ReactElement\<TabProps>>        |         | Children elements to be rendered within the component. Expected to be more than one `Tab` component. |
-| data?    | [DataAttributeMap][data-attribute-map] |         | Sets data attributes on the component.                                                               |
+<PropsTable displayName="TabList" />
 
 ### Tab
 
-| Prop      | Type                                   | Default | Description                                                 |
-| --------- | -------------------------------------- | ------- | ----------------------------------------------------------- |
-| children  | ReactNode                              |         | Children elements to be rendered within the component.      |
-| data?     | [DataAttributeMap][data-attribute-map] |         | Sets data attributes on the component.                      |
-| disabled? | boolean                                |         | When true, prevents the user from interacting with the tab. |
+<PropsTable displayName="Tab" />
 
 ### TabPanels
 
-| Prop     | Type                                   | Default | Description                                                                                               |
-| -------- | -------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------- |
-| children | Array\<ReactElement\<TabPanelProps>>   |         | Children elements to be rendered within the component. Expected to be more than one `TabPanel` component. |
-| data?    | [DataAttributeMap][data-attribute-map] |         | Sets data attributes on the component.                                                                    |
+<PropsTable displayName="TabPanels" />
 
 ### TabPanel
 
-| Prop     | Type                                   | Default | Description                                            |
-| -------- | -------------------------------------- | ------- | ------------------------------------------------------ |
-| children | ReactNode                              |         | Children elements to be rendered within the component. |
-| data?    | [DataAttributeMap][data-attribute-map] |         | Sets data attributes on the component.                 |
+<PropsTable displayName="TabPanel" />
 
 [data-attribute-map]:
   https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/utils/src/internal/buildDataAttributes.ts#L1

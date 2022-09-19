@@ -4,24 +4,21 @@ import docgenTypescript from 'react-docgen-typescript';
 
 const repoRoot = path.resolve(path.basename(import.meta.url), '..', '..');
 
-const tsConfig = JSON.parse(
-  fs.readFileSync(path.join(repoRoot, 'tsconfig.json')).toString()
-);
+const docgen = docgenTypescript.withDefaultConfig({
+  propFilter: prop => {
+    if (prop.parent?.name === 'DOMAttributes') return false;
+    if (prop.parent?.name === 'HTMLAttributes') return false;
+    if (prop.parent?.name === 'AriaAttributes') return false;
+    if (prop.parent?.fileName.includes('node_modules/@types/react/')) {
+      return false;
+    }
 
-const docgen = docgenTypescript.withCompilerOptions(
-  {
-    ...tsConfig,
-    noErrorTruncation: true,
+    return true;
   },
-  {
-    propFilter: {
-      skipPropsWithName: ['children'],
-    },
-    shouldExtractValuesFromUnion: true,
-    shouldExtractLiteralValuesFromEnum: true,
-    shouldRemoveUndefinedFromOptional: true,
-  }
-);
+  shouldExtractValuesFromUnion: true,
+  shouldExtractLiteralValuesFromEnum: true,
+  shouldRemoveUndefinedFromOptional: true,
+});
 
 const extensions = ['js', 'jsx', 'json', 'ts', 'tsx', 'tson'];
 const exportRegex = /export {[^}]*} from ['"]([^'"]*)['"]/gs;

@@ -75,15 +75,7 @@ foreground colour is inverted.
 
 ## Props
 
-| Prop      | Type                                   | Default   | Description                                         |
-| --------- | -------------------------------------- | --------- | --------------------------------------------------- |
-| align?    | "left" \| "center" \| "right"          |           | The horizontal alignment.                           |
-| children  | React.ReactNode                        |           | Content to be rendered as the heading.              |
-| data?     | [DataAttributeMap][data-attribute-map] |           | Sets data attributes on the component.              |
-| id?       | string                                 |           | Sets a unique identifier for the element.           |
-| level     | "1" \| "2" \| "3" \| "4"               |           | The heading level.                                  |
-| tone?     | "primary" \| "neutral"                 | "neutral" | The tone of the text.                               |
-| truncate? | boolean                                |           | Indicate whether to truncate text to a single line. |
+<PropsTable displayName="Heading" />
 
 Extra props are passed into the underlying [`Box`](/package/box) component.
 

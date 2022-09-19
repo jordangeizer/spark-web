@@ -64,14 +64,7 @@ Conditionally display content for print using the `on` prop.
 
 ## Props
 
-| Prop     | Type                                   | Default | Description                                                             |
-| -------- | -------------------------------------- | ------- | ----------------------------------------------------------------------- |
-| children | React.ReactNode                        |         | Children elements to be conditionally rendered.                         |
-| data?    | [DataAttributeMap][data-attribute-map] |         | Sets data attributes for the element.                                   |
-| inline?  | boolean                                |         | Sets whether element should be rendered in-line or on a new line.       |
-| on?      | 'screen' \| 'print'                    |         | Sets whether element should be hidden.                                  |
-| above?   | 'mobile' \| 'tablet' \| 'desktop'      |         | Sets the screen width floor breakpoint the elements should be hidden.   |
-| below?   | 'mobile' \| 'tablet' \| 'desktop'      |         | Sets the screen width ceiling breakpoint the elements should be hidden. |
+<PropsTable displayName="Hidden" />
 
 [data-attribute-map]:
   https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/utils/src/internal/buildDataAttributes.ts#L1

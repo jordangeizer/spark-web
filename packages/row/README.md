@@ -113,12 +113,7 @@ element in the Row.
 
 ## Props
 
-| Prop      | Type                                   | Default   | Description                                           |
-| --------- | -------------------------------------- | --------- | ----------------------------------------------------- |
-| align?    | [ResponsiveProp\<Align>][align]        | 'left'    | Horizontally align items within the container.        |
-| alignY?   | [ResponsiveProp\<AlignY>][align-y]     | 'stretch' | Vertically align items within the container.          |
-| dividers? | boolean                                |           | Sets whether to place a divider between each element. |
-| data?     | [DataAttributeMap][data-attribute-map] |           | Sets data attributes on the component.                |
+<PropsTable displayName="Row" />
 
 `Row` props also include [`Box`](/package/box) props and are not listed here
 (excludes `display`, `alignItems`, `flexDirection`, `justifyContent` and

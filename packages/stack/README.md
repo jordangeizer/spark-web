@@ -104,11 +104,7 @@ Nest Stack components to create more complex white space rules.
 
 ## Props
 
-| Prop      | Type                                   | Default   | Description                                           |
-| --------- | -------------------------------------- | --------- | ----------------------------------------------------- |
-| align?    | [ResponsiveProp\<Align>][align]        | 'stretch' | Horizontally align items within the container.        |
-| dividers? | boolean                                |           | Sets whether to place a divider between each element. |
-| data?     | [DataAttributeMap][data-attribute-map] |           | Sets data attributes on the component.                |
+<PropsTable displayName="Stack" />
 
 `Stack` props also include [`Box`](/package/box) props and are not listed here
 (excludes `display`, `className`, `alignItems`, `flexDirection`,

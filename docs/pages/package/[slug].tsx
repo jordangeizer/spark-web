@@ -21,7 +21,8 @@ import { allPackages } from '../../.contentlayer/generated';
 import { GITHUB_URL } from '../../components/constants';
 import { DocsContent } from '../../components/content';
 import { InlineCode } from '../../components/example-helpers';
-import type { DataContextType } from '../../components/mdx-components/mdx-components';
+import type { Props } from '../../components/mdx-components/mdx-components';
+import { PropsContext } from '../../components/mdx-components/mdx-components';
 import { MDXContent } from '../../components/mdx-components/mdx-content';
 import { StorybookIcon } from '../../components/vectors/fill';
 import type { HeadingData } from '../../utils/generate-toc';
@@ -42,7 +43,7 @@ export const getStaticProps: GetStaticProps<{
   isExperimentalPackage: boolean;
   title: string;
   toc: HeadingData[];
-  propsDoc: any;
+  props: Props;
 }> = async ({ params }) => {
   const pkg = allPackages.find(p => p.slug === params!.slug);
   if (!pkg) {
@@ -60,18 +61,16 @@ export const getStaticProps: GetStaticProps<{
       storybookPath: pkg.storybookPath ?? null,
       title: pkg.title,
       toc: pkg.toc,
-      propsDoc: formatPropsData(pkg.props),
+      props: formatPropsData(pkg.props),
     },
   };
 };
 
-const formatPropsData = (
-  originalPropsData: ComponentDoc[]
-): Record<string, DataContextType> =>
-  originalPropsData
-    .map(propsData => ({
-      displayName: propsData.displayName,
-      props: Object.entries(propsData.props)
+const formatPropsData = (props: ComponentDoc[]): Props =>
+  Object.fromEntries(
+    props.map(({ displayName, props }) => [
+      displayName,
+      Object.entries(props)
         .map(([key, prop]) => {
           let type = prop.type.name;
           if (prop.type.name === 'enum') {
@@ -118,14 +117,8 @@ const formatPropsData = (
           // bucket
           return a.name.localeCompare(b.name);
         }),
-    }))
-    .reduce(
-      (memo, { displayName, ...rest }) => ({
-        ...memo,
-        [displayName]: rest,
-      }),
-      {}
-    );
+    ])
+  );
 
 export default function Packages({
   code,
@@ -135,7 +128,7 @@ export default function Packages({
   storybookPath,
   title,
   toc,
-  propsDoc,
+  props,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
   const packageSlug = packageName.replace('@spark-web/', '');
 
@@ -151,7 +144,9 @@ export default function Packages({
           packageSlug={packageSlug}
         />
         <Divider />
-        <MDXContent code={code} data={{ props: propsDoc }} />
+        <PropsContext.Provider value={props}>
+          <MDXContent code={code} />
+        </PropsContext.Provider>
       </Stack>
     </DocsContent>
   );

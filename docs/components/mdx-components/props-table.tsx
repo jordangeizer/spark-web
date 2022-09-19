@@ -1,32 +1,20 @@
 import { Stack } from '@spark-web/stack';
 import { Text } from '@spark-web/text';
 
-import type { PropsType } from './mdx-components';
-import { InlineCode } from './mdx-components';
+import { InlineCode } from '../example-helpers';
 import { MdxTable, MdxTd, MdxTh, MdxThead, MdxTr } from './mdx-table';
 
-export type FormattedPropsType = {
-  [key: string]: PropsType;
+export type PropsTableProps = {
+  props: {
+    name: string;
+    required: boolean;
+    type: string;
+    defaultValue?: any;
+    description: string;
+  }[];
 };
 
-export const ComponentPropsDocTables = ({
-  propsDoc,
-  displayName,
-}: {
-  propsDoc: { props: Record<string, PropsType> } | undefined;
-  displayName: string;
-}) => {
-  if (!propsDoc || !Object.keys(propsDoc?.props).length) {
-    return null;
-  }
-  return <PropsTable key={displayName} props={propsDoc.props} />;
-};
-
-const PropsTable = ({ props }: { props: Record<string, PropsType> }) => {
-  if (!Object.keys(props).length) {
-    return null;
-  }
-
+export const PropsTable = ({ props }: PropsTableProps) => {
   return (
     <MdxTable>
       <colgroup>
@@ -42,8 +30,7 @@ const PropsTable = ({ props }: { props: Record<string, PropsType> }) => {
         </MdxTr>
       </MdxThead>
 
-      {Object.keys(props).map((key: string) => {
-        const prop = props[key];
+      {props.map(prop => {
         return (
           <MdxTr key={prop.name}>
             <MdxTd>

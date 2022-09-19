@@ -92,16 +92,7 @@ illustrate intent. The supported tones are: `critical`, `positive` and
 
 ## Props
 
-| Prop          | Type                                           | Default | Description                                                         |
-| ------------- | ---------------------------------------------- | ------- | ------------------------------------------------------------------- |
-| data?         | [DataAttributeMap][data-attribute-map]         |         | Sets data attributes on the component.                              |
-| placeholder?  | string                                         |         | Placeholder text for when the input does not have an initial value. |
-| defaultValue? | string \| number \| readonly string[]          |         | Default value of the text area.                                     |
-| name?         | string                                         |         | This attribute is used to specify the name of the control.          |
-| onBlur?       | React.FocusEventHandler\<HTMLTextAreaElement>  |         | Function for handling change events.                                |
-| onChange?     | React.ChangeEventHandler\<HTMLTextAreaElement> |         | Function for handling blur events.                                  |
-| required?     | boolean                                        |         | Boolean that indicates a value is required in the text area.        |
-| value?        | string \| number \| readonly string[]          |         | Value of the text area.                                             |
+<PropsTable displayName="TextArea" />
 
 [data-attribute-map]:
   https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/utils/src/internal/buildDataAttributes.ts#L1

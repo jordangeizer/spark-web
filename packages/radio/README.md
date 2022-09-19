@@ -227,26 +227,14 @@ return (
 
 ### Radio
 
-| Prop      | Type                | Default | Description                            |
-| --------- | ------------------- | ------- | -------------------------------------- |
-| children  | React.ReactNode     |         | The radio label content.               |
-| checked?  | boolean             |         | When true, the radio will be checked.  |
-| disabled? | boolean             | false   | When true, the radio will be disabled. |
-| size?     | 'small' \| 'medium' | 'small' | The size of the radio.                 |
-| value?    | string              |         | The value of the radio.                |
+<PropsTable displayName="Radio" />
 
 The `Radio` component also extends `InputHTMLAttributes` props and are not
 listed here.
 
 ### RadioPrimitive
 
-| Prop      | Type                                   | Default | Description                            |
-| --------- | -------------------------------------- | ------- | -------------------------------------- |
-| checked?  | boolean                                |         | When true, the radio will be checked.  |
-| data?     | [DataAttributeMap][data-attribute-map] |         | Sets data attributes on the component. |
-| disabled? | boolean                                |         | When true, the radio will be disabled. |
-| size?     | 'small' \| 'medium'                    | 'small' | The size of the radio.                 |
-| value?    | string                                 |         | The value of the radio.                |
+<PropsTable displayName="RadioPrimitive" />
 
 [data-attribute-map]:
   https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/utils/src/internal/buildDataAttributes.ts#L1
@@ -256,24 +244,11 @@ are not listed here.
 
 ### RadioGroup
 
-| Prop      | Type                                     | Default   | Description                                                               |
-| --------- | ---------------------------------------- | --------- | ------------------------------------------------------------------------- |
-| disabled? | boolean                                  |           | When true, disables the group of nested radios.                           |
-| message?  | string                                   |           | Provide a message, informing the user about changes in state.             |
-| onChange  | onChange: (selectedValue: Value) => void |           | Function that is fired whenever a change event is triggered on a `Radio`. |
-| size?     | 'small' \| 'medium'                      |           | The size of the nested radios.                                            |
-| tone?     | 'critical' \| 'positive' \| 'neutral'    | 'neutral' | Provide a tone to influence elements of the field, and its input.         |
-| value     | string                                   |           | The value of the nested radios.                                           |
+<PropsTable displayName="RadioGroup" />
 
 ### RadioCard
 
-| Prop         | Type            | Default | Description                            |
-| ------------ | --------------- | ------- | -------------------------------------- |
-| checked?     | boolean         |         | When true, the radio will be checked.  |
-| children     | React.ReactNode |         | The radio label.                       |
-| description? | string          |         | The radio description.                 |
-| disabled?    | boolean         | false   | When true, the radio will be disabled. |
-| value?       | string          |         | The value of the radio.                |
+<PropsTable displayName="RadioCard" />
 
 The `RadioCard` component also extends `InputHTMLAttributes` props and are not
 listed here.

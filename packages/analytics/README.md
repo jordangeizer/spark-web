@@ -49,9 +49,7 @@ independently whenever an event is fired, i.e.:
 
 ### Props
 
-| Prop    | Type                                                                    | Default | Description                                               |
-| ------- | ----------------------------------------------------------------------- | ------- | --------------------------------------------------------- |
-| onEvent | (eventName: string, eventData: Record\<string, string\|number>) => void |         | Callback that will be invoked with fired analytics events |
+<PropsTable displayName="AnalyticsListener" />
 
 ## AnalyticsContext
 

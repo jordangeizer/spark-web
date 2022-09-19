@@ -9,11 +9,12 @@ import { Children, createContext, Fragment, useContext } from 'react';
 
 import * as sparkComponents from '../../cache/spark-components';
 import { Heading } from '../../components/content/toc-context';
-import { ComponentPropsDocTables } from '../../components/mdx-components/props-doc-tables';
 import { InlineCode } from '../example-helpers';
 import { CodeBlock } from './code-block';
 import type { MdxTdProps } from './mdx-table';
 import { MdxTable, MdxTd, MdxTh, MdxThead, MdxTr } from './mdx-table';
+import type { PropsTableProps } from './props-table';
+import { PropsTable } from './props-table';
 
 interface CodeProps {
   children: string;
@@ -23,25 +24,6 @@ interface CodeProps {
   live: true;
   metastring?: string;
 }
-
-export type PropsType = {
-  name: string;
-  required: boolean;
-  type: string;
-  defaultValue: any;
-  description: string;
-};
-
-export type DataContextType = {
-  props: Record<
-    string,
-    { displayName: string; props: Record<string, PropsType> }
-  >;
-} | null;
-
-export const DataContext = createContext<DataContextType>(null);
-
-export { InlineCode };
 
 function Code({ children, className, demo, ...props }: CodeProps): JSX.Element {
   const trimmedChildren = children.trim();
@@ -73,6 +55,9 @@ const TextListMdx = (props: TextListProps) => (
   </TextList>
 );
 
+export type Props = Record<string, PropsTableProps['props']>;
+export const PropsContext = createContext<Props | undefined>(undefined);
+
 export const mdxComponents: Record<string, ReactNode> = {
   // Native HTML elements
   a: TextLink,
@@ -100,16 +85,17 @@ export const mdxComponents: Record<string, ReactNode> = {
   pre: Fragment,
   code: Code,
   PropsTable: ({ displayName }: { displayName: string }) => {
-    const data = useContext(DataContext);
-
-    if (!data?.props) {
-      return null;
+    const propsContext = useContext(PropsContext);
+    if (propsContext === undefined) {
+      throw new Error('PropsTable must be used within a PropsContext provider');
     }
 
-    const propsDoc = data.props[displayName];
-    return (
-      <ComponentPropsDocTables propsDoc={propsDoc} displayName={displayName} />
-    );
+    const props = propsContext[displayName];
+    if (!props?.length) {
+      throw new Error(`${displayName} props not found`);
+    }
+
+    return <PropsTable props={props} />;
   },
   // Design System Components
   ...sparkComponents,

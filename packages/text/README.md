@@ -135,18 +135,7 @@ tones “neutral” and “muted” will be inverted.
 
 ## Props
 
-| Prop              | Type                                                            | Default | Description                                                                  |
-| ----------------- | --------------------------------------------------------------- | ------- | ---------------------------------------------------------------------------- |
-| align?            | 'left' \| 'center' \| 'right'                                   |         | Sets the horizontal alignment of the component. Used if displaying as block. |
-| children          | React.ReactNode                                                 |         | The text content to be rendered.                                             |
-| data?             | [DataAttributeMap][data-attribute-map]                          |         | Sets data attributes on the component.                                       |
-| id?               | string                                                          |         | Sets a unique idenitifier for the component.                                 |
-| inline?           | boolean                                                         |         | Indicates if text should be inline or not.                                   |
-| overflowStrategy? | 'nowrap' \| 'truncate' \| 'breakword'                           |         | Sets how text behaves with regards to overflow. Used if displaying as block. |
-| tabularNumbers?   | boolean                                                         |         | When enabled, numbers will be the same width. Similar to a monospaced font.  |
-| tone?             | keyof [BrighteTheme][brighte-theme]['color']['foreground']      |         | The tone of the text.                                                        |
-| transform?        | CSSProperties['textTransform']                                  |         | Transforms the text casing.                                                  |
-| weight?           | keyof [BrighteTheme][brighte-theme]['typography']['fontweight'] |         | The weight of the text.                                                      |
+<PropsTable displayName="Text" />
 
 Extra props are also passed into the underlying [`Box`](/package/box) component.
 

@@ -99,15 +99,7 @@ Lists of varying types can be nested within each other.
 
 ## Props
 
-| Prop     | Type                                            | Default | Description                                                           |
-| -------- | ----------------------------------------------- | ------- | --------------------------------------------------------------------- |
-| children | React.ReactNode                                 |         | The elements that represent each item in the list                     |
-| data?    | [DataAttributeMap][data-attribute-map]          |         | Sets data attributes on the component.                                |
-| gap?     | [StackProps][stack-props]['gap']                | 'large' | Sets the size of the gap between each item.                           |
-| icon?    | React.ReactElement\<[IconProps](/package/icon)> |         | Provide an icon to be used as the "bullet" element.                   |
-| size?    | [TextProps][text-props]['size']                 |         | Sets the size of child text elements.                                 |
-| tone?    | [TextProps][text-props]['tone']                 |         | Sets the tone of child text elements.                                 |
-| type?    | 'ul' \| 'ol'                                    | 'ul'    | Sets the list type. Equivalent to HTML's ordered and unordered lists. |
+<PropsTable displayName="TextList" />
 
 The `TextList` component also passes extra props into the component's nested
 [`Stack`](/package/stack) component.

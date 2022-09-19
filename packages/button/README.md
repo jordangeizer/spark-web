@@ -211,3 +211,7 @@ Unstyled button primitive that:
 ## Button Props
 
 <PropsTable displayName="Button" />
+
+## Button Link Props
+
+<PropsTable displayName="ButtonLink" />

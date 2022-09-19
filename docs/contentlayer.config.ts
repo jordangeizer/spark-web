@@ -65,8 +65,8 @@ export const Guide = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: 'string',
-      resolve: guide => {
-        const flattenedPath = guide._raw.sourceFileName;
+      resolve: doc => {
+        const flattenedPath = doc._raw.sourceFileName;
         const [slug] = flattenedPath.split('.md');
         return slug;
       },
@@ -103,34 +103,34 @@ export const Package = defineDocumentType(() => ({
   computedFields: {
     packageName: {
       type: 'string',
-      resolve: async pkg => {
+      resolve: async doc => {
         return JSON.parse(
           (
-            await readFile(`../${pkg._raw.sourceFileDir}/package.json`)
+            await readFile(`../${doc._raw.sourceFileDir}/package.json`)
           ).toString()
         ).name;
       },
     },
     componentMaturityStatus: {
       type: 'string',
-      resolve: async pkg => {
+      resolve: async doc => {
         return JSON.parse(
           (
-            await readFile(`../${pkg._raw.sourceFileDir}/package.json`)
+            await readFile(`../${doc._raw.sourceFileDir}/package.json`)
           ).toString()
         ).componentMaturityStatus;
       },
     },
     slug: {
       type: 'string',
-      resolve: pkg => pkg._raw.sourceFileDir.replace(/^packages\//, ''),
+      resolve: doc => doc._raw.sourceFileDir.replace(/^packages\//, ''),
     },
     version: {
       type: 'string',
-      resolve: async pkg => {
+      resolve: async doc => {
         return JSON.parse(
           (
-            await readFile(`../${pkg._raw.sourceFileDir}/package.json`)
+            await readFile(`../${doc._raw.sourceFileDir}/package.json`)
           ).toString()
         ).version;
       },

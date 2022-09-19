@@ -48,18 +48,11 @@ conveyed to non-visual users.
 
 ### Emoji Props
 
-| Prop   | Type                                   | Default | Description                                                                 |
-| ------ | -------------------------------------- | ------- | --------------------------------------------------------------------------- |
-| data?  | [DataAttributeMap][data-attribute-map] |         | Sets data attributes on the component.                                      |
-| label? | string                                 |         | Label used to describe the symbol that will be announced to screen readers. |
-| symbol | string                                 |         | Emoji symbol.                                                               |
+<PropsTable displayName="Emoji" />
 
 ### VisuallyHidden Props
 
-| Prop     | Type                                   | Default | Description                                           |
-| -------- | -------------------------------------- | ------- | ----------------------------------------------------- |
-| data?    | [DataAttributeMap][data-attribute-map] |         | Sets data attributes on the component.                |
-| children | React.ReactNode                        |         | Children elements to be hidden within this component. |
+<PropsTable displayName="VisuallyHidden" />
 
 Additional props are passed to the `span` element and are not listed.
 

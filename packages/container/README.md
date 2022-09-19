@@ -37,11 +37,7 @@ Use the `size` prop to adjust the maximum width of the container.
 
 ## Props
 
-| Prop     | Type                                                | Default | Description                                            |
-| -------- | --------------------------------------------------- | ------- | ------------------------------------------------------ |
-| children | React.ReactNode                                     |         | Children elements to be rendered inside the container. |
-| data?    | [DataAttributeMap][data-attribute-map]              |         | Sets data attributes on the element.                   |
-| size?    | keyof [BrighteTheme][brighte-theme]['contentWidth'] |         | Sets the size of the container.                        |
+<PropsTable displayName="Container" />
 
 [data-attribute-map]:
   https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/utils/src/internal/buildDataAttributes.ts#L1

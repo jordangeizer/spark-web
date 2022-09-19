@@ -42,10 +42,7 @@ the respective currency's
 </Stack>
 ```
 
-| Prop          | Type                                   | Default | Description                                                                       |
-| ------------- | -------------------------------------- | ------- | --------------------------------------------------------------------------------- |
-| currencyType? | [CurrencyType][currency-symbol-type]   | 'AUD'   | Specifies what currency symbol you want as a starting adornment to the component. |
-| data?         | [DataAttributeMap][data-attribute-map] |         | Sets data attributes on the component.                                            |
+<PropsTable displayName="CurrencyInput" />
 
 Note that `CurrencyInput` also extends [`FloatInput`](/package/float-input)'s
 props and are not listed here.

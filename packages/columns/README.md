@@ -95,14 +95,7 @@ relative width of each column.
 
 ## Props
 
-| Prop           | Type                                                    | Default | Description                                                                            |
-| -------------- | ------------------------------------------------------- | ------- | -------------------------------------------------------------------------------------- |
-| alignY?        | [ResponsiveProp][responsive-prop]\<AlignY>              |         | Vertically align items within the container.                                           |
-| children       | React.ReactNode                                         |         | Children elements to be rendered within the column component representing each column. |
-| collapseBelow? | [ResponsiveRangeProps][responsive-range-props]['below'] |         | At which breakpoint, if amy, should the columns collapse.                              |
-| gap?           | [Gap][gap]                                              |         | The size of the gap between each column.                                               |
-| template?      | number[]                                                |         | Define the relative width of each column. By default each column is the same width.    |
-| data?          | [DataAttributeMap][data-attribute-map]                  |         | Sets data attributes on the component.                                                 |
+<PropsTable displayName="Columns" />
 
 [`Box`](/package/box) props are also included as `Column` props and are not
 listed here (excluding `display`, `alignItems`, `gap`, `flexDirection`,

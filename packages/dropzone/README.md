@@ -79,13 +79,4 @@ image, you can use the `showImageThumbnails` to show an image preview instead.
 
 ## Props
 
-| Prop                 | Type                                        | Default | Description                                                            |
-| -------------------- | ------------------------------------------- | ------- | ---------------------------------------------------------------------- |
-| accept?              | Accept \| Accept[]                          |         | File type(s) that the Dropzone should be allowed to accept.            |
-| maxFiles?            | number                                      | 1       | Maximum number of files that the Dropzone should be allowed to accept. |
-| maxFileSizeKb?       | number                                      |         | Maximum file size that the Dropzone should be allowed to accept.       |
-| minFileSizeKb?       | number                                      |         | Minimum file size that the Dropzone should be allowed to accept.       |
-| showImageThumbnails? | boolean                                     |         | When true, renders an image preview next to file previews.             |
-| name?                | string                                      |         | This attribute is used to specify the name of the control.             |
-| onBlur?              | React.FocusEventHandler\<HTMLInputElement>  |         | Function for handling blur events.                                     |
-| onChange?            | React.ChangeEventHandler\<HTMLInputElement> |         | Function for handling change events.                                   |
+<PropsTable displayName="Dropzone" />

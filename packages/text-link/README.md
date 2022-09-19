@@ -38,10 +38,7 @@ customised via the `linkComponent` prop on the [SparkProvider](#todo) component.
 
 ### Props
 
-| Prop  | Type                                   | Default | Description                             |
-| ----- | -------------------------------------- | ------- | --------------------------------------- |
-| data? | [DataAttributeMap][data-attribute-map] |         | Sets data attributes on the component.  |
-| href  | string                                 |         | URL to set as destination for the link. |
+<PropsTable displayName="TextLink" />
 
 The `TextLink` component also extends native HTML `a` anchor props and are not
 listed here.
@@ -58,9 +55,7 @@ Even though it looks like a text link, this is actually a semantic button.
 
 ### Props
 
-| Prop  | Type                                   | Default | Description                            |
-| ----- | -------------------------------------- | ------- | -------------------------------------- |
-| data? | [DataAttributeMap][data-attribute-map] |         | Sets data attributes on the component. |
+<PropsTable displayName="TextLinkButton" />
 
 The `TextLinkButton` component also extends native HTML `span` props and are not
 listed here.

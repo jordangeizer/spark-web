@@ -59,11 +59,7 @@ foreground tones “neutral” and “muted” will be inverted.
 
 ## Props
 
-| Prop  | Type                                   | Default   | Description                            |
-| ----- | -------------------------------------- | --------- | -------------------------------------- |
-| data? | [DataAttributeMap][data-attribute-map] |           | Sets data attributes on the component. |
-| size? | [SizeType][size-type]                  | 'small'   | Sets the size of the icon.             |
-| tone? | [ForegroundTone][foreground-tone]      | 'neutral' | Sets the tone of the icon.             |
+<PropsTable displayName="LightBulbIcon" />
 
 [data-attribute-map]:
   https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/utils/src/internal/buildDataAttributes.ts#L1
