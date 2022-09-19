@@ -93,6 +93,14 @@ export type ResponsiveBoxProps = {
 
   /** The `border` property sets the color of an element's border. */
   border?: ResponsiveProp<keyof BrighteTheme['border']['color']>;
+  /** The `border` property sets the color of an element's border on the top side. */
+  borderTop?: ResponsiveProp<keyof BrighteTheme['border']['color']>;
+  /** The `border` property sets the color of an element's border on the bottom side. */
+  borderBottom?: ResponsiveProp<keyof BrighteTheme['border']['color']>;
+  /** The `border` property sets the color of an element's border on the left side. */
+  borderLeft?: ResponsiveProp<keyof BrighteTheme['border']['color']>;
+  /** The `border` property sets the color of an element's border on the right side. */
+  borderRight?: ResponsiveProp<keyof BrighteTheme['border']['color']>;
   /**
    * The `borderRadius` property rounds the corners of an element's outer
    * border edge.
@@ -250,6 +258,10 @@ export const useBoxStyles = ({
   alignSelf,
   background,
   border,
+  borderTop,
+  borderBottom,
+  borderLeft,
+  borderRight,
   borderRadius,
   borderWidth = 'standard',
   bottom,
@@ -303,16 +315,73 @@ export const useBoxStyles = ({
     userSelect,
   };
 
-  const conditionalBorderStyles = border
-    ? {
-        borderStyle: 'solid',
-        borderColor: theme.utils.mapResponsiveScale(border, theme.border.color),
-        borderWidth: theme.utils.mapResponsiveScale(
-          borderWidth,
-          theme.border.width
-        ),
-      }
-    : null;
+  const conditionalBorderStyles = {
+    ...(border
+      ? {
+          borderStyle: 'solid',
+          borderColor: theme.utils.mapResponsiveScale(
+            border,
+            theme.border.color
+          ),
+          borderWidth: theme.utils.mapResponsiveScale(
+            borderWidth,
+            theme.border.width
+          ),
+        }
+      : {}),
+    ...(borderTop
+      ? {
+          borderTopStyle: 'solid',
+          borderTopColor: theme.utils.mapResponsiveScale(
+            borderTop,
+            theme.border.color
+          ),
+          borderTopWidth: theme.utils.mapResponsiveScale(
+            borderWidth,
+            theme.border.width
+          ),
+        }
+      : {}),
+    ...(borderBottom
+      ? {
+          borderBottomStyle: 'solid',
+          borderBottomColor: theme.utils.mapResponsiveScale(
+            borderBottom,
+            theme.border.color
+          ),
+          borderBottomWidth: theme.utils.mapResponsiveScale(
+            borderWidth,
+            theme.border.width
+          ),
+        }
+      : {}),
+    ...(borderLeft
+      ? {
+          borderLeftStyle: 'solid',
+          borderLeftColor: theme.utils.mapResponsiveScale(
+            borderLeft,
+            theme.border.color
+          ),
+          borderLeftWidth: theme.utils.mapResponsiveScale(
+            borderWidth,
+            theme.border.width
+          ),
+        }
+      : {}),
+    ...(borderRight
+      ? {
+          borderRightStyle: 'solid',
+          borderRightColor: theme.utils.mapResponsiveScale(
+            borderRight,
+            theme.border.color
+          ),
+          borderRightWidth: theme.utils.mapResponsiveScale(
+            borderWidth,
+            theme.border.width
+          ),
+        }
+      : {}),
+  };
 
   return theme.utils.resolveResponsiveProps({
     ...unresponsiveProps,

@@ -141,10 +141,3 @@ its contents are readable.
 
 By default, Box renders a `div` element. You can customise this via the `as`
 prop. Extra props will also be forwarded to the underlying element.
-
-[brighte-theme]:
-  https://github.com/brighte-labs/spark-web/blob/e503bea4f7668d187ec7a78f99c5ed374417588b/packages/theme/src/makeTheme.ts#L158
-[responsive-prop]:
-  https://github.com/brighte-labs/spark-web/blob/e503bea4f7668d187ec7a78f99c5ed374417588b/packages/theme/src/themeUtils.ts#L11
-[data-attribute-map]:
-  https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/utils/src/internal/buildDataAttributes.ts#L1
