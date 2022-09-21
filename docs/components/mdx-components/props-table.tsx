@@ -1,5 +1,6 @@
 import { Stack } from '@spark-web/stack';
 import { Text } from '@spark-web/text';
+import { TextLink } from '@spark-web/text-link';
 
 import { InlineCode } from '../example-helpers';
 import { MdxTable, MdxTd, MdxTh, MdxThead, MdxTr } from './mdx-table';
@@ -46,7 +47,27 @@ export const PropsTable = ({ props }: PropsTableProps) => {
             </MdxTd>
             <MdxTd>
               <Stack gap="xlarge">
-                <Text as="p">{prop.description}</Text>
+                {prop.description.split('\n').map((text, i) => {
+                  const urlRe = /(https?:\/\/\S*)/;
+                  return (
+                    <Text key={i} as="p">
+                      {text.split(urlRe).map((s, i) =>
+                        urlRe.test(s) ? (
+                          <TextLink
+                            key={i}
+                            href={s}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                          >
+                            {s}
+                          </TextLink>
+                        ) : (
+                          <span key={i}>{s}</span>
+                        )
+                      )}
+                    </Text>
+                  );
+                })}
                 {typeof prop.defaultValue !== 'undefined' ? (
                   <Text as="p">
                     <strong>Default</strong>:{' '}

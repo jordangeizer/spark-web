@@ -33,6 +33,7 @@ export type AlertProps = {
   data?: DataAttributeMap;
   /** Sets a heading for the alert. */
   heading?: string;
+  /** Optionally provide a custom icon to be used instead of the default icon. */
   icon?: IconWithRef | IconWithWithoutRef;
   /** Sets a unique indentifier on the component. */
   id?: string;

@@ -6,6 +6,9 @@ const repoRoot = path.resolve(path.basename(import.meta.url), '..', '..');
 
 const docgen = docgenTypescript.withDefaultConfig({
   propFilter: prop => {
+    if (prop.name === 'as') return false;
+    if (prop.name === 'asElement') return false;
+    if (prop.name === 'ref') return false;
     if (prop.parent?.name === 'DOMAttributes') return false;
     if (prop.parent?.name === 'HTMLAttributes') return false;
     if (prop.parent?.name === 'AriaAttributes') return false;
