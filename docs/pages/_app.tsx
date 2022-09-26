@@ -65,6 +65,10 @@ App.getInitialProps = async () => {
         name: 'Reference',
         children: [
           {
+            name: 'Tokens',
+            href: '/reference/tokens',
+          },
+          {
             name: 'Colours',
             href: '/reference/colours',
           },

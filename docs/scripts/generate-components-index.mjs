@@ -10,7 +10,7 @@ const __dirname = dirname(__filename);
 const PACKAGE_PATH = normalize(`${__dirname}/../../packages`);
 const MANIFEST_DIR = normalize(`${__dirname}/../cache`);
 
-const ignoreDirs = ['core', 'theme', 'analytics', 'ssr', 'next-utils'];
+const ignoreDirs = ['core', 'analytics', 'ssr', 'next-utils'];
 
 const packageNames = readdirSync(PACKAGE_PATH, { withFileTypes: true })
   .filter(

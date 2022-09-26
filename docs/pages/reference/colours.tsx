@@ -16,36 +16,53 @@ export default function ColoursPage() {
   const theme = useTheme();
   const colors = [
     {
-      id: 'foreground',
-      colors: theme.color.foreground,
-      items: [],
-      level: 2,
-      slug: 'foreground',
       title: 'Foreground',
+      description: 'Foreground tones are used for text and icons.',
+      id: 'foreground',
+      slug: 'foreground',
+      level: 2,
+      items: [],
+      colors: theme.color.foreground,
     },
     {
-      id: 'background',
-      colors: theme.color.background,
-      items: [],
-      level: 2,
-      slug: 'background',
       title: 'Background',
+      description:
+        'Background tones are used for all of our background colours (anything from a button up to the entire page.)',
+      id: 'background',
+      slug: 'background',
+      level: 2,
+      items: [],
+      colors: theme.color.background,
     },
     {
-      id: 'border',
-      colors: theme.border.color,
-      items: [],
-      level: 2,
-      slug: 'border',
-      title: 'Border',
-    },
-    {
-      id: 'background-interactions',
-      colors: theme.backgroundInteractions,
-      items: [],
-      level: 2,
-      slug: 'background-interactions',
       title: 'Background Interactions',
+      description:
+        'Background interactions are colours used for indicating hover or active states.',
+      id: 'background-interactions',
+      slug: 'background-interactions',
+      level: 2,
+      items: [],
+      colors: theme.backgroundInteractions,
+    },
+    {
+      title: 'Border',
+      description:
+        'Border tones are used for border colours and for the Divider component. These colours tend to have more contrast with the background tones so they stand out.',
+      id: 'border',
+      slug: 'border',
+      level: 2,
+      items: [],
+      colors: theme.border.color,
+    },
+    {
+      title: 'Status',
+      description:
+        'Status tones are used to highlight the semantic meaning of a component. A good example of this is the IndicatorDot in our Badge component.',
+      id: 'status',
+      slug: 'status',
+      level: 2,
+      items: [],
+      colors: theme.color.status,
     },
   ];
 
@@ -60,11 +77,14 @@ export default function ColoursPage() {
         </Stack>
 
         <Stack gap="large">
-          {colors.map(({ colors, slug, title }) => (
+          {colors.map(({ colors, slug, title, description }) => (
             <Stack key={slug} gap="xlarge">
               <Heading id={slug} level="2">
                 {title}
               </Heading>
+              <Text size="large" tone="muted">
+                {description}
+              </Text>
               <Columns
                 gap="large"
                 template={[1, 1, 1, 1]}

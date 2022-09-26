@@ -60,6 +60,7 @@
     "@spark-web/utils": "^1.2.2",
     "@untitled-docs/live-code": "^0.4.0",
     "clipboard-copy": "^4.0.1",
+    "dedent": "^0.7.0",
     "lunr": "^2.3.9",
     "next": "^12.3.0",
     "next-seo": "^5.5.0",
