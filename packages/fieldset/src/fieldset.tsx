@@ -46,6 +46,6 @@ Fieldset.displayName = 'Fieldset';
  * @see https://www.chromestatus.com/feature/5962796351094784
  */
 const Gap = ({ gap }: { gap: 'small' | 'medium' | 'large' }) => {
-  const { spacing } = useTheme();
-  return <Box aria-hidden className={css({ height: spacing[gap] })} />;
+  const theme = useTheme();
+  return <Box aria-hidden className={css({ height: theme.spacing[gap] })} />;
 };

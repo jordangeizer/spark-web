@@ -61,16 +61,21 @@ export function MdxTr({ children, ...rest }: { children: ReactNode }) {
   );
 }
 
-export function MdxTh({ children, ...rest }: { children: ReactNode }) {
-  const { border, spacing } = useTheme();
+export function MdxTh({
+  children,
+  ...rest
+}: {
+  children: ReactNode;
+}): JSX.Element {
+  const theme = useTheme();
   const textStyles = useHeading({ align: 'left', level: '4' });
   return (
     <Box
       as="th"
       className={css(textStyles, {
-        padding: spacing.large,
+        padding: theme.spacing.large,
         'thead &': {
-          borderBottom: `1px solid ${border.color.field}`,
+          borderBottom: `1px solid ${theme.border.color.field}`,
         },
       })}
       {...rest}

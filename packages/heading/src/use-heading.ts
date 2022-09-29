@@ -19,10 +19,10 @@ export function useHeading({
   level,
   tone = 'neutral',
 }: UseHeadingProps) {
-  const { typography, utils } = useTheme();
+  const theme = useTheme();
   const color = useForegroundTone(tone);
-  const { mobile, tablet } = typography.heading.level[level];
-  const responsiveStyles = utils.responsiveStyles({
+  const { mobile, tablet } = theme.typography.heading.level[level];
+  const responsiveStyles = theme.utils.responsiveStyles({
     mobile: createTextStyles(mobile),
     tablet: createTextStyles(tablet),
   });
@@ -30,8 +30,8 @@ export function useHeading({
   return [
     {
       color,
-      fontFamily: typography.fontFamily.display.name,
-      fontWeight: typography.fontWeight.semibold,
+      fontFamily: theme.typography.fontFamily.display.name,
+      fontWeight: theme.typography.fontWeight.semibold,
       textAlign: align,
     },
     responsiveStyles,

@@ -26,10 +26,10 @@ export function DocsContent({
   toc?: HeadingData[];
   includeNavigation?: boolean;
   pageTitle?: string;
-}) {
-  const { utils } = useTheme();
+}): JSX.Element {
+  const theme = useTheme();
 
-  const responsiveStyles = utils.responsiveStyles({
+  const responsiveStyles = theme.utils.responsiveStyles({
     mobile: {
       'h2[id], h3[id]': {
         scrollMarginTop: HEADER_HEIGHT,
@@ -167,7 +167,7 @@ const HeadingItem = ({
   children,
   level,
 }: HeadingItemProps) => {
-  const { color } = useTheme();
+  const theme = useTheme();
 
   const isActive = useIsActive(id);
 
@@ -188,7 +188,7 @@ const HeadingItem = ({
         paddingLeft={level === 3 || level === 4 ? 'small' : undefined}
         className={css([
           textStyles,
-          { ':hover': { color: color.foreground.primary } },
+          { ':hover': { color: theme.color.foreground.primary } },
         ])}
       >
         {children}

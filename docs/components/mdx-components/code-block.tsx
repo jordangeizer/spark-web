@@ -31,8 +31,8 @@ export function CodeBlock({
   live,
   metastring,
   scope,
-}: CodeBlockProps) {
-  const { color, border } = useTheme();
+}: CodeBlockProps): JSX.Element {
+  const theme = useTheme();
 
   const language = className?.replace(/language-/, '');
   if (live && initialCompiledResult && scope) {
@@ -50,14 +50,14 @@ export function CodeBlock({
     <Box
       as="pre"
       className={css({
-        background: color.background.surfaceMuted,
-        borderRadius: border.radius.small,
-        boxShadow: `0 0 0 1px ${border.color.standard}`,
+        background: theme.color.background.surfaceMuted,
+        borderRadius: theme.border.radius.small,
+        boxShadow: `0 0 0 1px ${theme.border.color.standard}`,
         // TODO: add monospace font to tokens
         fontFamily: 'Monaco, Consolas, monospace',
         // TODO: use theme
         fontSize: '0.875rem',
-        color: color.foreground.neutral,
+        color: theme.color.foreground.neutral,
         // TODO: use theme
         lineHeight: 1.4,
         maxWidth: '100%',

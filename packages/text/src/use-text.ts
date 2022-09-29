@@ -16,10 +16,10 @@ export type UseTextProps = {
 };
 
 export function useText({ baseline = true, size, tone, weight }: UseTextProps) {
-  const { typography, utils } = useTheme();
+  const theme = useTheme();
   const color = useForegroundTone(tone);
-  const { mobile, tablet } = typography.text[size];
-  const responsiveStyles = utils.responsiveStyles({
+  const { mobile, tablet } = theme.typography.text[size];
+  const responsiveStyles = theme.utils.responsiveStyles({
     mobile: createTextStyles(mobile, { includeTrims: baseline }),
     tablet: createTextStyles(tablet, { includeTrims: baseline }),
   });
@@ -27,8 +27,8 @@ export function useText({ baseline = true, size, tone, weight }: UseTextProps) {
   const styles = [
     {
       color,
-      fontFamily: typography.fontFamily.sans.name,
-      fontWeight: typography.fontWeight[weight],
+      fontFamily: theme.typography.fontFamily.sans.name,
+      fontWeight: theme.typography.fontWeight[weight],
     },
     responsiveStyles,
   ];

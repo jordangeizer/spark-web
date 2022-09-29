@@ -125,9 +125,9 @@ export const IndicatorContainer = ({
   size = 'standard',
   children,
 }: TextProps) => {
-  const { typography, utils } = useTheme();
-  const { mobile, tablet } = typography.text[size];
-  const responsiveStyles = utils.responsiveStyles({
+  const theme = useTheme();
+  const { mobile, tablet } = theme.typography.text[size];
+  const responsiveStyles = theme.utils.responsiveStyles({
     mobile: { height: mobile.capHeight },
     tablet: { height: tablet.capHeight },
   });

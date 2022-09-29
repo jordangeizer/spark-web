@@ -215,9 +215,9 @@ export const FieldMessage = ({ message, id, tone }: FieldMessageProps) => {
 };
 
 function IndicatorContainer({ children }: { children: ReactNode }) {
-  const { typography, utils } = useTheme();
-  const { mobile, tablet } = typography.text.small;
-  const responsiveStyles = utils.responsiveStyles({
+  const theme = useTheme();
+  const { mobile, tablet } = theme.typography.text.small;
+  const responsiveStyles = theme.utils.responsiveStyles({
     mobile: { height: mobile.capHeight },
     tablet: { height: tablet.capHeight },
   });

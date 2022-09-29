@@ -22,15 +22,12 @@ export type IconProps = {
 export const createIcon = (children: ReactNode, name: string) => {
   const Icon = forwardRef<SVGSVGElement, IconProps>(
     ({ data, size: sizeKey = 'small', tone = 'neutral' }, forwardedRef) => {
-      const {
-        sizing,
-        utils: { resolveResponsiveProps },
-      } = useTheme();
+      const theme = useTheme();
       const stroke = useForegroundTone(tone);
-      const size = sizing[sizeKey];
+      const size = theme.sizing[sizeKey];
       const styles = useMemo(
         () =>
-          resolveResponsiveProps({
+          theme.utils.resolveResponsiveProps({
             fill: 'none',
             height: size,
             stroke,
@@ -40,7 +37,7 @@ export const createIcon = (children: ReactNode, name: string) => {
             verticalAlign: 'text-bottom', // removes whitespace inside buttons
             width: size,
           }),
-        [resolveResponsiveProps, size, stroke]
+        [size, stroke, theme.utils]
       );
 
       return (

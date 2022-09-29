@@ -27,9 +27,9 @@ export type HiddenProps = {
 /** Conditionally display content for different screen sizes. */
 export const Hidden = forwardRefWithAs<'div', HiddenProps>(
   ({ above, as, below, children, data, inline: inlineProp, on }, ref) => {
-    const { utils } = useTheme();
+    const theme = useTheme();
     const [hiddenOnMobile, hiddenOnTablet, hiddenOnDesktop, hiddenOnWide] =
-      utils.responsiveRange({ above, below });
+      theme.utils.responsiveRange({ above, below });
 
     const hiddenOnScreen = on === 'screen';
     const conditionalStyles = on
@@ -48,8 +48,8 @@ export const Hidden = forwardRefWithAs<'div', HiddenProps>(
         className={css([
           hiddenOnScreen
             ? null
-            : utils.resolveResponsiveProps({
-                display: utils.optimizeResponsiveArray([
+            : theme.utils.resolveResponsiveProps({
+                display: theme.utils.optimizeResponsiveArray([
                   hiddenOnMobile ? 'none' : display,
                   hiddenOnTablet ? 'none' : display,
                   hiddenOnDesktop ? 'none' : display,

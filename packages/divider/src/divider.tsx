@@ -32,15 +32,15 @@ export const Divider = ({
   vertical,
   width = 'standard',
 }: DividerProps) => {
-  const { border } = useTheme();
+  const theme = useTheme();
   const direction = vertical ? 'row' : 'column';
   const [mainAxis, crossAxis] = directionMap[direction];
 
   const styles = {
     alignSelf: 'stretch', // 1.
-    backgroundColor: border.color[color],
+    backgroundColor: theme.border.color[color],
     flexShrink: 0,
-    [crossAxis]: border.width[width],
+    [crossAxis]: theme.border.width[width],
     [mainAxis]: '100%', // 2.
   };
 

@@ -65,7 +65,7 @@ export const InputAdornment = ({
   placement,
   raw,
 }: InputAdornmentProps) => {
-  const { sizing } = useTheme();
+  const theme = useTheme();
   const adornmentContext = useMemo(() => ({ placement }), [placement]);
   const { paddingLeft, paddingRight } = placementToPadding[placement];
   let content = children;
@@ -82,7 +82,7 @@ export const InputAdornment = ({
           display="flex"
           alignItems="center"
           justifyContent="center"
-          style={{ minWidth: sizing.xxsmall }}
+          style={{ minWidth: theme.sizing.xxsmall }}
         >
           {children}
         </Box>

@@ -41,6 +41,7 @@ dist
 
 # Docs
 docs/cache
+docs/public/example-site
 docs/public/playroom
 docs/public/storybook
 

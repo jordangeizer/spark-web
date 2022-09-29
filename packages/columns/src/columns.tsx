@@ -47,7 +47,7 @@ export const Columns = forwardRefWithAs<'div', ColumnsProps>(
     { alignY = 'top', collapseBelow, data, gap, template, ...props },
     forwardedRef
   ) => {
-    const { spacing, utils } = useTheme();
+    const theme = useTheme();
     const alignItems = alignYToAlignItems(alignY);
     const count = Children.count(props.children);
     const gridTemplateColumns = template
@@ -59,18 +59,18 @@ export const Columns = forwardRefWithAs<'div', ColumnsProps>(
       collapseOnTablet,
       collapseOnDesktop,
       collapseOnWide,
-    ] = utils.responsiveRange({ below: collapseBelow });
+    ] = theme.utils.responsiveRange({ below: collapseBelow });
 
     return (
       <Box
         ref={forwardedRef}
         className={css(
-          utils.resolveResponsiveProps({
+          theme.utils.resolveResponsiveProps({
             alignItems,
             display: 'grid',
-            gap: utils.mapResponsiveScale(gap, spacing),
+            gap: theme.utils.mapResponsiveScale(gap, theme.spacing),
             gridTemplateColumns: collapseBelow
-              ? utils.optimizeResponsiveArray([
+              ? theme.utils.optimizeResponsiveArray([
                   collapseOnMobile ? null : gridTemplateColumns,
                   collapseOnTablet ? null : gridTemplateColumns,
                   collapseOnDesktop ? null : gridTemplateColumns,

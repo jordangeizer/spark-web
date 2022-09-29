@@ -13,7 +13,7 @@ export function useTextLink(tag: 'a' | 'span') {
     throw new Error(TEXT_LINK_ERROR_MESSAGE);
   }
 
-  const { typography } = useTheme();
+  const theme = useTheme();
   const textColor = useForegroundTone(textContext.tone);
 
   const resetStyles = resetElementStyles(tag);
@@ -21,7 +21,7 @@ export function useTextLink(tag: 'a' | 'span') {
     color: textColor,
     cursor: 'pointer',
     textDecoration: 'underline',
-    fontWeight: typography.fontWeight.semibold,
+    fontWeight: theme.typography.fontWeight.semibold,
   };
 
   const styles = [resetStyles, linkStyles];

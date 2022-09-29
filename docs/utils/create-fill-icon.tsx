@@ -11,15 +11,12 @@ export function createFillIcon(
 ) {
   const Icon = forwardRef<SVGSVGElement, IconProps>(
     ({ size: sizeKey = 'small', tone = 'neutral' }, forwardedRef) => {
-      const {
-        sizing,
-        utils: { resolveResponsiveProps },
-      } = useTheme();
+      const theme = useTheme();
       const fill = useForegroundTone(tone);
-      const size = sizing[sizeKey];
+      const size = theme.sizing[sizeKey];
       const styles = useMemo(
         () =>
-          resolveResponsiveProps({
+          theme.utils.resolveResponsiveProps({
             fillRule: 'evenodd',
             strokeLinejoin: 'round',
             strokeMiterlimit: 2,
@@ -30,7 +27,7 @@ export function createFillIcon(
             verticalAlign: 'text-bottom', // removes whitespace inside buttons
             width: size,
           }),
-        [fill, resolveResponsiveProps, size]
+        [fill, size, theme.utils]
       );
 
       return (

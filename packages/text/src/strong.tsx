@@ -7,7 +7,7 @@ export type StrongProps = {
 };
 
 export const Strong = ({ children }: StrongProps) => {
-  const { typography } = useTheme();
-  const styles = { fontWeight: typography.fontWeight.semibold };
+  const theme = useTheme();
+  const styles = { fontWeight: theme.typography.fontWeight.semibold };
   return <strong className={css(styles)}>{children}</strong>;
 };

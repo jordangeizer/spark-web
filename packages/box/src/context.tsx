@@ -37,8 +37,8 @@ export const useBackgroundLightness = (
 ) => {
   const backgroundFromContext = useBackground();
   const background = backgroundOverride || backgroundFromContext;
-  const { backgroundLightness } = useTheme();
-  const defaultLightness = backgroundLightness.body;
+  const theme = useTheme();
+  const defaultLightness = theme.backgroundLightness.body;
 
   // used by the consumer-facing/external BackgroundProvider
   if (background === 'UNKNOWN_DARK') {
@@ -49,6 +49,6 @@ export const useBackgroundLightness = (
   }
 
   return background
-    ? backgroundLightness[background] || defaultLightness
+    ? theme.backgroundLightness[background] || defaultLightness
     : defaultLightness;
 };

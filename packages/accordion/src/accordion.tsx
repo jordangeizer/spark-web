@@ -56,8 +56,8 @@ export function AccordionItem({
   label,
   level,
   value,
-}: AccordionItemProps) {
-  const { animation } = useTheme();
+}: AccordionItemProps): JSX.Element {
+  const theme = useTheme();
   return (
     <AccordionPrimitive.Item value={value} asChild>
       <Box
@@ -89,10 +89,10 @@ export function AccordionItem({
           className={css({
             '@media screen and (prefers-reduced-motion: no-preference)': {
               '&[data-state="open"]': {
-                animation: `${openAnimation} ${animation.standard.duration}ms ${animation.standard.easing}`,
+                animation: `${openAnimation} ${theme.animation.standard.duration}ms ${theme.animation.standard.easing}`,
               },
               '&[data-state="closed"]': {
-                animation: `${closeAnimation} ${animation.standard.duration}ms ${animation.standard.easing}`,
+                animation: `${closeAnimation} ${theme.animation.standard.duration}ms ${theme.animation.standard.easing}`,
               },
             },
           })}

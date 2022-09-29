@@ -12,7 +12,7 @@ import type { SidebarItem } from './types';
 
 /** Responsively render sidebar navigation items. */
 export const Sidebar = ({ items }: { items: SidebarItem[] }) => {
-  const { color, utils } = useTheme();
+  const theme = useTheme();
   const { events } = useRouter();
   const { sidebarIsOpen, closeSidebar } = useSidebarContext();
 
@@ -25,9 +25,9 @@ export const Sidebar = ({ items }: { items: SidebarItem[] }) => {
     };
   }, [closeSidebar, events]);
 
-  const fixedScrollableArea = utils.responsiveStyles({
+  const fixedScrollableArea = theme.utils.responsiveStyles({
     mobile: {
-      backgroundColor: color.background.surface,
+      backgroundColor: theme.color.background.surface,
       bottom: 0,
       left: 0,
       right: 0,
