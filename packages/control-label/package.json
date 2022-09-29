@@ -1,6 +1,6 @@
 {
   "name": "@spark-web/control-label",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "homepage": "https://github.com/brighte-labs/spark-web#readme",
   "repository": {
     "type": "git",
@@ -17,8 +17,8 @@
   "dependencies": {
     "@babel/runtime": "^7.19.0",
     "@emotion/css": "^11.9.0",
-    "@spark-web/box": "^1.0.9",
-    "@spark-web/text": "^1.1.1"
+    "@spark-web/box": "^1.1.0",
+    "@spark-web/text": "^1.1.2"
   },
   "devDependencies": {
     "@types/react": "^17.0.12",

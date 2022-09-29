@@ -1,6 +1,6 @@
 {
   "name": "@spark-web/next-utils",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "homepage": "https://github.com/brighte-labs/spark-web#readme",
   "repository": {
     "type": "git",
@@ -16,8 +16,8 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.19.0",
-    "@spark-web/link": "^1.0.9",
-    "@spark-web/ssr": "1.0.8"
+    "@spark-web/link": "^1.0.10",
+    "@spark-web/ssr": "1.0.9"
   },
   "devDependencies": {
     "@types/react": "^17.0.12",

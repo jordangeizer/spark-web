@@ -1,6 +1,6 @@
 {
   "name": "@spark-web/divider",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "homepage": "https://github.com/brighte-labs/spark-web#readme",
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
   "dependencies": {
     "@babel/runtime": "^7.19.0",
     "@emotion/css": "^11.9.0",
-    "@spark-web/theme": "^3.0.6"
+    "@spark-web/theme": "^3.1.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.12",

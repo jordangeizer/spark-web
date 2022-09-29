@@ -1,6 +1,6 @@
 {
   "name": "@spark-web/currency-input",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "homepage": "https://github.com/brighte-labs/spark-web#readme",
   "repository": {
     "type": "git",
@@ -17,16 +17,16 @@
   "dependencies": {
     "@babel/runtime": "^7.19.0",
     "@emotion/css": "^11.9.0",
-    "@spark-web/float-input": "^1.0.6",
-    "@spark-web/text": "^1.1.1",
-    "@spark-web/text-input": "^2.0.3"
+    "@spark-web/float-input": "^1.0.7",
+    "@spark-web/text": "^1.1.2",
+    "@spark-web/text-input": "^2.0.4"
   },
   "devDependencies": {
-    "@spark-web/field": "^3.0.5",
+    "@spark-web/field": "^3.0.6",
     "react": "^17.0.2"
   },
   "peerDependencies": {
-    "@spark-web/field": "^3.0.5",
+    "@spark-web/field": "^3.0.6",
     "react": ">=17.0.2"
   },
   "engines": {

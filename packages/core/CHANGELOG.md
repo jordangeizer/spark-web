@@ -1,5 +1,38 @@
 # @spark-web/core
 
+## 2.1.5
+
+### Patch Changes
+
+- [#245](https://github.com/brighte-labs/spark-web/pull/245)
+  [`21c6e08`](https://github.com/brighte-labs/spark-web/commit/21c6e08e821ada32feea7c34f1bf451573b5023d)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Remove explicit
+  JSX.Element return types
+
+- [#218](https://github.com/brighte-labs/spark-web/pull/218)
+  [`6fc8d1b`](https://github.com/brighte-labs/spark-web/commit/6fc8d1bc37e25d0cd622bc37f68a1d92eb5961b5)
+  Thanks [@nderkim](https://github.com/nderkim)! - Rename files to kebab case
+
+- [#222](https://github.com/brighte-labs/spark-web/pull/222)
+  [`7f93c45`](https://github.com/brighte-labs/spark-web/commit/7f93c45bbae8c765e10df9d0dd7615473797749b)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update
+  dependencies
+
+- [#242](https://github.com/brighte-labs/spark-web/pull/242)
+  [`6df05f7`](https://github.com/brighte-labs/spark-web/commit/6df05f764e4181c140d6547d6b897d0210468f6a)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - - Add homepage
+  and repository keys to package.json
+  - Add CHANGELOG and README to files key in package.json
+- Updated dependencies
+  [[`6fc8d1b`](https://github.com/brighte-labs/spark-web/commit/6fc8d1bc37e25d0cd622bc37f68a1d92eb5961b5),
+  [`7f93c45`](https://github.com/brighte-labs/spark-web/commit/7f93c45bbae8c765e10df9d0dd7615473797749b),
+  [`62f7de8`](https://github.com/brighte-labs/spark-web/commit/62f7de8a2e1df5ae088c093d3acdaa868d3f61fe),
+  [`6df05f7`](https://github.com/brighte-labs/spark-web/commit/6df05f764e4181c140d6547d6b897d0210468f6a)]:
+  - @spark-web/a11y@1.3.2
+  - @spark-web/link@1.0.10
+  - @spark-web/theme@3.1.0
+  - @spark-web/utils@1.2.3
+
 ## 2.1.4
 
 ### Patch Changes

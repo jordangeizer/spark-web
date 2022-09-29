@@ -1,5 +1,24 @@
 # @spark-web/utils
 
+## 1.2.3
+
+### Patch Changes
+
+- [#218](https://github.com/brighte-labs/spark-web/pull/218)
+  [`6fc8d1b`](https://github.com/brighte-labs/spark-web/commit/6fc8d1bc37e25d0cd622bc37f68a1d92eb5961b5)
+  Thanks [@nderkim](https://github.com/nderkim)! - Rename files to kebab case
+
+- [#222](https://github.com/brighte-labs/spark-web/pull/222)
+  [`7f93c45`](https://github.com/brighte-labs/spark-web/commit/7f93c45bbae8c765e10df9d0dd7615473797749b)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Update
+  dependencies
+
+- [#242](https://github.com/brighte-labs/spark-web/pull/242)
+  [`6df05f7`](https://github.com/brighte-labs/spark-web/commit/6df05f764e4181c140d6547d6b897d0210468f6a)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - - Add homepage
+  and repository keys to package.json
+  - Add CHANGELOG and README to files key in package.json
+
 ## 1.2.2
 
 ### Patch Changes

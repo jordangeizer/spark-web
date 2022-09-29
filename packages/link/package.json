@@ -1,6 +1,6 @@
 {
   "name": "@spark-web/link",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "homepage": "https://github.com/brighte-labs/spark-web#readme",
   "repository": {
     "type": "git",
@@ -16,8 +16,8 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.19.0",
-    "@spark-web/box": "^1.0.9",
-    "@spark-web/utils": "^1.2.2",
+    "@spark-web/box": "^1.1.0",
+    "@spark-web/utils": "^1.2.3",
     "dedent": "^0.7.0"
   },
   "devDependencies": {
