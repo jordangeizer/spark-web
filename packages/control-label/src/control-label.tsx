@@ -17,7 +17,7 @@ export function ControlLabel({
   disabled = false,
   htmlFor,
   size = 'small',
-}: ControlLabelProps): JSX.Element {
+}: ControlLabelProps) {
   return (
     <Box
       as="label"

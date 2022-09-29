@@ -56,7 +56,7 @@ export function AccordionItem({
   label,
   level,
   value,
-}: AccordionItemProps): JSX.Element {
+}: AccordionItemProps) {
   const { animation } = useTheme();
   return (
     <AccordionPrimitive.Item value={value} asChild>
@@ -108,7 +108,7 @@ export type AccordionProps =
   | (Omit<AccordionSingleProps, 'asChild'> & RefAttributes<HTMLDivElement>)
   | (Omit<AccordionMultipleProps, 'asChild'> & RefAttributes<HTMLDivElement>);
 
-export function Accordion({ children, ...rest }: AccordionProps): JSX.Element {
+export function Accordion({ children, ...rest }: AccordionProps) {
   return (
     <AccordionPrimitive.Root asChild {...rest}>
       <Stack gap="medium" width="full">

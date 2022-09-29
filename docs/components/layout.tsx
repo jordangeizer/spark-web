@@ -13,7 +13,7 @@ export function Layout({
 }: {
   navigation: SidebarItem[];
   children: ReactNode;
-}): JSX.Element {
+}) {
   const theme = useTheme();
   return (
     <SidebarProvider>

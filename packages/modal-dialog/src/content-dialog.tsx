@@ -220,7 +220,7 @@ function DialogClose() {
 
 // Dialog Close Button
 // ------------------------------
-export function DialogCloseButton(): JSX.Element {
+export function DialogCloseButton() {
   return <DialogPrimitive.Close />;
 }
 
@@ -262,7 +262,7 @@ export function ContentDialog({
   isOpen,
   onToggle,
   size,
-}: ContentDialogProps): JSX.Element {
+}: ContentDialogProps) {
   const theme = useTheme();
   return (
     <DialogPrimitive.Root open={isOpen} onOpenChange={onToggle}>

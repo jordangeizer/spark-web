@@ -5,12 +5,7 @@ import { Text } from '@spark-web/text';
 import { useTheme } from '@spark-web/theme';
 import type { ReactNode } from 'react';
 
-export function MdxTable({
-  children,
-  ...rest
-}: {
-  children: ReactNode;
-}): JSX.Element {
+export function MdxTable({ children, ...rest }: { children: ReactNode }) {
   const theme = useTheme();
   return (
     <Box
@@ -37,12 +32,7 @@ export function MdxTable({
   );
 }
 
-export function MdxThead({
-  children,
-  ...rest
-}: {
-  children: ReactNode;
-}): JSX.Element {
+export function MdxThead({ children, ...rest }: { children: ReactNode }) {
   return (
     <Box as="thead" background="surface" {...rest}>
       {children}
@@ -50,12 +40,7 @@ export function MdxThead({
   );
 }
 
-export function MdxTr({
-  children,
-  ...rest
-}: {
-  children: ReactNode;
-}): JSX.Element {
+export function MdxTr({ children, ...rest }: { children: ReactNode }) {
   const theme = useTheme();
   return (
     <Box
@@ -76,12 +61,7 @@ export function MdxTr({
   );
 }
 
-export function MdxTh({
-  children,
-  ...rest
-}: {
-  children: ReactNode;
-}): JSX.Element {
+export function MdxTh({ children, ...rest }: { children: ReactNode }) {
   const { border, spacing } = useTheme();
   const textStyles = useHeading({ align: 'left', level: '4' });
   return (
@@ -104,7 +84,7 @@ export type MdxTdProps = {
   children: ReactNode;
 };
 
-export function MdxTd({ children, ...rest }: MdxTdProps): JSX.Element {
+export function MdxTd({ children, ...rest }: MdxTdProps) {
   const theme = useTheme();
   return (
     <Box

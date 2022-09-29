@@ -31,7 +31,7 @@ export function CodeBlock({
   live,
   metastring,
   scope,
-}: CodeBlockProps): JSX.Element {
+}: CodeBlockProps) {
   const { color, border } = useTheme();
 
   const language = className?.replace(/language-/, '');

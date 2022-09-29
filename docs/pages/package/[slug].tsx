@@ -129,7 +129,7 @@ export default function Packages({
   title,
   toc,
   props,
-}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const packageSlug = packageName.replace('@spark-web/', '');
 
   return (

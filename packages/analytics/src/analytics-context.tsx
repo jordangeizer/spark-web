@@ -10,10 +10,7 @@ export type AnalyticsContextProps = {
   data: AnalyticsEventData;
 };
 
-export function AnalyticsContext({
-  data,
-  children,
-}: AnalyticsContextProps): JSX.Element {
+export function AnalyticsContext({ data, children }: AnalyticsContextProps) {
   const parentContext = useContext(AnalyticsContextContext) || {};
   const childContext = { ...parentContext, ...data };
 

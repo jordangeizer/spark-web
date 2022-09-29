@@ -152,7 +152,7 @@ export function ReactLive({
   demo?: boolean;
   scope: { [key: string]: any };
   initialCompiledResult: string;
-}): JSX.Element {
+}) {
   const collapsible = useRef(false);
   const editorWrapperRef = useRef<HTMLDivElement | null>(null);
   const [collapsed, setCollapsed] = useState(true);

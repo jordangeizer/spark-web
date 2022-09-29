@@ -17,7 +17,7 @@ export type AnalyticsListenerProps = {
 export function AnalyticsListener({
   children,
   onEvent,
-}: AnalyticsListenerProps): JSX.Element {
+}: AnalyticsListenerProps) {
   const parentContext = useContext<AnalyticsEventHandler>(
     AnalyticsListenerContext
   );

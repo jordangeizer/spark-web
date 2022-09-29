@@ -24,7 +24,7 @@ export const resolveButtonChildren = ({
   prominence,
   size,
   tone,
-}: ResolveButtonChildren): JSX.Element[] => {
+}: ResolveButtonChildren) => {
   const variant = variants[prominence][tone];
 
   return Children.map(children, child => {

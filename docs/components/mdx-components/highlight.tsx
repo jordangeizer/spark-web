@@ -33,11 +33,7 @@ const getShouldHighlightLine = (meta = '') => {
   }
 };
 
-export function Highlight({
-  code,
-  language,
-  metastring,
-}: HighlightProps): JSX.Element {
+export function Highlight({ code, language, metastring }: HighlightProps) {
   const shouldHighlightLine = getShouldHighlightLine(metastring);
   return (
     <PrismHighlight

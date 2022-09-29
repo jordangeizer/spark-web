@@ -15,7 +15,7 @@ export const RadioGroup = <Value extends string>({
   id: idProp,
   'aria-describedby': ariaDescribedBy,
   tone = 'neutral',
-}: RadioGroupProps<Value>): JSX.Element => {
+}: RadioGroupProps<Value>) => {
   const context = useRadioGroupState({
     disabled,
     name,

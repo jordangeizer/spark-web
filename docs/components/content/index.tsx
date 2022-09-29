@@ -26,7 +26,7 @@ export function DocsContent({
   toc?: HeadingData[];
   includeNavigation?: boolean;
   pageTitle?: string;
-}): JSX.Element {
+}) {
   const { utils } = useTheme();
 
   const responsiveStyles = utils.responsiveStyles({

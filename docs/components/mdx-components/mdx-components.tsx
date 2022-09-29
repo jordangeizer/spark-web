@@ -25,7 +25,7 @@ interface CodeProps {
   metastring?: string;
 }
 
-function Code({ children, className, demo, ...props }: CodeProps): JSX.Element {
+function Code({ children, className, demo, ...props }: CodeProps) {
   const trimmedChildren = children.trim();
   // Please forgive me, I had no choice!
   // See: https://github.com/mdx-js/mdx/discussions/1891#discussioncomment-1936179

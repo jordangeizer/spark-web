@@ -25,6 +25,6 @@ const styles = `
 }
 `.trim();
 
-export function AesteticoStylesheet(): JSX.Element {
+export function AesteticoStylesheet() {
   return <Global styles={styles} />;
 }
