@@ -8,8 +8,10 @@ import { Link } from '@spark-web/link';
 import { useTheme } from '@spark-web/theme';
 
 import { GITHUB_URL, HEADER_HEIGHT, SIDEBAR_WIDTH } from './constants';
+import { MAIN_ID } from './content';
 // import { Search } from './search';
 import { useSidebarContext } from './sidebar';
+import { SkipLink } from './skip-link';
 import { BrighteLogo, GitHubIcon } from './vectors/fill';
 
 export function Header() {
@@ -33,6 +35,7 @@ export function Header() {
           alignItems="center"
           className={css({ height: HEADER_HEIGHT })}
         >
+          <SkipLink href={`#${MAIN_ID}`}>Skip to main content</SkipLink>
           <MobileMenu />
           <HomeLink />
           {/* <Search /> */}

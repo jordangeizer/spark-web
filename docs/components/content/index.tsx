@@ -14,7 +14,7 @@ import type { HeadingData } from '../../utils/generate-toc';
 import { ASIDE_WIDTH, HEADER_HEIGHT, SIDEBAR_WIDTH } from '../constants';
 import { TocContextProvider, useIsActive, useTocContext } from './toc-context';
 
-const MAIN_ID = 'spark-docs-main';
+export const MAIN_ID = 'spark-docs-main';
 
 export function DocsContent({
   children,
