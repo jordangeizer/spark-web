@@ -6,32 +6,42 @@ isExperimentalPackage: false
 
 Constrained, purposeful heading styles as a component.
 
+## Level
+
+Controls the size of the heading and maps to the appropriate heading element
+(`h1`, `h2`, `h3` or `h4`). The rendered element can be overridden with the `as`
+prop.
+
 ```jsx live
 const headingLevels = ['1', '2', '3', '4'];
 
 return (
-  <Columns collapseBelow="tablet" gap="xlarge">
-    <Stack gap="large">
-      {headingLevels.map(headingLevel => (
-        <Heading key={headingLevel} level={headingLevel} tone="neutral">
-          Heading level {headingLevel}
-        </Heading>
-      ))}
-    </Stack>
-    <Stack gap="large">
-      {headingLevels.map(headingLevel => (
-        <Heading key={headingLevel} level={headingLevel} tone="primary">
-          Heading level {headingLevel}
-        </Heading>
-      ))}
-    </Stack>
-  </Columns>
+  <Stack gap="large">
+    {headingLevels.map(headingLevel => (
+      <Heading key={headingLevel} as="h4" level={headingLevel} tone="neutral">
+        Heading level {headingLevel}
+      </Heading>
+    ))}
+  </Stack>
 );
 ```
 
-## Example
+## Tone
 
-### Alignment
+Headings can be either "neutral" or "primary".
+
+```jsx live
+<Stack gap="large">
+  <Heading level="1" tone="neutral">
+    Heading neutral
+  </Heading>
+  <Heading level="1" tone="primary">
+    Heading primary
+  </Heading>
+</Stack>
+```
+
+## Alignment
 
 Text can be aligned with the `align` prop.
 
@@ -49,7 +59,7 @@ Text can be aligned with the `align` prop.
 </Stack>
 ```
 
-### Truncation
+## Truncation
 
 Truncate text to a single line using the `truncate` prop. Useful for displaying
 user-generated content that may not fit within your layout.
@@ -62,7 +72,7 @@ user-generated content that may not fit within your layout.
 </Stack>
 ```
 
-### Contrast
+## Contrast
 
 To ensure headings have sufficient contrast, when on a dark background the
 foreground colour is inverted.
@@ -78,6 +88,3 @@ foreground colour is inverted.
 <PropsTable displayName="Heading" />
 
 Extra props are passed into the underlying [`Box`](/package/box) component.
-
-[data-attribute-map]:
-  https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/utils/src/internal/buildDataAttributes.ts#L1

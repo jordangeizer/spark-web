@@ -47,10 +47,6 @@ export const defaultTokens = {
       semibold: 600,
     },
     heading: {
-      weight: {
-        weak: 'regular',
-        regular: 'semibold',
-      },
       level: {
         '1': {
           mobile: {
