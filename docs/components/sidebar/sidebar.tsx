@@ -46,7 +46,6 @@ export const Sidebar = ({ items }: { items: SidebarItem[] }) => {
         overflow="auto"
         paddingX={{ tablet: 'large' }}
         paddingY={{ mobile: 'medium', tablet: 'large' }}
-        zIndex="sticky"
         className={css(fixedScrollableArea)}
       >
         <nav aria-label="Page navigation">

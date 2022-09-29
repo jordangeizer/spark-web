@@ -72,7 +72,7 @@ export const mdxComponents: Record<string, ReactNode> = {
   strong: Strong,
   ul: (props: TextListProps) => <TextListMdx {...props} type="bullet" />,
   ol: (props: TextListProps) => <TextListMdx {...props} type="number" />,
-  li: Text,
+  li: (props: TextProps) => <Text baseline={false} {...props} />,
   table: MdxTable,
   thead: MdxThead,
   tr: MdxTr,

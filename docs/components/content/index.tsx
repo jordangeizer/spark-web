@@ -88,11 +88,16 @@ const Aside = () => {
     <Hidden below="wide">
       <Box
         as="aside"
-        padding="large"
+        background="surface"
+        overflow="auto"
+        paddingX="large"
         paddingY="xxlarge"
         position="fixed"
-        overflow="auto"
-        className={css({ width: ASIDE_WIDTH })}
+        bottom={0}
+        style={{
+          top: HEADER_HEIGHT,
+          width: ASIDE_WIDTH,
+        }}
       >
         <TableOfContents />
       </Box>
