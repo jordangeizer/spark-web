@@ -50,6 +50,7 @@ const FocusIndicator = ({ invalid }: { invalid: boolean }) => {
       left={0}
       right={0}
       top={0}
+      shadow="small"
       className={css({ pointerEvents: 'none' })}
     />
   );

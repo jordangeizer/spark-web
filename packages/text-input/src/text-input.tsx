@@ -131,7 +131,6 @@ export const useInputStyles = ({
       height: 'medium',
       paddingLeft: startAdornment ? 'none' : 'medium',
       paddingRight: endAdornment ? 'none' : 'medium',
-      shadow: 'small',
       width: 'full',
     },
     {
