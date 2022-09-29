@@ -2,12 +2,13 @@ const babelConfig = require('../babel.config');
 const webpack = require('webpack');
 
 module.exports = {
-  title: 'Playroom | Brighte Spark',
-  components: './playroom/components.ts',
-  outputPath: './public/playroom/',
+  title: 'Spark Web',
   baseUrl: '/playroom/',
   exampleCode: `<Text>Hello world</Text>`,
+  components: './playroom/components.ts',
   frameComponent: './playroom/frame.tsx',
+  openBrowser: false,
+  outputPath: './public/playroom/',
   port: 9000,
   typeScriptFiles: [
     '../packages/**/*.{ts,tsx}',

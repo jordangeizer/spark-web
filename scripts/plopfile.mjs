@@ -10,14 +10,13 @@ export default function newPackage(
       {
         type: 'input',
         name: 'packageName',
-        message: 'Package name, all lowercase (e.g. button)',
+        message: 'Package name, please use kebab-case (e.g. text-input)',
         validate: answer => answer.length > 0,
       },
       {
         type: 'input',
         name: 'componentName',
-        message:
-          'Component name, please use appropriate uppercase (e.g. Button)',
+        message: 'Component name, please use PascalCase (e.g. TextInput)',
         validate: answer => answer.length > 0,
       },
       {
@@ -55,10 +54,16 @@ export default function newPackage(
 
       actions.push({
         type: 'modify',
-        path: '../docs/package.json',
+        path: '../packages/design-system/package.json',
         pattern: /"dependencies": {/,
-        template:
-          '"dependencies": {\n"@spark-web/{{packageName}}": "^0.0.0",\n',
+        template: '"dependencies": {\n"@spark-web/{{packageName}}": "0.0.0",\n',
+      });
+
+      actions.push({
+        type: 'modify',
+        path: '../packages/design-system/src/index.ts',
+        pattern: /\n/,
+        template: "\nexport * from '@spark-web/{{ packageName }}';\n",
       });
 
       return actions;

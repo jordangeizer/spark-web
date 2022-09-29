@@ -1,7 +1,9 @@
 import { css } from '@emotion/css';
-import { visuallyHiddenStyles } from '@spark-web/a11y';
-import { Box } from '@spark-web/box';
-import { ButtonLink } from '@spark-web/button';
+import {
+  Box,
+  ButtonLink,
+  visuallyHiddenStyles,
+} from '@spark-web/design-system';
 
 export type SkipLinkProps = {
   children: string;

@@ -1,6 +1,4 @@
-import { Stack } from '@spark-web/stack';
-import { Text } from '@spark-web/text';
-import { TextLink } from '@spark-web/text-link';
+import { Stack, Text, TextLink } from '@spark-web/design-system';
 
 import { InlineCode } from '../example-helpers';
 import { MdxTable, MdxTd, MdxTh, MdxThead, MdxTr } from './mdx-table';

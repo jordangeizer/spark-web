@@ -1,23 +1,27 @@
-import { Emoji } from '@spark-web/a11y';
-import type { BoxProps } from '@spark-web/box';
-import { Box } from '@spark-web/box';
-import { Columns } from '@spark-web/columns';
-import type { ContainerProps } from '@spark-web/container';
-import { Container } from '@spark-web/container';
-import type { DividerProps } from '@spark-web/divider';
-import { Divider } from '@spark-web/divider';
-import type { HeadingProps } from '@spark-web/heading';
-import { Heading } from '@spark-web/heading';
-import { Inline } from '@spark-web/inline';
-import type { RowProps } from '@spark-web/row';
-import { Row } from '@spark-web/row';
-import type { StackProps } from '@spark-web/stack';
-import { Stack } from '@spark-web/stack';
-import type { TextProps } from '@spark-web/text';
-import { Text } from '@spark-web/text';
-import { TextLink } from '@spark-web/text-link';
-import type { BrighteTheme } from '@spark-web/theme';
-import { useTheme } from '@spark-web/theme';
+import type {
+  BoxProps,
+  BrighteTheme,
+  ContainerProps,
+  DividerProps,
+  HeadingProps,
+  RowProps,
+  StackProps,
+  TextProps,
+} from '@spark-web/design-system';
+import {
+  Box,
+  Columns,
+  Container,
+  Divider,
+  Emoji,
+  Heading,
+  Inline,
+  Row,
+  Stack,
+  Text,
+  TextLink,
+  useTheme,
+} from '@spark-web/design-system';
 import dedent from 'dedent';
 import type { ReactNode } from 'react';
 import { createElement } from 'react';
