@@ -1,11 +1,18 @@
 {
   "name": "@spark-web/text-area",
   "version": "1.0.10",
-  "license": "MIT",
+  "homepage": "https://github.com/brighte-labs/spark-web#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brighte-labs/spark-web.git",
+    "directory": "packages/text-area"
+  },
   "main": "dist/spark-web-text-area.cjs.js",
   "module": "dist/spark-web-text-area.esm.js",
   "files": [
-    "dist"
+    "CHANGELOG.md",
+    "dist",
+    "README.md"
   ],
   "dependencies": {
     "@babel/runtime": "^7.19.0",

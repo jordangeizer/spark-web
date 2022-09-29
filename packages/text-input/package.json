@@ -1,11 +1,18 @@
 {
   "name": "@spark-web/text-input",
   "version": "2.0.3",
-  "license": "MIT",
+  "homepage": "https://github.com/brighte-labs/spark-web#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brighte-labs/spark-web.git",
+    "directory": "packages/text-input"
+  },
   "main": "dist/spark-web-text-input.cjs.js",
   "module": "dist/spark-web-text-input.esm.js",
   "files": [
-    "dist"
+    "CHANGELOG.md",
+    "dist",
+    "README.md"
   ],
   "dependencies": {
     "@babel/runtime": "^7.19.0",

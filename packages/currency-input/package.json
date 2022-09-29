@@ -1,11 +1,18 @@
 {
   "name": "@spark-web/currency-input",
   "version": "2.0.4",
-  "license": "MIT",
+  "homepage": "https://github.com/brighte-labs/spark-web#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brighte-labs/spark-web.git",
+    "directory": "packages/currency-input"
+  },
   "main": "dist/spark-web-currency-input.cjs.js",
   "module": "dist/spark-web-currency-input.esm.js",
   "files": [
-    "dist"
+    "CHANGELOG.md",
+    "dist",
+    "README.md"
   ],
   "dependencies": {
     "@babel/runtime": "^7.19.0",

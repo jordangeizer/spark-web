@@ -1,11 +1,18 @@
 {
   "name": "@spark-web/float-input",
   "version": "1.0.6",
-  "license": "MIT",
+  "homepage": "https://github.com/brighte-labs/spark-web#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brighte-labs/spark-web.git",
+    "directory": "packages/float-input"
+  },
   "main": "dist/spark-web-float-input.cjs.js",
   "module": "dist/spark-web-float-input.esm.js",
   "files": [
-    "dist"
+    "CHANGELOG.md",
+    "dist",
+    "README.md"
   ],
   "dependencies": {
     "@babel/runtime": "^7.19.0",

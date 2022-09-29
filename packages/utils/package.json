@@ -1,7 +1,12 @@
 {
   "name": "@spark-web/utils",
   "version": "1.2.2",
-  "license": "MIT",
+  "homepage": "https://github.com/brighte-labs/spark-web#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brighte-labs/spark-web.git",
+    "directory": "packages/utils"
+  },
   "main": "dist/spark-web-utils.cjs.js",
   "module": "dist/spark-web-utils.esm.js",
   "files": [

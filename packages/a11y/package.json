@@ -1,11 +1,19 @@
 {
   "name": "@spark-web/a11y",
   "version": "1.3.1",
+  "homepage": "https://github.com/brighte-labs/spark-web#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brighte-labs/spark-web.git",
+    "directory": "packages/a11y"
+  },
   "license": "MIT",
   "main": "dist/spark-web-a11y.cjs.js",
   "module": "dist/spark-web-a11y.esm.js",
   "files": [
-    "dist"
+    "CHANGELOG.md",
+    "dist",
+    "README.md"
   ],
   "dependencies": {
     "@babel/runtime": "^7.19.0",

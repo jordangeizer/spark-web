@@ -1,11 +1,18 @@
 {
   "name": "@spark-web/analytics",
   "version": "1.0.10",
-  "license": "MIT",
+  "homepage": "https://github.com/brighte-labs/spark-web#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brighte-labs/spark-web.git",
+    "directory": "packages/analytics"
+  },
   "main": "dist/spark-web-analytics.cjs.js",
   "module": "dist/spark-web-analytics.esm.js",
   "files": [
-    "dist"
+    "CHANGELOG.md",
+    "dist",
+    "README.md"
   ],
   "dependencies": {
     "@babel/runtime": "^7.19.0"

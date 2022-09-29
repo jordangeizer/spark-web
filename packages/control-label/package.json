@@ -1,11 +1,18 @@
 {
   "name": "@spark-web/control-label",
   "version": "1.0.9",
-  "license": "MIT",
+  "homepage": "https://github.com/brighte-labs/spark-web#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brighte-labs/spark-web.git",
+    "directory": "packages/control-label"
+  },
   "main": "dist/spark-web-control-label.cjs.js",
   "module": "dist/spark-web-control-label.esm.js",
   "files": [
-    "dist"
+    "CHANGELOG.md",
+    "dist",
+    "README.md"
   ],
   "dependencies": {
     "@babel/runtime": "^7.19.0",

@@ -1,11 +1,18 @@
 {
   "name": "@spark-web/modal-dialog",
   "version": "2.0.4",
-  "license": "MIT",
+  "homepage": "https://github.com/brighte-labs/spark-web#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brighte-labs/spark-web.git",
+    "directory": "packages/modal-dialog"
+  },
   "main": "dist/spark-web-modal-dialog.cjs.js",
   "module": "dist/spark-web-modal-dialog.esm.js",
   "files": [
-    "dist"
+    "CHANGELOG.md",
+    "dist",
+    "README.md"
   ],
   "dependencies": {
     "@babel/runtime": "^7.19.0",

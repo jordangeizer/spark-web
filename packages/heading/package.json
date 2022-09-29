@@ -1,11 +1,18 @@
 {
   "name": "@spark-web/heading",
   "version": "2.1.0",
-  "license": "MIT",
+  "homepage": "https://github.com/brighte-labs/spark-web#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brighte-labs/spark-web.git",
+    "directory": "packages/heading"
+  },
   "main": "dist/spark-web-heading.cjs.js",
   "module": "dist/spark-web-heading.esm.js",
   "files": [
-    "dist"
+    "CHANGELOG.md",
+    "dist",
+    "README.md"
   ],
   "dependencies": {
     "@babel/runtime": "^7.19.0",
