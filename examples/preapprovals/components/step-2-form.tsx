@@ -340,6 +340,7 @@ const RecurringPaymentFrequencySelect = forwardRef<
         ref={ref}
         borderRadius="small"
         height="medium"
+        paddingLeft="medium"
         paddingRight="xxlarge"
         className={css([
           {
