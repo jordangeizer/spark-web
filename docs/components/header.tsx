@@ -13,7 +13,6 @@ import {
 
 import { GITHUB_URL, HEADER_HEIGHT, SIDEBAR_WIDTH } from './constants';
 import { MAIN_ID } from './content';
-// import { Search } from './search';
 import { useSidebarContext } from './sidebar';
 import { SkipLink } from './skip-link';
 import { BrighteLogo, GitHubIcon } from './vectors/fill';
@@ -42,7 +41,6 @@ export function Header() {
           <SkipLink href={`#${MAIN_ID}`}>Skip to main content</SkipLink>
           <MobileMenu />
           <HomeLink />
-          {/* <Search /> */}
           <GitHub />
         </Box>
       </Container>
