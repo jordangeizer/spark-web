@@ -1,12 +1,42 @@
 import { Box } from '@spark-web/box';
-import type { NextPage } from 'next';
+import type {
+  GetServerSideProps,
+  InferGetServerSidePropsType,
+  NextPage,
+} from 'next';
 import { useRouter } from 'next/router';
 
 import { Layout } from '../components/layout';
 import { Slant } from '../components/slant';
+import type { Step1FormSchema } from '../components/step-1-form';
 import { Step1Form } from '../components/step-1-form';
+import { fakeSubmit } from '../utils';
 
-const Page: NextPage = () => {
+const exampleData: Step1FormSchema = {
+  name: 'Fred',
+  mobile: '0412356789',
+  email: 'fred@bob.com',
+};
+
+export const getServerSideProps: GetServerSideProps<{
+  initialValues?: Step1FormSchema;
+}> = async context => {
+  if (context.query.prefill === 'true') {
+    return {
+      props: {
+        initialValues: exampleData,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+};
+
+const Page: NextPage<
+  InferGetServerSidePropsType<typeof getServerSideProps>
+> = ({ initialValues }) => {
   const router = useRouter();
 
   return (
@@ -27,7 +57,13 @@ const Page: NextPage = () => {
           paddingX="large"
         />
       </Slant>
-      <Step1Form onSubmit={() => router.push('step-2')} />
+      <Step1Form
+        initialValues={initialValues}
+        onSubmit={async data => {
+          await fakeSubmit(data);
+          router.push('step-2');
+        }}
+      />
     </Layout>
   );
 };

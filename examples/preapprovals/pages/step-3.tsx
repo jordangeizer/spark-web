@@ -1,10 +1,39 @@
-import type { NextPage } from 'next';
+import type {
+  GetServerSideProps,
+  InferGetServerSidePropsType,
+  NextPage,
+} from 'next';
 import { useRouter } from 'next/router';
 
 import { Layout } from '../components/layout';
+import type { Step3FormSchema } from '../components/step-3-form';
 import { Step3Form } from '../components/step-3-form';
+import { fakeSubmit } from '../utils';
 
-const Page: NextPage = () => {
+const exampleData: Step3FormSchema = {
+  amount: 0,
+  confirmation: false,
+};
+
+export const getServerSideProps: GetServerSideProps<{
+  initialValues?: Step3FormSchema;
+}> = async context => {
+  if (context.query.prefill === 'true') {
+    return {
+      props: {
+        initialValues: exampleData,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+};
+
+const Page: NextPage<
+  InferGetServerSidePropsType<typeof getServerSideProps>
+> = ({ initialValues }) => {
   const router = useRouter();
 
   return (
@@ -23,7 +52,13 @@ const Page: NextPage = () => {
         '© 2022 Brighte Capital Pty Ltd (ABN 74 609 165 906)',
       ]}
     >
-      <Step3Form onSubmit={() => router.push('/')} />
+      <Step3Form
+        initialValues={initialValues}
+        onSubmit={async data => {
+          await fakeSubmit(data);
+          router.push('/');
+        }}
+      />
     </Layout>
   );
 };

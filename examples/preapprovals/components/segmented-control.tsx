@@ -1,66 +1,90 @@
 import { css } from '@emotion/css';
+import { useFocusRing, useId, VisuallyHidden } from '@spark-web/a11y';
 import { Box } from '@spark-web/box';
+import { Row } from '@spark-web/row';
 import { Text } from '@spark-web/text';
 import { useTheme } from '@spark-web/theme';
+import type { ReactNode } from 'react';
+import { forwardRef } from 'react';
 
-export const SegmentedControl = ({
-  name,
-  options,
-  borderRadius = 'small',
-}: {
-  name: string;
-  options: { label: string; value: string }[];
-  borderRadius?: 'full' | 'small' | 'medium' | 'large';
-}) => {
-  const theme = useTheme();
+const borderRadius = 'small';
 
+export const SegmentedControl = ({ children }: { children: ReactNode }) => {
   return (
-    <Box height="medium" display="flex">
-      {options.map(option => (
-        <Box
-          key={option.value}
-          className={css({
-            flexBasis: 0,
-            flexGrow: 1,
-            position: 'relative',
-            ':first-child > label': {
-              borderTopLeftRadius: theme.border.radius[borderRadius],
-              borderBottomLeftRadius: theme.border.radius[borderRadius],
-            },
-            ':last-child > label': {
-              borderTopRightRadius: theme.border.radius[borderRadius],
-              borderBottomRightRadius: theme.border.radius[borderRadius],
-            },
-          })}
-        >
-          <Box as="input" type="radio" id={option.value} name={name} />
-          <Box
-            as="label"
-            htmlFor={option.value}
-            background="surface"
-            border="field"
-            cursor="pointer"
-            className={css({
-              position: 'absolute',
-              inset: 0,
-              ':hover': {
-                borderColor: theme.border.color.primaryHover,
-              },
-              'input:checked + &': {
-                backgroundColor: theme.color.background.primary,
-                '*': {
-                  color: theme.color.foreground.neutralInverted,
-                },
-              },
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            })}
-          >
-            <Text>{option.label}</Text>
-          </Box>
-        </Box>
-      ))}
-    </Box>
+    <Row
+      height="medium"
+      dividers
+      shadow="small"
+      borderRadius={borderRadius}
+      border="standard"
+    >
+      {children}
+    </Row>
   );
 };
+
+export const SegmentedControlOption = forwardRef<
+  HTMLInputElement,
+  { label: string }
+>(function SegmentedControlOption({ label, ...inputProps }, ref) {
+  const theme = useTheme();
+  const focusStyles = useFocusRing();
+  const id = useId();
+
+  return (
+    <Box
+      flex={1}
+      position="relative"
+      className={css({
+        ':first-child > label': {
+          borderTopLeftRadius: theme.border.radius[borderRadius],
+          borderBottomLeftRadius: theme.border.radius[borderRadius],
+        },
+        ':last-child > label': {
+          borderTopRightRadius: theme.border.radius[borderRadius],
+          borderBottomRightRadius: theme.border.radius[borderRadius],
+        },
+      })}
+    >
+      <VisuallyHidden
+        {...inputProps}
+        as="input"
+        type="radio"
+        id={id}
+        ref={ref}
+      />
+      <Box
+        as="label"
+        htmlFor={id}
+        background="surface"
+        cursor="pointer"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        height="full"
+        userSelect="none"
+        className={css({
+          ':hover': {
+            background: theme.backgroundInteractions.primaryLowHover,
+          },
+          'input:checked + &': {
+            background: theme.color.background.primary,
+            '*': {
+              color: theme.color.foreground.neutralInverted,
+            },
+          },
+          'input:active + &': {
+            background: theme.backgroundInteractions.primaryLowActive,
+          },
+          'input:focus + &': {
+            ...focusStyles,
+            position: 'relative',
+            zIndex: theme.elevation.sticky,
+          },
+        })}
+      >
+        <Text>{label}</Text>
+      </Box>
+    </Box>
+  );
+});
