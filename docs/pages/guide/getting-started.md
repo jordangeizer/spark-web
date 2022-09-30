@@ -141,22 +141,16 @@ For Next.js applications, we've made it _even easier_ for you and provided a
 This component uses the Next.js link component for client-side transitions and
 will fall back to using an `<a>` for external links.
 
-The `@spark-web/core` package also exports the `AesteticoStylesheet` component.
-This is used to set up the `@font-face` declarations to load the custom font
-that Brighte uses from our CDN. This component should also be rendered inside of
-`_app`.
-
 Now your `_app` file should look something like this:
 
 ```tsx
-import { AesteticoStylesheet, SparkProvider } from '@spark-web/core';
+import { SparkProvider } from '@spark-web/core';
 import { UniversalNextLink } from '@spark-web/next-utils';
 import type { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SparkProvider linkComponent={UniversalNextLink}>
-      <AesteticoStylesheet />
       <Component {...pageProps} />
     </SparkProvider>
   );
