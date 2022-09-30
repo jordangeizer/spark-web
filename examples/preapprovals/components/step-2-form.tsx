@@ -1,12 +1,15 @@
 import { css } from '@emotion/css';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useFocusRing } from '@spark-web/a11y';
 import { Alert } from '@spark-web/alert';
+import { Box } from '@spark-web/box';
 import { Button } from '@spark-web/button';
 import { Field } from '@spark-web/field';
 import { Fieldset } from '@spark-web/fieldset';
+import { ChevronDownIcon } from '@spark-web/icon';
 import { Select } from '@spark-web/select';
 import { Stack } from '@spark-web/stack';
-import { Text } from '@spark-web/text';
+import { Text, useText } from '@spark-web/text';
 import { InputAdornment, TextInput } from '@spark-web/text-input';
 import { useTheme } from '@spark-web/theme';
 import type { ReactNode } from 'react';
@@ -310,22 +313,56 @@ const RecurringPaymentFrequencySelect = forwardRef<
   { options: { label: string; value: string }[] }
 >(function RecurringPaymentFrequencySelect({ options }, ref) {
   const theme = useTheme();
+  const focusStyles = useFocusRing({ always: true });
+  const textStyles = useText({
+    size: 'small',
+    tone: 'neutral',
+    weight: 'regular',
+    baseline: false,
+  });
 
   return (
-    <select
-      ref={ref}
-      className={css({
-        border: 'none',
-        outline: 'none',
-        fontFamily: theme.typography.fontFamily.display.name,
-        fontSize: '1rem', // TODO
-      })}
-    >
-      {options.map(({ label, value }) => (
-        <option key={label} value={value}>
-          {label}
-        </option>
-      ))}
-    </select>
+    <Box position="absolute" right={0}>
+      <Box
+        position="absolute"
+        top={0}
+        bottom={0}
+        right={0}
+        display="flex"
+        alignItems="center"
+        padding="medium"
+        className={css({ pointerEvents: 'none' })}
+      >
+        <ChevronDownIcon size="xxsmall" tone="placeholder" />
+      </Box>
+      <Box
+        as="select"
+        ref={ref}
+        borderRadius="small"
+        height="medium"
+        paddingRight="xxlarge"
+        className={css([
+          {
+            appearance: 'none',
+            border: '1px solid transparent',
+            background: 'none',
+            outline: 'none',
+            textAlign: 'right',
+
+            ':focus': {
+              borderColor: theme.border.color.fieldAccent,
+              ...focusStyles,
+            },
+          },
+          ...textStyles,
+        ])}
+      >
+        {options.map(({ label, value }) => (
+          <Box as="option" key={label} value={value}>
+            {label}
+          </Box>
+        ))}
+      </Box>
+    </Box>
   );
 });
