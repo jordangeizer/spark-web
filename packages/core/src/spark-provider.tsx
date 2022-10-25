@@ -32,7 +32,7 @@ export const SparkProvider = ({
       {loadCustomFonts && <AesteticoStylesheet />}
       {/* Minimum reset */}
       <Global
-        styles={`body{margin:0;padding:0;background:${theme.color.background.body}; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}`}
+        styles={`body{margin:0;padding:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}`}
       />
     </ThemeProvider>
   );
