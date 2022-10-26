@@ -1,5 +1,23 @@
 # @spark-web/design-system
 
+## 0.2.0
+
+### Minor Changes
+
+- [#216](https://github.com/brighte-labs/spark-web/pull/216)
+  [`dbfad22`](https://github.com/brighte-labs/spark-web/commit/dbfad220c84bb05ce5789baee6dad181dc9f7031)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Add DatePicker
+  component
+
+### Patch Changes
+
+- Updated dependencies
+  [[`0fa12eb`](https://github.com/brighte-labs/spark-web/commit/0fa12eb3650ad260b2d19ebedb0602e0430cf384),
+  [`bf8b25c`](https://github.com/brighte-labs/spark-web/commit/bf8b25cf0e41ec7776cd1f572b658f18d170e5d6),
+  [`dbfad22`](https://github.com/brighte-labs/spark-web/commit/dbfad220c84bb05ce5789baee6dad181dc9f7031)]:
+  - @spark-web/core@2.2.0
+  - @spark-web/date-picker@0.1.0
+
 ## 0.1.0
 
 ### Minor Changes

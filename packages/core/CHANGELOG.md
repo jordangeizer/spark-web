@@ -1,5 +1,21 @@
 # @spark-web/core
 
+## 2.2.0
+
+### Minor Changes
+
+- [#255](https://github.com/brighte-labs/spark-web/pull/255)
+  [`bf8b25c`](https://github.com/brighte-labs/spark-web/commit/bf8b25cf0e41ec7776cd1f572b658f18d170e5d6)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Load custom fonts
+  by default
+
+### Patch Changes
+
+- [#259](https://github.com/brighte-labs/spark-web/pull/259)
+  [`0fa12eb`](https://github.com/brighte-labs/spark-web/commit/0fa12eb3650ad260b2d19ebedb0602e0430cf384)
+  Thanks [@szhang-brighte](https://github.com/szhang-brighte)! - remove global
+  background color override
+
 ## 2.1.5
 
 ### Patch Changes
