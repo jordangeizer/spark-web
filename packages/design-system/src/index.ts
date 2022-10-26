@@ -12,6 +12,7 @@ export * from '@spark-web/container';
 export * from '@spark-web/control-label';
 export * from '@spark-web/core';
 export * from '@spark-web/currency-input';
+export * from '@spark-web/date-picker';
 export * from '@spark-web/divider';
 export * from '@spark-web/dropzone';
 export * from '@spark-web/field';
