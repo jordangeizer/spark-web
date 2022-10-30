@@ -1,5 +1,14 @@
 # @spark-web/combobox
 
+## 1.5.0
+
+### Minor Changes
+
+- [#260](https://github.com/brighte-labs/spark-web/pull/260)
+  [`9efaf0b`](https://github.com/brighte-labs/spark-web/commit/9efaf0bad5d620c6c33d52db307ed15fc51fe651)
+  Thanks [@szhang-brighte](https://github.com/szhang-brighte)! - Expose
+  menuPortalTarget prop from react-select
+
 ## 1.4.4
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @spark-web/design-system
 
+## 0.2.1
+
+### Patch Changes
+
+- Updated dependencies
+  [[`9efaf0b`](https://github.com/brighte-labs/spark-web/commit/9efaf0bad5d620c6c33d52db307ed15fc51fe651)]:
+  - @spark-web/combobox@1.5.0
+
 ## 0.2.0
 
 ### Minor Changes
