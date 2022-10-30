@@ -1,6 +1,6 @@
 # Spark Web Design System
 
-### Start Docs with playroom on local
+## Start Docs with playroom on local
 
 First, run the development server:
 

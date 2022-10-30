@@ -38,6 +38,9 @@ export type ComboboxProps<Item = unknown> = {
   /** Array of items for the user to select from. */
   items: Awaitable<(Item | GroupBase<Item>)[]>;
 
+  /** Whether the menu should use a portal, and where it should attach. */
+  menuPortalTarget?: HTMLElement | null;
+
   /** Called when an item is selected. */
   onChange?: (value: Nullable<Item>) => void;
 
@@ -73,16 +76,17 @@ export const useAwaitableItems = <Item,>(awaitableItems: Awaitable<Item[]>) => {
 };
 
 export const Combobox = <Item,>({
-  placeholder,
-  inputValue,
-  items: _items,
-  onChange,
-  onInputChange,
+  data,
   getOptionLabel,
   getOptionValue,
+  inputValue,
   isLoading,
+  items: _items,
+  menuPortalTarget,
+  onChange,
+  onInputChange,
+  placeholder,
   value,
-  data,
 }: ComboboxProps<Item>) => {
   const [{ disabled, invalid }, { id: inputId }] = useFieldContext();
   const { items, loading } = useAwaitableItems(_items);
@@ -100,7 +104,9 @@ export const Combobox = <Item,>({
       inputValue={inputValue}
       isDisabled={disabled}
       isLoading={isLoading ?? loading}
-      menuPortalTarget={isBrowser ? document.body : undefined}
+      menuPortalTarget={
+        menuPortalTarget ?? (isBrowser ? document.body : undefined)
+      }
       onChange={onChange}
       onInputChange={onInputChange}
       options={items}
