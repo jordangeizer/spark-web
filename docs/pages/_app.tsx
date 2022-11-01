@@ -33,7 +33,10 @@ function App({
 }
 
 App.getInitialProps = async () => {
-  const ignorePackages = ['control-label', 'core', 'theme', 'utils'];
+  const ignorePackages = [
+    // internal package used only for Radio and Checkbox for consistent styling
+    'control-label',
+  ];
   return {
     navigation: [
       { name: 'Home', href: '/' },
