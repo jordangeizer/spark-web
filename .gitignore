@@ -53,3 +53,12 @@ coverage
 
 # VSCode settings
 .vscode/settings.json
+
+# yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

@@ -83,7 +83,7 @@ jobs:
           node-version: 16.x
 
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: yarn --immutable
 
       - name: Create an .npmrc
         env:

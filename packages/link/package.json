@@ -18,7 +18,8 @@
     "@babel/runtime": "^7.19.0",
     "@spark-web/box": "^1.1.0",
     "@spark-web/utils": "^1.2.3",
-    "dedent": "^0.7.0"
+    "dedent": "^0.7.0",
+    "emery": "^1.4.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.12",
