@@ -1,5 +1,14 @@
 # @spark-web/link
 
+## 1.0.11
+
+### Patch Changes
+
+- [#264](https://github.com/brighte-labs/spark-web/pull/264)
+  [`d462e07`](https://github.com/brighte-labs/spark-web/commit/d462e07ce0d83d5c0e32650e99a92af1fece599e)
+  Thanks [@szhang-brighte](https://github.com/szhang-brighte)! - replace assert
+  package with emery assertions
+
 ## 1.0.10
 
 ### Patch Changes

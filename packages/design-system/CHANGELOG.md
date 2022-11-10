@@ -1,5 +1,17 @@
 # @spark-web/design-system
 
+## 0.2.2
+
+### Patch Changes
+
+- Updated dependencies
+  [[`266a734`](https://github.com/brighte-labs/spark-web/commit/266a7342366ec4b1973e79f90541fec870fac69f),
+  [`d462e07`](https://github.com/brighte-labs/spark-web/commit/d462e07ce0d83d5c0e32650e99a92af1fece599e),
+  [`266a734`](https://github.com/brighte-labs/spark-web/commit/266a7342366ec4b1973e79f90541fec870fac69f)]:
+  - @spark-web/float-input@1.0.8
+  - @spark-web/core@2.2.1
+  - @spark-web/link@1.0.11
+
 ## 0.2.1
 
 ### Patch Changes

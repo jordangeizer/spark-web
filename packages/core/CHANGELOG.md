@@ -1,5 +1,18 @@
 # @spark-web/core
 
+## 2.2.1
+
+### Patch Changes
+
+- [#264](https://github.com/brighte-labs/spark-web/pull/264)
+  [`d462e07`](https://github.com/brighte-labs/spark-web/commit/d462e07ce0d83d5c0e32650e99a92af1fece599e)
+  Thanks [@szhang-brighte](https://github.com/szhang-brighte)! - replace assert
+  package with emery assertions
+
+- Updated dependencies
+  [[`d462e07`](https://github.com/brighte-labs/spark-web/commit/d462e07ce0d83d5c0e32650e99a92af1fece599e)]:
+  - @spark-web/link@1.0.11
+
 ## 2.2.0
 
 ### Minor Changes

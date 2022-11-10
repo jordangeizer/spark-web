@@ -1,5 +1,17 @@
 # @spark-web/float-input
 
+## 1.0.8
+
+### Patch Changes
+
+- [#266](https://github.com/brighte-labs/spark-web/pull/266)
+  [`266a734`](https://github.com/brighte-labs/spark-web/commit/266a7342366ec4b1973e79f90541fec870fac69f)
+  Thanks [@yaminideveloper](https://github.com/yaminideveloper)! - updated props
+
+- [#266](https://github.com/brighte-labs/spark-web/pull/266)
+  [`266a734`](https://github.com/brighte-labs/spark-web/commit/266a7342366ec4b1973e79f90541fec870fac69f)
+  Thanks [@yaminideveloper](https://github.com/yaminideveloper)! - updated props
+
 ## 1.0.7
 
 ### Patch Changes
