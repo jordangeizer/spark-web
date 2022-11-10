@@ -22,10 +22,17 @@ export type CurrencyInputProps = {
 
 /** A component for inputting numbers into the app via a keyboard. Enforces 2 fraction digits. */
 export const CurrencyInput = forwardRef<HTMLInputElement, CurrencyInputProps>(
-  ({ currencyType, data, onChange, value, onBlur, onFocus }, forwardedRef) => {
+  (
+    { currencyType, data, onChange, value, onBlur, onFocus, ...inputProps },
+    forwardedRef
+  ) => {
     const [{ disabled }] = useFieldContext();
 
-    let floatInputProps: UseFloatInputProps = { onBlur, onFocus };
+    let floatInputProps: UseFloatInputProps = {
+      onBlur,
+      onFocus,
+      ...inputProps,
+    };
     if (onChange !== undefined && value !== undefined) {
       floatInputProps = { ...floatInputProps, onChange, value };
     }
