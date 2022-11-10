@@ -1,5 +1,14 @@
 # @spark-web/currency-input
 
+## 2.0.6
+
+### Patch Changes
+
+- [#267](https://github.com/brighte-labs/spark-web/pull/267)
+  [`5b9802f`](https://github.com/brighte-labs/spark-web/commit/5b9802f9c92a9ff2af9d6f77629e12381fb192dc)
+  Thanks [@yaminideveloper](https://github.com/yaminideveloper)! - updates to
+  currency props
+
 ## 2.0.5
 
 ### Patch Changes

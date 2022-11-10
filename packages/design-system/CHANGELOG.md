@@ -1,5 +1,13 @@
 # @spark-web/design-system
 
+## 0.2.3
+
+### Patch Changes
+
+- Updated dependencies
+  [[`5b9802f`](https://github.com/brighte-labs/spark-web/commit/5b9802f9c92a9ff2af9d6f77629e12381fb192dc)]:
+  - @spark-web/currency-input@2.0.6
+
 ## 0.2.2
 
 ### Patch Changes

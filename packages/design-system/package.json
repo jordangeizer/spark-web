@@ -1,6 +1,6 @@
 {
   "name": "@spark-web/design-system",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "license": "MIT",
   "main": "dist/spark-web-design-system.cjs.js",
   "module": "dist/spark-web-design-system.esm.js",
@@ -21,7 +21,7 @@
     "@spark-web/container": "1.0.10",
     "@spark-web/control-label": "1.0.10",
     "@spark-web/core": "2.2.1",
-    "@spark-web/currency-input": "2.0.5",
+    "@spark-web/currency-input": "2.0.6",
     "@spark-web/date-picker": "0.1.0",
     "@spark-web/divider": "1.0.10",
     "@spark-web/dropzone": "2.0.8",
