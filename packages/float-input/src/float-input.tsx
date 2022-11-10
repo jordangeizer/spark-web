@@ -19,6 +19,7 @@ export const FloatInput = forwardRef<HTMLInputElement, FloatInputProps>(
       data,
       placeholder,
       children,
+      ...inputProps
     },
     forwardedRef
   ) => {
@@ -41,6 +42,7 @@ export const FloatInput = forwardRef<HTMLInputElement, FloatInputProps>(
 
     return (
       <TextInput
+        {...inputProps}
         ref={forwardedRef}
         data={data}
         placeholder={placeholder}
