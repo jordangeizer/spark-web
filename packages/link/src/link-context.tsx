@@ -1,6 +1,6 @@
 import type { DataAttributeMap } from '@spark-web/utils/internal';
 import dedent from 'dedent';
-import { assert } from 'emery/assertions';
+import { assert } from 'emery';
 import type {
   AnchorHTMLAttributes,
   ForwardRefRenderFunction,
