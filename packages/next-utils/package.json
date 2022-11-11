@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.19.0",
-    "@spark-web/link": "^1.0.10",
+    "@spark-web/link": "^1.0.12",
     "@spark-web/ssr": "1.0.9"
   },
   "devDependencies": {
