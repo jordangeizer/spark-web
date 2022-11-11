@@ -1,5 +1,17 @@
 # @spark-web/design-system
 
+## 0.2.5
+
+### Patch Changes
+
+- Updated dependencies
+  [[`b6976e3`](https://github.com/brighte-labs/spark-web/commit/b6976e36ab0a577ba700660c5dc8d2d1251082bb)]:
+  - @spark-web/button@1.4.5
+  - @spark-web/core@2.2.2
+  - @spark-web/nav-link@1.1.10
+  - @spark-web/next-utils@1.1.2
+  - @spark-web/text-link@1.0.11
+
 ## 0.2.4
 
 ### Patch Changes

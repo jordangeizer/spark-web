@@ -1,5 +1,14 @@
 # @spark-web/text-link
 
+## 1.0.11
+
+### Patch Changes
+
+- [#274](https://github.com/brighte-labs/spark-web/pull/274)
+  [`b6976e3`](https://github.com/brighte-labs/spark-web/commit/b6976e36ab0a577ba700660c5dc8d2d1251082bb)
+  Thanks [@szhang-brighte](https://github.com/szhang-brighte)! - update
+  @spark-web/link version
+
 ## 1.0.10
 
 ### Patch Changes
