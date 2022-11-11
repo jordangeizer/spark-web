@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Enforce permission requirement
-        uses: prince-chrismc/check-actor-permissions-action@v1
+        uses: prince-chrismc/check-actor-permissions-action@v2
         with:
           permission: write
 
