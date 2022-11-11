@@ -23,7 +23,7 @@
     "@spark-web/hidden": "^1.0.11",
     "@spark-web/icon": "^1.2.2",
     "@spark-web/inline": "^1.0.10",
-    "@spark-web/link": "^1.0.11",
+    "@spark-web/link": "^1.0.12",
     "@spark-web/next-utils": "^1.1.1",
     "@spark-web/row": "^1.1.5",
     "@spark-web/stack": "^1.0.10",

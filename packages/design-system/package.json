@@ -1,6 +1,6 @@
 {
   "name": "@spark-web/design-system",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "license": "MIT",
   "main": "dist/spark-web-design-system.cjs.js",
   "module": "dist/spark-web-design-system.esm.js",
@@ -32,7 +32,7 @@
     "@spark-web/hidden": "1.0.11",
     "@spark-web/icon": "1.2.2",
     "@spark-web/inline": "1.0.10",
-    "@spark-web/link": "1.0.11",
+    "@spark-web/link": "1.0.12",
     "@spark-web/modal-dialog": "2.0.5",
     "@spark-web/nav-link": "1.1.9",
     "@spark-web/next-utils": "1.1.1",

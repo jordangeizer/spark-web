@@ -1,5 +1,15 @@
 # @spark-web/link
 
+## 1.0.12
+
+### Patch Changes
+
+- [#269](https://github.com/brighte-labs/spark-web/pull/269)
+  [`537732b`](https://github.com/brighte-labs/spark-web/commit/537732b80131a03d0e95a75cb85356426b3a50ff)
+  Thanks [@szhang-brighte](https://github.com/szhang-brighte)! - import { assert
+  } from emery/assertions somehow returns (0 , import_assert.default) is not a
+  function
+
 ## 1.0.11
 
 ### Patch Changes

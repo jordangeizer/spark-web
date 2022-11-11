@@ -1,5 +1,13 @@
 # @spark-web/design-system
 
+## 0.2.4
+
+### Patch Changes
+
+- Updated dependencies
+  [[`537732b`](https://github.com/brighte-labs/spark-web/commit/537732b80131a03d0e95a75cb85356426b3a50ff)]:
+  - @spark-web/link@1.0.12
+
 ## 0.2.3
 
 ### Patch Changes
