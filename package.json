@@ -54,6 +54,10 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
+  "resolutions": {
+    "**/@types/react": "^17.0.21",
+    "**/@types/react-dom": "^17.0.9"
+  },
   "dependencies": {
     "@babel/core": "^7.19.0",
     "@babel/plugin-transform-runtime": "^7.18.10",

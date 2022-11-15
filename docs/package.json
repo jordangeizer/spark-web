@@ -4,7 +4,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "npm-run-all --sequential build:*",
+    "build": "npm-run-all --sequential build:* && next export -o ./dist",
     "build:contentlayer": "INIT_CWD=$PWD yarn contentlayer build",
     "build:docs": "INIT_CWD=$PWD next build",
     "build:example-site": "yarn workspace example-site build",
