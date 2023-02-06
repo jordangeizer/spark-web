@@ -20,13 +20,28 @@ Single.args = {
   type: 'single',
   children: (
     <>
-      <AccordionItem value="item-1" label="What is this?" level="4">
+      <AccordionItem
+        value="item-1"
+        label="What is this?"
+        level="4"
+        background="primaryLow"
+      >
         <Text>This is an example accordion</Text>
       </AccordionItem>
-      <AccordionItem value="item-2" label="Should I click this?" level="4">
+      <AccordionItem
+        value="item-2"
+        label="Should I click this?"
+        level="4"
+        background="cautionLow"
+      >
         <Text>Yes</Text>
       </AccordionItem>
-      <AccordionItem value="item-3" label="What is in it for me?" level="4">
+      <AccordionItem
+        value="item-3"
+        label="What is in it for me?"
+        level="4"
+        background="infoLow"
+      >
         <Text>A nice accordion</Text>
       </AccordionItem>
     </>

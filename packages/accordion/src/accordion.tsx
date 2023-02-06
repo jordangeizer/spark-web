@@ -9,6 +9,7 @@ import { Box } from '@spark-web/box';
 import { Heading } from '@spark-web/heading';
 import { ChevronDownIcon } from '@spark-web/icon';
 import { Stack } from '@spark-web/stack';
+import type { BrighteTheme } from '@spark-web/theme';
 import { useTheme } from '@spark-web/theme';
 import type { DataAttributeMap } from '@spark-web/utils/internal';
 import type { RefAttributes } from 'react';
@@ -47,10 +48,13 @@ export type AccordionItemProps = Pick<
   label: string;
   /** The size of the heading. '1' is largest and '4' is smallest. */
   level?: '1' | '2' | '3' | '4';
+  /** background colour of the component. */
+  background?: keyof BrighteTheme['color']['background'];
 };
 
 export function AccordionItem({
   headingElement = 'h3',
+  background = 'surface',
   children,
   data,
   label,
@@ -62,7 +66,7 @@ export function AccordionItem({
     <AccordionPrimitive.Item value={value} asChild>
       <Box
         data={data}
-        background="surface"
+        background={background}
         borderRadius="medium"
         padding="large"
       >
@@ -79,7 +83,7 @@ export function AccordionItem({
                 <Box display="flex" alignItems="center">
                   {/* Zero-width space character, used to align chevron properly with label text */}
                   &#8203;
-                  <ChevronDownIcon size="xsmall" />
+                  <ChevronDownIcon size="xxsmall" />
                 </Box>
               </Box>
             </AccordionPrimitive.Trigger>
@@ -111,7 +115,7 @@ export type AccordionProps =
 export function Accordion({ children, ...rest }: AccordionProps) {
   return (
     <AccordionPrimitive.Root asChild {...rest}>
-      <Stack gap="medium" width="full">
+      <Stack gap="small" width="full">
         {children}
       </Stack>
     </AccordionPrimitive.Root>
