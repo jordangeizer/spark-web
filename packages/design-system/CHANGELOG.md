@@ -1,5 +1,13 @@
 # @spark-web/design-system
 
+## 0.2.6
+
+### Patch Changes
+
+- Updated dependencies
+  [[`f3b2bfb`](https://github.com/brighte-labs/spark-web/commit/f3b2bfbaa77bf2c1abfd06cd42e4f16fbd28340b)]:
+  - @spark-web/accordion@1.1.0
+
 ## 0.2.5
 
 ### Patch Changes

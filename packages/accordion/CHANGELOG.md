@@ -1,5 +1,14 @@
 # @spark-web/accordion
 
+## 1.1.0
+
+### Minor Changes
+
+- [#293](https://github.com/brighte-labs/spark-web/pull/293)
+  [`f3b2bfb`](https://github.com/brighte-labs/spark-web/commit/f3b2bfbaa77bf2c1abfd06cd42e4f16fbd28340b)
+  Thanks [@dilipt-brighte](https://github.com/dilipt-brighte)! - allows
+  configurable background colours on accordion component.
+
 ## 1.0.11
 
 ### Patch Changes

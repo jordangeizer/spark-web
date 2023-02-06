@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@emotion/css": "^11.9.0",
-    "@spark-web/design-system": "^0.2.5",
+    "@spark-web/design-system": "^0.2.6",
     "@spark-web/next-utils": "^1.1.2",
     "@untitled-docs/live-code": "^0.4.0",
     "clipboard-copy": "^4.0.1",
